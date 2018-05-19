@@ -1,6 +1,6 @@
 ﻿using Zenject;
 
-namespace test
+namespace MidasMain
 {
     partial class BaseForm
     {

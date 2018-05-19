@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zenject;
 
-namespace test
+namespace MidasMain
 {
     public partial class BaseForm : MetroFramework.Forms.MetroForm
     {

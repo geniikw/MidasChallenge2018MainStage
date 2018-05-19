@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zenject;
 
-namespace test
+namespace MidasMain
 {
     static class Program
     {
@@ -16,7 +16,6 @@ namespace test
         static void Main()
         {
             DiContainer container = new DiContainer();
-            
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
