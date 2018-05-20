@@ -13,17 +13,22 @@ namespace MidasMain
 {
     public partial class BaseForm : MetroFramework.Forms.MetroForm
     {
-        DiContainer _container;
+        FixedTickList _fixedList;
 
-        public BaseForm(DiContainer container)
+        public BaseForm(FixedTickList fixedList)
         {
-            _container = container;
+            _fixedList = fixedList;
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            _fixedList.FixedTick();
         }
     }
 }

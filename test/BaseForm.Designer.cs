@@ -30,7 +30,9 @@ namespace MidasMain
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // metroPanel1
@@ -47,14 +49,19 @@ namespace MidasMain
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // Form1
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
+            // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 450);
             this.ControlBox = false;
             this.Controls.Add(this.metroPanel1);
-            this.Name = "Form1";
+            this.Name = "BaseForm";
             this.Style = MetroFramework.MetroColorStyle.Default;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -64,6 +71,7 @@ namespace MidasMain
 
         #endregion
         private MetroFramework.Controls.MetroPanel metroPanel1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
