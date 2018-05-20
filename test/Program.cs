@@ -15,6 +15,7 @@ namespace MidasMain
         [STAThread]
         static void Main()
         {
+            int commitingLine = 1;
             DiContainer container = new DiContainer();
 
             Application.EnableVisualStyles();
