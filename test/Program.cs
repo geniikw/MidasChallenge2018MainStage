@@ -16,6 +16,7 @@ namespace MidasMain
         static void Main()
         {
             int commitingLine = 1;
+            Console.WriteLine(commitingLine);
             DiContainer container = new DiContainer();
 
             Application.EnableVisualStyles();
