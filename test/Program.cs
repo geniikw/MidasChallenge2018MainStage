@@ -19,10 +19,12 @@ namespace MidasMain
             Console.WriteLine(commitingLine);
             DiContainer container = new DiContainer();
 
+            BaseInstaller.Install(container);
+
             container.Bind<FixedTickList>().AsSingle();
             container.Bind<BaseForm>().AsSingle();
-            container.Bind<BaseInstaller>().AsSingle();
-
+            
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(container.Resolve<BaseForm>());

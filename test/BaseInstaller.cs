@@ -9,16 +9,17 @@ namespace MidasMain
 {
     public class BaseInstaller : Installer<BaseInstaller>
     {
-        readonly DiContainer container;
-
-        public BaseInstaller(DiContainer container)
-        {
-            this.container = container;
-        }           
-
         public override void InstallBindings()
         {
-            
+            Container.BindInterfacesTo<TickExample>().AsSingle();
+        }
+    }    
+
+    public class TickExample : IFixedTickable
+    {
+        public void FixedTick()
+        {
+            Console.WriteLine("100ms 마다 호출");
         }
     }
 }
