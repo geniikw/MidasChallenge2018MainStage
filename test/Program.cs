@@ -15,16 +15,9 @@ namespace MidasMain
         [STAThread]
         static void Main()
         {
-            int commitingLine = 1;
-            Console.WriteLine(commitingLine);
             DiContainer container = new DiContainer();
-
             BaseInstaller.Install(container);
-
-            container.Bind<FixedTickList>().AsSingle();
-            container.Bind<BaseForm>().AsSingle();
-            
-            
+                        
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(container.Resolve<BaseForm>());
