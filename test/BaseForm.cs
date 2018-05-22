@@ -14,38 +14,48 @@ using Markdig;
 using Zenject;
 using MetroFramework.Controls;
 using MidasMain.Paint;
+using MetroFramework.Drawing.Html;
 
 namespace MidasMain
 {
     public partial class BaseForm : MetroFramework.Forms.MetroForm
     {
         BindEventToInterface _eventManager;
-        EventSignal m_paintDown;
-        EventSignal m_paintUp;
-        EventSignal m_paintMove;
-
-        public BaseForm(BindEventToInterface fixedList, DiContainer container)
+        PaintModel _paint;
+        DiContainer _Container = new DiContainer();
+        List<MetroRadioButton> m_radioList = new List<MetroRadioButton>();
+        [Inject]
+        public void Contructor(PaintModel paint, BindEventToInterface em)
         {
-            _eventManager = fixedList;
-            InitializeComponent();
-            //paint
-            DiContainer pC = new DiContainer(new DiContainer[]{ container });
-            pC.Bind<PictureBox>().FromInstance(pictureBox1).AsSingle();
-            pC.Bind<MetroButton>().WithId("Save").FromInstance(SaveButton).AsCached();
-            pC.Bind<MetroButton>().WithId("Load").FromInstance(LoadButton).AsCached();
-            pC.Bind<MetroRadioButton>().WithId("Rect").FromInstance(RectRadio).AsCached();
-            pC.Bind<MetroRadioButton>().WithId("Pen").FromInstance(RectRadio).AsCached();
-            pC.Bind<MetroRadioButton>().WithId("Fill").FromInstance(RectRadio).AsCached();
-                     
-            PaintInstaller.Install(pC);
-            m_paintDown = pC.ResolveId<EventSignal>("PaintDown");
-            m_paintUp = pC.ResolveId<EventSignal>("PaintUp");
-            m_paintMove = pC.ResolveId<EventSignal>("PaintMove");
+            _paint = paint;
+            _eventManager = em;
         }
+
+        public BaseForm()
+        {
+            InitializeComponent();
+            ControlInstaller(_Container);
+
+            ProgramInstaller.Install(_Container);
+            
+            _Container.Inject(this);
+        }
+
+        public void ControlInstaller(DiContainer container) {
+            //Creadit
+            container.BindInstance(htmlPanel1);
+            //Paint
+            m_radioList.AddRange(new MetroRadioButton[] {NoneRadio ,PenRadio,FillRadio,RectRadio });
+
+            container.BindInstance(pictureBox1);
+            container.BindInstance(SaveButton).WithId("Save");
+            container.BindInstance(LoadButton).WithId("Load");
+        }
+
 
         private void BaseForm_Load(object sender, EventArgs e)
         {
-            _eventManager.Init(sender, e);
+            _eventManager.Init();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -53,19 +63,9 @@ namespace MidasMain
             _eventManager.FixedTick();
         }
 
-        private void PaintDown(object sender, MouseEventArgs e)
+        private void Checked_Changed(object sender, EventArgs e)
         {
-            m_paintDown.Fire(sender, e);
-        }
-
-        private void PaintMove(object sender, MouseEventArgs e)
-        {
-            m_paintMove.Fire(sender, e);
-        }
-
-        private void PaintUp(object sender, MouseEventArgs e)
-        {
-            m_paintUp.Fire(sender, e);
+            _paint.toolIdx.OnNext(m_radioList.FindIndex(r => r.Checked));
         }
     }
 }

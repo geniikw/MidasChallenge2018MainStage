@@ -37,9 +37,10 @@ namespace MidasMain
             this.metroProgressSpinner1 = new MetroFramework.Controls.MetroProgressSpinner();
             this.Tab1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.RectRadio = new MetroFramework.Controls.MetroRadioButton();
-            this.FillRadio = new MetroFramework.Controls.MetroRadioButton();
+            this.NoneRadio = new MetroFramework.Controls.MetroRadioButton();
             this.PenRadio = new MetroFramework.Controls.MetroRadioButton();
+            this.FillRadio = new MetroFramework.Controls.MetroRadioButton();
+            this.RectRadio = new MetroFramework.Controls.MetroRadioButton();
             this.SaveButton = new MetroFramework.Controls.MetroButton();
             this.LoadButton = new MetroFramework.Controls.MetroButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -84,9 +85,10 @@ namespace MidasMain
             // 
             // metroTabPage2
             // 
-            this.metroTabPage2.Controls.Add(this.RectRadio);
-            this.metroTabPage2.Controls.Add(this.FillRadio);
+            this.metroTabPage2.Controls.Add(this.NoneRadio);
             this.metroTabPage2.Controls.Add(this.PenRadio);
+            this.metroTabPage2.Controls.Add(this.FillRadio);
+            this.metroTabPage2.Controls.Add(this.RectRadio);
             this.metroTabPage2.Controls.Add(this.SaveButton);
             this.metroTabPage2.Controls.Add(this.LoadButton);
             this.metroTabPage2.Controls.Add(this.pictureBox1);
@@ -102,37 +104,51 @@ namespace MidasMain
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
             // 
-            // RectRadio
+            // NoneRadio
             // 
-            this.RectRadio.AutoSize = true;
-            this.RectRadio.Location = new System.Drawing.Point(60, 134);
-            this.RectRadio.Name = "RectRadio";
-            this.RectRadio.Size = new System.Drawing.Size(46, 15);
-            this.RectRadio.TabIndex = 7;
-            this.RectRadio.Text = "Rect";
-            this.RectRadio.UseSelectable = true;
+            this.NoneRadio.AutoSize = true;
+            this.NoneRadio.Checked = true;
+            this.NoneRadio.Location = new System.Drawing.Point(22, 256);
+            this.NoneRadio.Name = "NoneRadio";
+            this.NoneRadio.Size = new System.Drawing.Size(52, 15);
+            this.NoneRadio.TabIndex = 8;
+            this.NoneRadio.TabStop = true;
+            this.NoneRadio.Text = "None";
+            this.NoneRadio.UseSelectable = true;
+            this.NoneRadio.CheckedChanged += new System.EventHandler(this.Checked_Changed);
+            // 
+            // PenRadio
+            // 
+            this.PenRadio.AutoSize = true;
+            this.PenRadio.Location = new System.Drawing.Point(22, 277);
+            this.PenRadio.Name = "PenRadio";
+            this.PenRadio.Size = new System.Drawing.Size(43, 15);
+            this.PenRadio.TabIndex = 5;
+            this.PenRadio.Text = "Pen";
+            this.PenRadio.UseSelectable = true;
+            this.PenRadio.CheckedChanged += new System.EventHandler(this.Checked_Changed);
             // 
             // FillRadio
             // 
             this.FillRadio.AutoSize = true;
-            this.FillRadio.Location = new System.Drawing.Point(60, 113);
+            this.FillRadio.Location = new System.Drawing.Point(22, 298);
             this.FillRadio.Name = "FillRadio";
             this.FillRadio.Size = new System.Drawing.Size(38, 15);
             this.FillRadio.TabIndex = 6;
             this.FillRadio.Text = "Fill";
             this.FillRadio.UseSelectable = true;
+            this.FillRadio.CheckedChanged += new System.EventHandler(this.Checked_Changed);
             // 
-            // PenRadio
+            // RectRadio
             // 
-            this.PenRadio.AutoSize = true;
-            this.PenRadio.Checked = true;
-            this.PenRadio.Location = new System.Drawing.Point(60, 92);
-            this.PenRadio.Name = "PenRadio";
-            this.PenRadio.Size = new System.Drawing.Size(43, 15);
-            this.PenRadio.TabIndex = 5;
-            this.PenRadio.TabStop = true;
-            this.PenRadio.Text = "Pen";
-            this.PenRadio.UseSelectable = true;
+            this.RectRadio.AutoSize = true;
+            this.RectRadio.Location = new System.Drawing.Point(22, 319);
+            this.RectRadio.Name = "RectRadio";
+            this.RectRadio.Size = new System.Drawing.Size(46, 15);
+            this.RectRadio.TabIndex = 7;
+            this.RectRadio.Text = "Rect";
+            this.RectRadio.UseSelectable = true;
+            this.RectRadio.CheckedChanged += new System.EventHandler(this.Checked_Changed);
             // 
             // SaveButton
             // 
@@ -154,7 +170,7 @@ namespace MidasMain
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Location = new System.Drawing.Point(119, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(10);
@@ -162,9 +178,6 @@ namespace MidasMain
             this.pictureBox1.Size = new System.Drawing.Size(453, 357);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PaintDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PaintMove);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PaintUp);
             // 
             // metroTabPage1
             // 
@@ -226,7 +239,6 @@ namespace MidasMain
             this.Controls.Add(this.Tab1);
             this.Controls.Add(this.metroProgressSpinner1);
             this.DisplayHeader = false;
-            this.DoubleBuffered = false;
             this.MinimumSize = new System.Drawing.Size(600, 400);
             this.Name = "BaseForm";
             this.Padding = new System.Windows.Forms.Padding(10, 30, 10, 10);
@@ -251,6 +263,8 @@ namespace MidasMain
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
+
+        //Creadit
         private MetroFramework.Drawing.Html.HtmlPanel htmlPanel1;
 
         //paint
@@ -260,8 +274,7 @@ namespace MidasMain
         private MetroFramework.Controls.MetroRadioButton RectRadio;
         private MetroFramework.Controls.MetroRadioButton FillRadio;
         private MetroFramework.Controls.MetroRadioButton PenRadio;
-        
-
+        private MetroFramework.Controls.MetroRadioButton NoneRadio;
     }
 }
 

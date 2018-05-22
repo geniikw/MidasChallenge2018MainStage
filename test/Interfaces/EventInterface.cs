@@ -19,6 +19,6 @@ namespace MidasMain
     /// </summary>
     public interface IInitializable
     {
-        void Start(object obj, EventArgs arg);
+        void Start();
     }
 }

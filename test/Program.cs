@@ -14,13 +14,10 @@ namespace MidasMain
         /// </summary>
         [STAThread]
         static void Main()
-        {
-            DiContainer container = new DiContainer();
-            BaseInstaller.Install(container);
-                        
+        {         
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(container.Resolve<BaseForm>());
+            Application.Run(new BaseForm());
         }
     }
 }
