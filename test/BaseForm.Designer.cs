@@ -296,7 +296,7 @@ namespace MidasMain
             this.objectView1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.objectView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.objectView1.CausesValidation = false;
-            this.objectView1.Location = new System.Drawing.Point(332, 103);
+            this.objectView1.Location = new System.Drawing.Point(218, 17);
             this.objectView1.Name = "objectView1";
             this.objectView1.Size = new System.Drawing.Size(95, 77);
             this.objectView1.TabIndex = 3;

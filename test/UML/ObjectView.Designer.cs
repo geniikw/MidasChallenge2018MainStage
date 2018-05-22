@@ -58,7 +58,6 @@
             this.oolStripMenuItem.Name = "열추가ToolStripMenuItem";
             this.oolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.oolStripMenuItem.Text = "AddMember";
-            this.oolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // ObjectView
             // 
