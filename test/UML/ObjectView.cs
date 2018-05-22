@@ -75,10 +75,9 @@ namespace MidasMain.UML
             var left = e.ClipRectangle.Left;
             var right = e.ClipRectangle.Right;
             var top = e.ClipRectangle.Top;
-            var bottom = e.ClipRectangle.Bottom;
 
-            var p1 = new Point(left, (top + bottom) / 3);
-            var p2 = new Point(right, (top + bottom) / 3);
+            var p1 = new Point(left, top +20);
+            var p2 = new Point(right, top +20);
 
             g.DrawLine(linePen, p1, p2);
         }
