@@ -67,5 +67,25 @@ namespace MidasMain
         {
             _paint.toolIdx.OnNext(m_radioList.FindIndex(r => r.Checked));
         }
+
+        private void MetroTile1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MetroTile2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void objectView1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PointerDown(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 }

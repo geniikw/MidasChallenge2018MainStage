@@ -22,6 +22,7 @@ namespace MidasMain
             Container.Bind<PaintModel>().AsSingle();
             Container.BindInterfacesTo<ToolSelector>().AsSingle();
             Container.BindInterfacesTo<PaintInitializer>().AsSingle();
+
             //여기서 선언된 순서와 BaseForm의 radioList안의 순서가 대응됨.
             Container.BindInterfacesTo<NoneTool>().AsSingle();
             Container.BindInterfacesTo<PenTool>().AsSingle();
