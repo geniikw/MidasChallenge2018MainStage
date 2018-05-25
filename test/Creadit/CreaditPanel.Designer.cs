@@ -33,7 +33,6 @@
             // 
             // htmlPanel1
             // 
-            this.htmlPanel1.AutoScroll = true;
             this.htmlPanel1.AutoScrollMinSize = new System.Drawing.Size(494, 18);
             this.htmlPanel1.BackColor = System.Drawing.SystemColors.Window;
             this.htmlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
