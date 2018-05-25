@@ -80,6 +80,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PointUtil.cs" />
     <Compile Include="Creadit\CreaditPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>

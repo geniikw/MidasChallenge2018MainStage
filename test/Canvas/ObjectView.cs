@@ -16,43 +16,34 @@ namespace MidasMain.UML
     public partial class ObjectView : UserControl
     {
         public static Pen linePen = new Pen(Color.Black, 1);
+
         public ObjectView()
         {
             InitializeComponent();
         }
 
-        Graphics g;
         Subject<MouseEventArgs> OnDown = new Subject<MouseEventArgs>();
         Subject<MouseEventArgs> OnDrag = new Subject<MouseEventArgs>();
         Subject<MouseEventArgs> OnUp = new Subject<MouseEventArgs>();
 
-        Point m_Offset;
-
         private void UserControl1_Load(object sender, EventArgs e)
         {
-            g = CreateGraphics();
-            OnDrag
+            OnDrag.CombineLatest(OnDown.Select(p=>GetOffset(p.Location)), (a,o)=>PointUtil.Minus(a.Location, o))
                 .SkipUntil(OnDown)
                 .TakeUntil(OnUp)
                 .Repeat()
-                .Subscribe(p => MoveObject(PointToScreen(p.Location)));
-
-            OnDown.Subscribe(arg => {
-                var smp = PointToScreen(arg.Location);
-                var cp = Parent.PointToScreen(Location);
-                m_Offset = new Point(smp.X - cp.X, smp.Y - cp.Y);
-            });
-
+                .Subscribe(p => Location = Parent.PointToClient( PointToScreen( p)));
+            
             OnUp.Subscribe(arg => Invalidate());
         }
         
-
-        public void MoveObject(Point position)
+        public Point GetOffset(Point mousePoint)
         {
-            var p = Parent.PointToClient(position);
-            Location = new Point(p.X - m_Offset.X , p.Y - m_Offset.Y);
+            var smp = PointToScreen(mousePoint);
+            var cp = Parent.PointToScreen(Location);
+            return PointUtil.Minus(smp, cp);
         }
-        
+
         private void PointerDown(object sender, MouseEventArgs e)
         {
             OnDown.OnNext(e);
@@ -79,7 +70,7 @@ namespace MidasMain.UML
             var p1 = new Point(left, top +20);
             var p2 = new Point(right, top +20);
 
-            g.DrawLine(linePen, p1, p2);
+            e.Graphics.DrawLine(linePen, p1, p2);
         }
     }
 }

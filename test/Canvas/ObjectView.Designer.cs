@@ -53,18 +53,18 @@
             this.oolStripMenuItem,
             this.renameToolStripMenuItem});
             this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(181, 70);
+            this.metroContextMenu1.Size = new System.Drawing.Size(142, 48);
             // 
             // oolStripMenuItem
             // 
             this.oolStripMenuItem.Name = "oolStripMenuItem";
-            this.oolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.oolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.oolStripMenuItem.Text = "AddMember";
             // 
             // renameToolStripMenuItem
             // 
             this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
-            this.renameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.renameToolStripMenuItem.Text = "Rename";
             // 
             // ObjectView
@@ -76,8 +76,9 @@
             this.CausesValidation = false;
             this.ContextMenuStrip = this.metroContextMenu1;
             this.Controls.Add(this.metroLabel1);
+            this.DoubleBuffered = true;
             this.Name = "ObjectView";
-            this.Size = new System.Drawing.Size(109, 97);
+            this.Size = new System.Drawing.Size(109, 100);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintObjectView);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PointerDown);

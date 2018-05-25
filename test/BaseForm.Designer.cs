@@ -98,6 +98,7 @@
             this.creaditPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.creaditPanel1.Location = new System.Drawing.Point(0, 0);
             this.creaditPanel1.Name = "creaditPanel1";
+            this.creaditPanel1.Padding = new System.Windows.Forms.Padding(20);
             this.creaditPanel1.Size = new System.Drawing.Size(752, 328);
             this.creaditPanel1.TabIndex = 2;
             // 
