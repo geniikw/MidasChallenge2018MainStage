@@ -32,6 +32,7 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.oolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroContextMenu1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,15 +50,22 @@
             // metroContextMenu1
             // 
             this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.oolStripMenuItem});
+            this.oolStripMenuItem,
+            this.renameToolStripMenuItem});
             this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(142, 26);
+            this.metroContextMenu1.Size = new System.Drawing.Size(181, 70);
             // 
-            // 열추가ToolStripMenuItem
+            // oolStripMenuItem
             // 
-            this.oolStripMenuItem.Name = "열추가ToolStripMenuItem";
-            this.oolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.oolStripMenuItem.Name = "oolStripMenuItem";
+            this.oolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.oolStripMenuItem.Text = "AddMember";
+            // 
+            // renameToolStripMenuItem
+            // 
+            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.renameToolStripMenuItem.Text = "Rename";
             // 
             // ObjectView
             // 
@@ -86,5 +94,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
         private System.Windows.Forms.ToolStripMenuItem oolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
     }
 }
