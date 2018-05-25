@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.MainTab = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.creaditPanel1 = new MidasMain.Creadit.CreaditPanel();
+            this.canvas1 = new MidasMain.Canvas.Canvas();
+            this.dragItem1 = new MidasMain.Canvas.DragItem();
             this.MainTab.SuspendLayout();
+            this.metroTabPage1.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +56,8 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.dragItem1);
+            this.metroTabPage1.Controls.Add(this.canvas1);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.HorizontalScrollbarSize = 10;
@@ -102,6 +108,24 @@
             this.creaditPanel1.Size = new System.Drawing.Size(752, 328);
             this.creaditPanel1.TabIndex = 2;
             // 
+            // canvas1
+            // 
+            this.canvas1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.canvas1.Location = new System.Drawing.Point(0, 0);
+            this.canvas1.Name = "canvas1";
+            this.canvas1.Size = new System.Drawing.Size(752, 328);
+            this.canvas1.TabIndex = 2;
+            // 
+            // dragItem1
+            // 
+            this.dragItem1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dragItem1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dragItem1.CausesValidation = false;
+            this.dragItem1.Location = new System.Drawing.Point(141, 141);
+            this.dragItem1.Name = "dragItem1";
+            this.dragItem1.Size = new System.Drawing.Size(109, 100);
+            this.dragItem1.TabIndex = 3;
+            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -111,6 +135,7 @@
             this.Name = "BaseForm";
             this.Text = "MIDAS2018";
             this.MainTab.ResumeLayout(false);
+            this.metroTabPage1.ResumeLayout(false);
             this.metroTabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -123,5 +148,7 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private Creadit.CreaditPanel creaditPanel1;
+        private Canvas.Canvas canvas1;
+        private Canvas.DragItem dragItem1;
     }
 }

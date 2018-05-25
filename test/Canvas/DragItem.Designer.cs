@@ -1,6 +1,6 @@
-﻿namespace MidasMain.UML
+﻿namespace MidasMain.Canvas
 {
-    partial class ObjectView
+    partial class DragItem
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -29,23 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.oolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroContextMenu1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel1.Location = new System.Drawing.Point(-1, 0);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(74, 19);
-            this.metroLabel1.TabIndex = 0;
-            this.metroLabel1.Text = "ClassName";
-            this.metroLabel1.UseCustomBackColor = true;
             // 
             // metroContextMenu1
             // 
@@ -67,7 +55,7 @@
             this.renameToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.renameToolStripMenuItem.Text = "Rename";
             // 
-            // ObjectView
+            // DragItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -75,24 +63,19 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CausesValidation = false;
             this.ContextMenuStrip = this.metroContextMenu1;
-            this.Controls.Add(this.metroLabel1);
             this.DoubleBuffered = true;
-            this.Name = "ObjectView";
+            this.Name = "DragItem";
             this.Size = new System.Drawing.Size(109, 100);
             this.Load += new System.EventHandler(this.UserControl1_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintObjectView);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PointerDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PointerMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PointerUp);
             this.metroContextMenu1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
         private System.Windows.Forms.ToolStripMenuItem oolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
