@@ -34,12 +34,12 @@
             // htmlPanel1
             // 
             this.htmlPanel1.AutoScroll = true;
-            this.htmlPanel1.AutoScrollMinSize = new System.Drawing.Size(474, 18);
+            this.htmlPanel1.AutoScrollMinSize = new System.Drawing.Size(494, 18);
             this.htmlPanel1.BackColor = System.Drawing.SystemColors.Window;
             this.htmlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.htmlPanel1.Location = new System.Drawing.Point(10, 10);
+            this.htmlPanel1.Location = new System.Drawing.Point(20, 20);
             this.htmlPanel1.Name = "htmlPanel1";
-            this.htmlPanel1.Size = new System.Drawing.Size(474, 450);
+            this.htmlPanel1.Size = new System.Drawing.Size(454, 430);
             this.htmlPanel1.TabIndex = 0;
             this.htmlPanel1.Text = "htmlPanel1";
             // 
@@ -47,7 +47,7 @@
             // 
             this.Controls.Add(this.htmlPanel1);
             this.Name = "CreaditPanel";
-            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Padding = new System.Windows.Forms.Padding(20);
             this.Size = new System.Drawing.Size(494, 470);
             this.ResumeLayout(false);
 

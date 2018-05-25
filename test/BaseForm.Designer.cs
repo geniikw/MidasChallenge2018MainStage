@@ -45,7 +45,7 @@
             this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTab.Location = new System.Drawing.Point(20, 60);
             this.MainTab.Name = "MainTab";
-            this.MainTab.SelectedIndex = 2;
+            this.MainTab.SelectedIndex = 0;
             this.MainTab.Size = new System.Drawing.Size(760, 370);
             this.MainTab.TabIndex = 0;
             this.MainTab.UseSelectable = true;
@@ -98,7 +98,6 @@
             this.creaditPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.creaditPanel1.Location = new System.Drawing.Point(0, 0);
             this.creaditPanel1.Name = "creaditPanel1";
-            this.creaditPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.creaditPanel1.Size = new System.Drawing.Size(752, 328);
             this.creaditPanel1.TabIndex = 2;
             // 
@@ -109,7 +108,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.MainTab);
             this.Name = "BaseForm";
-            this.Text = "Form1";
+            this.Text = "MIDAS2018";
             this.MainTab.ResumeLayout(false);
             this.metroTabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
