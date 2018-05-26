@@ -32,7 +32,6 @@
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroButtonTest = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButtonObject = new MetroFramework.Controls.MetroTile();
             this.metroButtonRoom = new MetroFramework.Controls.MetroTile();
@@ -95,7 +94,6 @@
             // metroPanel1
             // 
             this.metroPanel1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.metroPanel1.Controls.Add(this.metroButtonTest);
             this.metroPanel1.Controls.Add(this.metroButton1);
             this.metroPanel1.Controls.Add(this.metroButtonObject);
             this.metroPanel1.Controls.Add(this.metroButtonRoom);
@@ -116,17 +114,6 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // metroButtonTest
-            // 
-            this.metroButtonTest.Location = new System.Drawing.Point(43, 352);
-            this.metroButtonTest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.metroButtonTest.Name = "metroButtonTest";
-            this.metroButtonTest.Size = new System.Drawing.Size(86, 29);
-            this.metroButtonTest.TabIndex = 8;
-            this.metroButtonTest.Text = "metroButton3";
-            this.metroButtonTest.UseSelectable = true;
-            this.metroButtonTest.Click += new System.EventHandler(this.GenerateBlock);
             // 
             // metroButton1
             // 
@@ -150,7 +137,6 @@
             this.metroButtonObject.TabIndex = 7;
             this.metroButtonObject.Text = "Object";
             this.metroButtonObject.UseSelectable = true;
-            this.metroButtonObject.Click += new System.EventHandler(this.metroButtonObject_Click);
             // 
             // metroButtonRoom
             // 
@@ -163,7 +149,6 @@
             this.metroButtonRoom.TabIndex = 6;
             this.metroButtonRoom.Text = "Room";
             this.metroButtonRoom.UseSelectable = true;
-            this.metroButtonRoom.Click += new System.EventHandler(this.metroButtonRoom_Click);
             // 
             // metroTile4
             // 
