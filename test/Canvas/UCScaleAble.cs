@@ -18,20 +18,20 @@ namespace MidasMain.Canvas
 		{
 			InitializeComponent();
 			InitScalers();
+			UpdateScalerPosition();
 		}
 
 		public void UpdateScalerPosition()
 		{
 			scalerLeftTop.Location = new Point(0, 0);
-			scalerLeftBottom.Location = new Point(0, Size.Height - 10);
-			scalerRightTop.Location = new Point(Size.Width - 10, 0);
-			scalerRightBottom.Location = new Point(Size.Width - 10, Size.Height - 10);
+			scalerLeftBottom.Location = new Point(0, Size.Height - 12);
+			scalerRightTop.Location = new Point(Size.Width - 12, 0);
+			scalerRightBottom.Location = new Point(Size.Width - 12, Size.Height - 12);
 		}
 
 		public override void PointerDown(object sender, MouseEventArgs e)
 		{
 			base.PointerDown(sender, e);
-			Console.WriteLine("room click");
 		}
 
 		public override void PointerMove(object sender, MouseEventArgs e)
