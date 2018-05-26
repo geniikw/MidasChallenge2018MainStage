@@ -520,7 +520,7 @@ namespace MidasMain
                         }
                         else if (wall.to == currentRoom && wall.from != null)
                         {
-                            if (!dict.ContainsKey(wall.to))
+                            if (!dict.ContainsKey(wall.from))
                             {
                                 dict.Add(wall.from, 1);
                                 nextRoom.Add(wall.from);

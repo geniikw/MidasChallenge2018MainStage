@@ -42,6 +42,7 @@
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.creditPanel1 = new MidasMain.Creadit.CreditPanel();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
+            this.AlarmLabel = new MetroFramework.Controls.MetroLabel();
             this.MainTab.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -63,6 +64,7 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.AlarmLabel);
             this.metroTabPage1.Controls.Add(this.metroButton2);
             this.metroTabPage1.Controls.Add(this.metroPanel1);
             this.metroTabPage1.Controls.Add(this.canvas1);
@@ -237,6 +239,20 @@
             this.metroTile4.UseSelectable = true;
             this.metroTile4.Click += new System.EventHandler(this.CaputreScreen);
             // 
+            // AlarmLabel
+            // 
+            this.AlarmLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.AlarmLabel.AutoSize = true;
+            this.AlarmLabel.BackColor = System.Drawing.Color.White;
+            this.AlarmLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.AlarmLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.AlarmLabel.ForeColor = System.Drawing.Color.PowderBlue;
+            this.AlarmLabel.Location = new System.Drawing.Point(564, 377);
+            this.AlarmLabel.Name = "AlarmLabel";
+            this.AlarmLabel.Size = new System.Drawing.Size(0, 0);
+            this.AlarmLabel.TabIndex = 9;
+            this.AlarmLabel.UseCustomBackColor = true;
+            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -253,6 +269,7 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyDownHandler);
             this.MainTab.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
+            this.metroTabPage1.PerformLayout();
             this.metroPanel1.ResumeLayout(false);
             this.metroTabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -275,5 +292,6 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroTile metroTile4;
+        private MetroFramework.Controls.MetroLabel AlarmLabel;
     }
 }
