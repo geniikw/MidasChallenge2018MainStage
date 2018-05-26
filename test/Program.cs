@@ -20,6 +20,7 @@ namespace MidasMain
             var bbb = new BaseForm();
             //kh.KeyDown += Kh_KeyDown;
             GlobalEvent.OnDocumentChangeBefore += UndoManager.Record;
+            GlobalEvent.OnDocumentChangeBefore += (a,b) => bbb.ClearBlock();
             GlobalEvent.OnDocumentChangeAfter += msg => bbb.GenBlock();
             GlobalEvent.OnDocumentChangeAfter += msg => Canvas.instance.SetZIndex();
 
