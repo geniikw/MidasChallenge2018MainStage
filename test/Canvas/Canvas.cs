@@ -102,16 +102,16 @@ namespace MidasMain.CanvasSpace
 		{
 			if(m_listDoor[dIdx].kind %2 == 0)	// vertical
 			{
-				if ((Math.Abs(m_listRoom[rIdx].Left - m_listDoor[dIdx].pA.X) <= 3 
-					|| Math.Abs(m_listRoom[rIdx].Right - m_listDoor[dIdx].pA.X) <= 3)
+				if ((Math.Abs(m_listRoom[rIdx].Left - m_listDoor[dIdx].pA.X) <= 1 
+					|| Math.Abs(m_listRoom[rIdx].Right - m_listDoor[dIdx].pA.X) <= 1)
 					&& m_listRoom[rIdx].Top <= m_listDoor[dIdx].Top
 					&& m_listRoom[rIdx].Bottom >= m_listDoor[dIdx].Bottom)
 					return true;
 			}
 			else // horizontal
 			{
-				if ((Math.Abs(m_listRoom[rIdx].Top - m_listDoor[dIdx].pA.Y) <= 3
-					|| Math.Abs(m_listRoom[rIdx].Bottom - m_listDoor[dIdx].pA.Y) <= 3)
+				if ((Math.Abs(m_listRoom[rIdx].Top - m_listDoor[dIdx].pA.Y) <= 1
+					|| Math.Abs(m_listRoom[rIdx].Bottom - m_listDoor[dIdx].pA.Y) <= 1)
 					&& m_listRoom[rIdx].Left <= m_listDoor[dIdx].Left
 					&& m_listRoom[rIdx].Right >= m_listDoor[dIdx].Right)
 					return true;
@@ -124,14 +124,29 @@ namespace MidasMain.CanvasSpace
 			for (int i = 0; i < m_listRoom.Count; i++)
 				m_listRoom[i].doors.Clear();
 
+			bool hasBind;
+			List<int> willDeleted = new List<int>();
 			for (int dIdx = 0; dIdx < m_listDoor.Count; dIdx++)
+			{
+				hasBind = false;
 				for (int rIdx = m_listRoom.Count - 1; rIdx >= 0; rIdx--)
 					if (IsRoomHasDoor(rIdx, dIdx))
 					{
-						Console.WriteLine("you find it?");
+						hasBind = true;
 						m_listRoom[rIdx].doors.Add(m_listDoor[dIdx]);
 						break;
 					}
+				if (!hasBind)
+					willDeleted.Add(dIdx);
+			}
+
+			UCDoor dTarget;
+			for (int i = willDeleted.Count - 1; i >= 0; i--)
+			{
+				dTarget = m_listDoor[willDeleted[i]];
+				m_listDoor.Remove(dTarget);
+				dTarget.Dispose();
+			}
 		}
 
         public void Clear()
