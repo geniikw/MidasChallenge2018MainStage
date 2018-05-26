@@ -24,7 +24,6 @@ namespace MidasMain.CanvasSpace
         {
             Location = data.Rect.Location;
             Size = data.Rect.Size;
-            BackColor = data.color;
         }
 
 		public override void PointerDown(object sender, MouseEventArgs e)

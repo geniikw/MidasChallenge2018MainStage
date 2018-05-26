@@ -148,7 +148,7 @@ namespace MidasMain.CanvasSpace
             var n = 0;
             foreach (var r in m_listRoom)
             {
-                doc.AddRoom(new Room(n, new Rectangle(r.Location, r.Size), r.BackColor));
+                doc.AddRoom(new Room(n++, new Rectangle(r.Location, r.Size), r.BackColor));
             }
 
             foreach (var o in m_listObject)
@@ -223,16 +223,16 @@ namespace MidasMain.CanvasSpace
 
 		public void SetZIndex()
 		{
-
-
-
 			for(int i=0; i<m_listObject.Count; i++)
 				this.Controls.SetChildIndex(m_listObject[m_listObject.Count-i-1], i);
 
 			for (int i = 0; i < m_listRoom.Count; i++)
 				this.Controls.SetChildIndex(m_listRoom[m_listRoom.Count - i - 1], i+ m_listObject.Count);
 
-
+            for (int i = 0; i < m_listDoor.Count; i++)
+            {
+                
+            }
         }
 
 		public void AllFocusOut()
