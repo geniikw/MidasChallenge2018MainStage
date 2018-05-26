@@ -23,6 +23,8 @@ namespace MidasMain.Canvas
             set
             {
                 cur_room = value;
+                if (cur_room == null)
+                    return;
                 Size = cur_room.Rect.Size;
                 Location = cur_room.Rect.Location;                                
             }
