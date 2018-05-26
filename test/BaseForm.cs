@@ -99,10 +99,5 @@ namespace MidasMain
 
 			makeWhat = -1;
 		}
-
-        private void metroTile3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
