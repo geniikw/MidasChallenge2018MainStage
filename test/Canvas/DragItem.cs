@@ -45,18 +45,17 @@ namespace MidasMain.Canvas
             return PointUtil.Minus(smp, cp);
         }
 
-        private void PointerDown(object sender, MouseEventArgs e)
+        public virtual void PointerDown(object sender, MouseEventArgs e)
         {
             OnDown.OnNext(e);
-            
         }
 
-        private void PointerMove(object sender, MouseEventArgs e)
+        public virtual void PointerMove(object sender, MouseEventArgs e)
         {
             OnDrag.OnNext(e);
         }
 
-        private void PointerUp(object sender, MouseEventArgs e)
+        public virtual void PointerUp(object sender, MouseEventArgs e)
         {
             OnUp.OnNext(e);
         }
