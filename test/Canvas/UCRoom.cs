@@ -10,43 +10,43 @@ using System.Windows.Forms;
 
 namespace MidasMain.Canvas
 {
-	public partial class UCRoom : DragItem
+	public partial class UCRoom : UCScaleAble
 	{
+		public List<UCObject> objects;
+
 		public UCRoom()
 		{
 			InitializeComponent();
-			InitScalers();
+			objects = new List<UCObject>();
 		}
+
+        public void SetupRoom(Room data)
+        {
+            Location = data.Rect.Location;
+            Size = data.Rect.Size;
+        }
 
 		public override void PointerDown(object sender, MouseEventArgs e)
 		{
 			base.PointerDown(sender, e);
-			Console.WriteLine("room click");
+			foreach (UCObject obj in objects)
+				obj.PointerDown(sender, e);
 		}
 
 		public override void PointerMove(object sender, MouseEventArgs e)
 		{
 			base.PointerMove(sender, e);
+			foreach (UCObject obj in objects)
+				obj.PointerMove(sender, e);
 		}
 
 		public override void PointerUp(object sender, MouseEventArgs e)
 		{
 			base.PointerUp(sender, e);
-		}
+			for (int i = 0; i < objects.Count; i++)
+				objects[i].PointerUpCalledByRoom(sender, e);
 
-		public void InitScalers()
-		{
-			scalerLeftTop.thisRoom = this;
-			scalerLeftTop.where = Where.lefttop;
-
-			scalerRightTop.thisRoom = this;
-			scalerRightTop.where = Where.righttop;
-
-			scalerLeftBottom.thisRoom = this;
-			scalerLeftBottom.where = Where.leftbottom;
-
-			scalerRightBottom.thisRoom = this;
-			scalerRightBottom.where = Where.rightbottom;
+			Canvas.instance.BindObjectToRoom();
 		}
 	}
 }

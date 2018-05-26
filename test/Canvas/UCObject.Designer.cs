@@ -1,6 +1,6 @@
 ﻿namespace MidasMain.Canvas
 {
-	partial class UCRoom
+	partial class UCObject
 	{
 		/// <summary> 
 		/// 필수 디자이너 변수입니다.
@@ -28,14 +28,15 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.SuspendLayout();
-            // 
-            // UCRoom
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "UCRoom";
-            this.ResumeLayout(false);
+			this.SuspendLayout();
+			// 
+			// UCObject
+			// 
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.Blue;
+			this.Name = "UCObject";
+			this.ResumeLayout(false);
 
 		}
 
