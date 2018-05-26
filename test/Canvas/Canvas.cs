@@ -125,6 +125,10 @@ namespace MidasMain.CanvasSpace
                     delList.Add(child);
             }
 
+            foreach (var c in m_listDoor)
+                if (!delList.Contains(c))
+                    delList.Add(c);
+
             m_listObject.Clear();
             m_listRoom.Clear();
             m_listDoor.Clear();
