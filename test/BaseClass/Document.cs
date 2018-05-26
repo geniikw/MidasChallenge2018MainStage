@@ -265,7 +265,7 @@ namespace MidasMain
                 }
             }
         }
-        public List<Line> GetLinesOfRoom(Room room)
+        public List<Line> GetLinesOfRoom()
         {
             List<Line> ret = new List<Line>();
 
@@ -300,8 +300,8 @@ namespace MidasMain
                 DrawRect(ref space, r.Rect, r.Depth);
             }
             //var list = GetHorizontalLines(ref space, right, bottom);
-         
 
+            /*
             var list =GetHorizontalLines(ref space, right, bottom);
             foreach(var line in list)
             {
@@ -317,7 +317,10 @@ namespace MidasMain
                 {
                     ret.Add(line);
                 }
-            }
+            }*/
+
+            ret.AddRange(GetHorizontalLines(ref space, right, bottom));
+            ret.AddRange(GetVerticalLines(ref space, right, bottom));
 
             return ret;
         }
