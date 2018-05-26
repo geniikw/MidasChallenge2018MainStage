@@ -394,14 +394,12 @@ namespace MidasMain
 
         }
 
-        public void Validation(Document doc, string msg)
+        private void metroTile5_Click(object sender, EventArgs e)
         {
-            if (doc.ValidateConstruction())
-                AlarmLabel.Text = "Validation Success";
+            if (Canvas.instance.GetCurrent().ValidateConstruction())
+                MetroFramework.MetroMessageBox.Show(this, "Success");
             else
-                AlarmLabel.Text = "Validation Fail";
+                MetroFramework.MetroMessageBox.Show(this, "Fail");
         }
-
-       
     }
 }

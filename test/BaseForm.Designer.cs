@@ -43,6 +43,7 @@
             this.creditPanel1 = new MidasMain.Creadit.CreditPanel();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.AlarmLabel = new MetroFramework.Controls.MetroLabel();
+            this.metroTile5 = new MetroFramework.Controls.MetroTile();
             this.MainTab.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -96,6 +97,7 @@
             // metroPanel1
             // 
             this.metroPanel1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.metroPanel1.Controls.Add(this.metroTile5);
             this.metroPanel1.Controls.Add(this.metroButton1);
             this.metroPanel1.Controls.Add(this.metroButtonObject);
             this.metroPanel1.Controls.Add(this.metroButtonRoom);
@@ -253,6 +255,18 @@
             this.AlarmLabel.TabIndex = 9;
             this.AlarmLabel.UseCustomBackColor = true;
             // 
+            // metroTile5
+            // 
+            this.metroTile5.ActiveControl = null;
+            this.metroTile5.Location = new System.Drawing.Point(21, 321);
+            this.metroTile5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.metroTile5.Name = "metroTile5";
+            this.metroTile5.Size = new System.Drawing.Size(155, 45);
+            this.metroTile5.TabIndex = 8;
+            this.metroTile5.Text = "Validation";
+            this.metroTile5.UseSelectable = true;
+            this.metroTile5.Click += new System.EventHandler(this.metroTile5_Click);
+            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -293,5 +307,6 @@
         private MetroFramework.Controls.MetroButton metroButton2;
         private MetroFramework.Controls.MetroTile metroTile4;
         private MetroFramework.Controls.MetroLabel AlarmLabel;
+        private MetroFramework.Controls.MetroTile metroTile5;
     }
 }
