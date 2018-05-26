@@ -177,6 +177,40 @@ namespace MidasMain.CanvasSpace
 			SetZIndex();
 		}
 
+		public void MakeDoor(Door door)
+		{
+			UCDoor uDoor = new UCDoor();
+
+			Parent.Controls.Add(uDoor);
+			Parent.Controls.SetChildIndex(uDoor, 0);
+
+			uDoor.pA = door.pA;
+			uDoor.Location = uDoor.pA;
+			door.pB = uDoor.pA;
+			if (door.idx %2 == 0)
+				door.pB = PointUtil.Plus(door.pB, new Point(0, 50));
+			else
+				door.pB = PointUtil.Plus(door.pB, new Point(50, 0));
+
+			switch (door.idx)
+			{
+				case 0: // right
+					uDoor.BackgroundImage = Properties.Resources.rDoor0;
+					break;
+				case 1: // up
+					uDoor.BackgroundImage = Properties.Resources.rDoor1;
+					uDoor.Location = PointUtil.Minus(uDoor.Location, new Point(0, 50));
+					break;
+				case 2: // left
+					uDoor.BackgroundImage = Properties.Resources.rDoor2;
+					uDoor.Location = PointUtil.Minus(uDoor.Location, new Point(50, 0));
+					break;
+				case 3:
+					uDoor.BackgroundImage = Properties.Resources.rDoor3;
+					break;
+			}
+		}
+
 		public void SetZIndex()
 		{
 			for(int i=0; i<m_listObject.Count; i++)

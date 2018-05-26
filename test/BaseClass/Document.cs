@@ -319,18 +319,100 @@ namespace MidasMain
             //return lines;
         }
 
-        /*public bool ValidateConstruction()
+        public bool ValidateConstruction()
         {
             List<Line> connectedWalls = new List<Line>();
 
-            foreach(var line in lines)
-            {
-                foreach(var door in doors)
-                {
 
+            // 연결되어있는 벽들을 불러옴
+            foreach (var line in lines)
+            {
+                var lineRect = line.ToRect();
+                foreach (var door in doors)
+                {
+                    var tempLine = new Line(door.pA, door.pB);
+                    var doorRect = tempLine.ToRect();
+
+                    if (doorRect.IntersectsWith(lineRect))
+                    {
+                        connectedWalls.Add(line);
+                        break;
+                    }
                 }
             }
-        }*/
+
+
+            Dictionary<Room, int> dict = new Dictionary<Room, int>();
+            Room currentRoom = null;
+            List<Room> previousRoom = new List<Room>();
+            List<Room> nextRoom = new List<Room>();
+
+
+            var fromOutside = connectedWalls.Where(x => (x.from == currentRoom || x.to == currentRoom));
+            foreach (var wall in fromOutside)
+            {
+                if (wall.from == currentRoom && wall.to != null)
+                {
+                    if (dict.ContainsKey(wall.to))
+                    {
+                        dict.Add(wall.to, 1);
+                        previousRoom.Add(wall.to);
+                    }
+                    //connectedWalls.Remove(wall);
+                }
+                else if (wall.to == currentRoom && wall.from != null)
+                {
+                    if (dict.ContainsKey(wall.to))
+                    {
+                        dict.Add(wall.from, 1);
+                        previousRoom.Add(wall.from);
+                    }
+                    //connectedWalls.Remove(wall);
+                }
+            }
+
+            for(int j = 0; j < connectedWalls.Count; j++)
+            {
+                nextRoom.Clear();
+                for (int k = 0; k < previousRoom.Count; k++)
+                {
+                    currentRoom = previousRoom[k];
+                    fromOutside = connectedWalls.Where(x => (x.from == currentRoom || x.to == currentRoom));
+                    foreach (var wall in fromOutside)
+                    {
+                        if (wall.from == currentRoom && wall.to != null)
+                        {
+                            if (dict.ContainsKey(wall.to))
+                            {
+                                dict.Add(wall.to, 1);
+                                nextRoom.Add(wall.to);
+                            }
+                            //connectedWalls.Remove(wall);
+                        }
+                        else if (wall.to == currentRoom && wall.from != null)
+                        {
+                            if (dict.ContainsKey(wall.to))
+                            {
+                                dict.Add(wall.from, 1);
+                                nextRoom.Add(wall.from);
+                            }
+                            //connectedWalls.Remove(wall);
+                        }
+                    }
+                }
+                previousRoom.Clear();
+                previousRoom = nextRoom.ToList();
+                
+            }
+            
+            if(dict.Count == rooms.Count)
+            {
+                return true;
+            }
+
+            return false; 
+
+        }
         
     }
 }

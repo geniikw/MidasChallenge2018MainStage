@@ -30,45 +30,59 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
-			this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.test1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.tttt3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.makeDoorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.makeDoorUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.makeDoorLeftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.makeDoorRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.metroContextMenu1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// metroContextMenu1
 			// 
 			this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.testToolStripMenuItem,
-            this.test1ToolStripMenuItem,
-            this.tttt3ToolStripMenuItem});
+            this.makeDoorToolStripMenuItem,
+            this.makeDoorUpToolStripMenuItem,
+            this.makeDoorLeftToolStripMenuItem,
+            this.makeDoorRightToolStripMenuItem});
 			this.metroContextMenu1.Name = "metroContextMenu1";
-			this.metroContextMenu1.Size = new System.Drawing.Size(153, 92);
+			this.metroContextMenu1.Size = new System.Drawing.Size(167, 114);
 			// 
-			// testToolStripMenuItem
+			// makeDoorToolStripMenuItem
 			// 
-			this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-			this.testToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.testToolStripMenuItem.Text = "test";
+			this.makeDoorToolStripMenuItem.Name = "makeDoorToolStripMenuItem";
+			this.makeDoorToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+			this.makeDoorToolStripMenuItem.Text = "Make door down";
+			this.makeDoorToolStripMenuItem.Click += new System.EventHandler(this.makeDoorToolStripMenuItem_Click);
 			// 
-			// test1ToolStripMenuItem
+			// makeDoorUpToolStripMenuItem
 			// 
-			this.test1ToolStripMenuItem.Name = "test1ToolStripMenuItem";
-			this.test1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.test1ToolStripMenuItem.Text = "test1";
+			this.makeDoorUpToolStripMenuItem.Name = "makeDoorUpToolStripMenuItem";
+			this.makeDoorUpToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+			this.makeDoorUpToolStripMenuItem.Text = "Make door up";
+			this.makeDoorUpToolStripMenuItem.Click += new System.EventHandler(this.makeDoorUpToolStripMenuItem_Click);
 			// 
-			// tttt3ToolStripMenuItem
+			// makeDoorLeftToolStripMenuItem
 			// 
-			this.tttt3ToolStripMenuItem.Name = "tttt3ToolStripMenuItem";
-			this.tttt3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.tttt3ToolStripMenuItem.Text = "tttt3";
+			this.makeDoorLeftToolStripMenuItem.Name = "makeDoorLeftToolStripMenuItem";
+			this.makeDoorLeftToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+			this.makeDoorLeftToolStripMenuItem.Text = "Make door left";
+			this.makeDoorLeftToolStripMenuItem.Click += new System.EventHandler(this.makeDoorLeftToolStripMenuItem_Click);
+			// 
+			// makeDoorRightToolStripMenuItem
+			// 
+			this.makeDoorRightToolStripMenuItem.Name = "makeDoorRightToolStripMenuItem";
+			this.makeDoorRightToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+			this.makeDoorRightToolStripMenuItem.Text = "Make door Right";
+			this.makeDoorRightToolStripMenuItem.Click += new System.EventHandler(this.makeDoorRightToolStripMenuItem_Click);
 			// 
 			// UCWall
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Green;
+			this.ContextMenuStrip = this.metroContextMenu1;
 			this.Name = "UCWall";
+			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UCWall_MouseDown);
 			this.metroContextMenu1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
@@ -77,8 +91,9 @@
 		#endregion
 
 		private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
-		private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem test1ToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem tttt3ToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem makeDoorToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem makeDoorUpToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem makeDoorLeftToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem makeDoorRightToolStripMenuItem;
 	}
 }
