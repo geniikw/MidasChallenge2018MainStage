@@ -39,9 +39,9 @@ namespace MidasMain
         private void MakeTestDataButton(object sender, EventArgs e)
         {
             current = new Document();
-            current.AddRoom(new Room(0, new Rectangle(new Point(300, 100), new Size(100, 100))));
-            current.AddRoom(new Room(1, new Rectangle(new Point(400, 100), new Size(100, 100))));
-            current.AddRoom(new Room(2, new Rectangle(new Point(300, 200), new Size(100, 100))));
+            current.AddRoom(new Room(0, new Rectangle(new Point(300, 100), new Size(100, 100)), -1));
+            current.AddRoom(new Room(1, new Rectangle(new Point(400, 100), new Size(100, 100)), -1));
+            current.AddRoom(new Room(2, new Rectangle(new Point(300, 200), new Size(100, 100)), -1));
 
             current.objects.Add(new Furniture(new Point(400, 200), 50, 50, "냉장고"));
             current.objects.Add(new Furniture(new Point(400, 250), 50, 50, "TV"));
@@ -109,7 +109,7 @@ namespace MidasMain
 			if (makeWhat == -1)
 				return;
 			else if (makeWhat == 0)
-				canvas1.MakeRoom(new Room(0, new Rectangle(new Point(e.X - 75, e.Y - 75), new Size(150, 150))));
+				canvas1.MakeRoom(new Room(0, new Rectangle(new Point(e.X - 75, e.Y - 75), new Size(150, 150)), -1));
 			else if (makeWhat == 1)
 				canvas1.MakeObject(new Furniture(new Point(e.X - 25, e.Y - 25), 50, 50, "새가구"));
 
