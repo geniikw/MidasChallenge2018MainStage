@@ -110,56 +110,5 @@ namespace MidasMain
 
 			makeWhat = -1;
 		}
-
-        private void metroButton1_Click(object sender, EventArgs e)
-        {
-            if (CloseAnimation == null)
-                return;
-            metroButton2.Visible = true;
-            CloseAnimation.Start();
-            CreateOpenAnimation();
-            CloseAnimation = null;
-            metroButton1.Visible = false;
-        }
-
-        private void metroButton2_Click(object sender, EventArgs e)
-        {
-            if (OpenAnimation == null)
-                return;
-            metroButton1.Visible = true;
-            OpenAnimation.Start();
-            CreateCloseAnimation();
-            OpenAnimation = null;
-            metroButton2.Visible = false;
-        }
-
-        public void CreateOpenAnimation()
-        {
-            OpenAnimation = new Animation()
-            {
-                DurationInFrames = Animation.FromTimeSpanToDurationInFrames(0.2),
-                EasingFunction = ef => Easing.EaseInOut(ef, EasingType.Quadratic)
-            };
-            OpenAnimation.AnimateOnControlThread(
-                metroPanel1,
-                ObservableHelper.FixedValue(0f),
-                ObservableHelper.FixedValue(menuSize),
-                f => metroPanel1.Size = new Size((int)f.CurrentValue, metroPanel1.Size.Height));
-        }
-
-        public void CreateCloseAnimation()
-        {
-            CloseAnimation = new Animation()
-            {
-                DurationInFrames = Animation.FromTimeSpanToDurationInFrames(0.2),
-                EasingFunction = ef => Easing.EaseInOut(ef, EasingType.Quadratic)
-            };
-            CloseAnimation.AnimateOnControlThread(
-                metroPanel1,
-                ObservableHelper.FixedValue(menuSize),
-                ObservableHelper.FixedValue(0f),
-                f => metroPanel1.Size = new Size((int)f.CurrentValue, metroPanel1.Size.Height));
-        }
-
-    }
+	}
 }
