@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MidasMain.CanvasSpace;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace MidasMain
     {
         public Point pA;
         public Point pB;
-		public int idx;
+		public int kind;
 
         public enum DoorType
         {
@@ -31,11 +32,11 @@ namespace MidasMain
             pB = new Point();
         }
 
-        public Door(Point a, Point b)
+        public Door(Point a, int idx)
         {
             pA = a;
-            pB = b;
-        }
+			kind = idx;
+		}
 
         public Door(DoorType type, float posRatio)
         {

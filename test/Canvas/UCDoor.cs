@@ -13,6 +13,7 @@ namespace MidasMain.CanvasSpace
 	public partial class UCDoor : UserControl
 	{
 		public Point pA, pB;
+		public int kind;
 
 		public UCDoor()
 		{
@@ -25,8 +26,11 @@ namespace MidasMain.CanvasSpace
         public void Setup(Door d)
         {
             pA = d.pA;
-            pB = d.pB;
-            //Location = new Point((pA.X+pB.X)/2, pA.Y + pB.
-        }
+			kind = d.kind;
+			if (kind % 2 == 0)
+				pB = PointUtil.Plus(pA, new Point(0, 50));
+			else
+				pB = PointUtil.Plus(pA, new Point(50, 0));
+		}
 	}
 }

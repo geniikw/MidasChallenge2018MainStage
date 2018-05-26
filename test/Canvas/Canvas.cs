@@ -135,12 +135,10 @@ namespace MidasMain.CanvasSpace
             }
             foreach(var d in doc.doors)
             {
-                var makeDoor = new UCDoor();
-                this.Controls.Add(makeDoor);
-                m_listDoor.Add(makeDoor);
+				Console.WriteLine("hello!" + d.pA + ", " + d.kind);
+                var makeDoor = Canvas.instance.MakeDoor(d);
                 makeDoor.Setup(d);
-                //todo setupdata;
-            }
+			}
 
         }
 
@@ -159,7 +157,7 @@ namespace MidasMain.CanvasSpace
             }
             foreach(var d in m_listDoor)
             {
-                doc.doors.Add(new Door(d.pA, d.pB));
+                doc.doors.Add(new Door(d.pA, d.kind));
             }
 
             return doc;
@@ -187,7 +185,7 @@ namespace MidasMain.CanvasSpace
 			SetZIndex();
 		}
 
-		public void MakeDoor(Door door)
+		public UCDoor MakeDoor(Door door)
 		{
 			UCDoor uDoor = new UCDoor();
 
@@ -196,13 +194,14 @@ namespace MidasMain.CanvasSpace
 
 			uDoor.pA = door.pA;
 			uDoor.Location = uDoor.pA;
-			door.pB = uDoor.pA;
-			if (door.idx %2 == 0)
-				door.pB = PointUtil.Plus(door.pB, new Point(0, 50));
+			uDoor.kind = door.kind;
+			uDoor.pB = uDoor.pA;
+			if (door.kind %2 == 0)
+				uDoor.pB = PointUtil.Plus(door.pB, new Point(0, 50));
 			else
-				door.pB = PointUtil.Plus(door.pB, new Point(50, 0));
+				uDoor.pB = PointUtil.Plus(door.pB, new Point(50, 0));
 
-			switch (door.idx)
+			switch (door.kind)
 			{
 				case 0: // right
 					uDoor.BackgroundImage = Properties.Resources.rDoor0;
@@ -219,6 +218,8 @@ namespace MidasMain.CanvasSpace
 					uDoor.BackgroundImage = Properties.Resources.rDoor3;
 					break;
 			}
+			m_listDoor.Add(uDoor);
+			return uDoor;
 		}
 
 		public void SetZIndex()
