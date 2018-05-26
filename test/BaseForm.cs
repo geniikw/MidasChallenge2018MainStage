@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace MidasMain
 {
@@ -20,7 +22,7 @@ namespace MidasMain
             InitializeComponent();
         }
 
-        private void metroTile4_Click(object sender, EventArgs e)
+        private void MakeTestDataButton(object sender, EventArgs e)
         {
             current = new Document();
             current.AddRoom(new Room(0, new Rectangle(new Point(300, 100), new Size(100, 100))));
@@ -35,6 +37,30 @@ namespace MidasMain
         }
 
         private void SaveButton(object sender, EventArgs e)
+        {
+            var dia = new SaveFileDialog();
+            dia.Filter = "*.xml";
+            dia.Title = "Save an document File";
+            var path = dia.ShowDialog();
+            if(dia.FileName != "")
+            {
+                using ( var fs = (FileStream)dia.OpenFile())
+                {
+                    var doc = canvas1.GetCurrent();
+                    var sr = new XmlSerializer(typeof(Document));
+
+                    sr.Serialize(fs, doc);
+                }
+            }
+
+        }
+
+        private void NewButton(object sender, EventArgs e)
+        {
+            canvas1.Clear();
+        }
+
+        private void LoadButton(object sender, EventArgs e)
         {
 
         }

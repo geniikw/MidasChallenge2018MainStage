@@ -21,6 +21,7 @@ namespace MidasMain.Canvas
         {
             Location = input.coordinate;
             Size = new Size(input.width, input.height);
+            Name = input.name;
             
         }
 
