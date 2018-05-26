@@ -397,9 +397,10 @@ namespace MidasMain
         private void metroTile5_Click(object sender, EventArgs e)
         {
             if (Canvas.instance.GetCurrent().ValidateConstruction())
-                MetroFramework.MetroMessageBox.Show(this, "Success");
+                MetroFramework.MetroMessageBox.Show(this, "Success", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MetroFramework.MetroMessageBox.Show(this, "Fail");
+                MetroFramework.MetroMessageBox.Show(this, "Fail", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
 
 		public void SetObjectName(String name)
