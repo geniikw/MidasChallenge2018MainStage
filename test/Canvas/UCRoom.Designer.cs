@@ -42,6 +42,7 @@
             this.tile3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.depthUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.depthDownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroContextMenu1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,9 +53,10 @@
             this.setColorToolStripMenuItem,
             this.setTileToolStripMenuItem,
             this.depthUpToolStripMenuItem,
-            this.depthDownToolStripMenuItem});
+            this.depthDownToolStripMenuItem,
+            this.deleteToolStripMenuItem});
             this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(211, 128);
+            this.metroContextMenu1.Size = new System.Drawing.Size(211, 152);
             // 
             // setColorToolStripMenuItem
             // 
@@ -64,7 +66,7 @@
             this.greenToolStripMenuItem,
             this.whiteToolStripMenuItem});
             this.setColorToolStripMenuItem.Name = "setColorToolStripMenuItem";
-            this.setColorToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
+            this.setColorToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.setColorToolStripMenuItem.Text = "SetColor";
             // 
             // redToolStripMenuItem
@@ -103,7 +105,7 @@
             this.tile2ToolStripMenuItem,
             this.tile3ToolStripMenuItem});
             this.setTileToolStripMenuItem.Name = "setTileToolStripMenuItem";
-            this.setTileToolStripMenuItem.Size = new System.Drawing.Size(160, 24);
+            this.setTileToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.setTileToolStripMenuItem.Text = "SetTile";
             // 
             // tile0ToolStripMenuItem
@@ -148,6 +150,13 @@
             this.depthDownToolStripMenuItem.Text = "DepthDown";
             this.depthDownToolStripMenuItem.Click += new System.EventHandler(this.depthDownToolStripMenuItem_Click);
             // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
             // UCRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -175,5 +184,6 @@
 		private System.Windows.Forms.ToolStripMenuItem tile3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem depthUpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem depthDownToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }

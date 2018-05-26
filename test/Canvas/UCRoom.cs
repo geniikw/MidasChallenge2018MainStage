@@ -143,6 +143,8 @@ namespace MidasMain.CanvasSpace
 
         private void depthUpToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            GlobalEvent.OnDocumentChangeBefore.Invoke(Canvas.instance.GetCurrent(), "depth up");
+
             var list = Canvas.instance.m_listRoom;
             var md = list.IndexOf(this);
             if (md == list.Count - 1)
@@ -151,11 +153,12 @@ namespace MidasMain.CanvasSpace
             list[md + 1] = this;
             list[md] = swapd;
             GlobalEvent.OnDocumentChangeAfter.Invoke(Canvas.instance.GetCurrent(), "depth up");
-
         }
 
         private void depthDownToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            GlobalEvent.OnDocumentChangeBefore.Invoke(Canvas.instance.GetCurrent(), "depth down");
+
             var list = Canvas.instance.m_listRoom;
             var md = list.IndexOf(this);
             if (md == 0)
@@ -165,6 +168,18 @@ namespace MidasMain.CanvasSpace
             list[md] = swapd;
             GlobalEvent.OnDocumentChangeAfter.Invoke(Canvas.instance.GetCurrent(), "depth down");
 
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GlobalEvent.OnDocumentChangeBefore.Invoke(Canvas.instance.GetCurrent(), "delete room");
+            var list = Canvas.instance.m_listRoom;
+            var md = list.IndexOf(this);
+            list.RemoveAt(md);
+            Parent.Controls.Remove(this);
+            Dispose();
+
+            GlobalEvent.OnDocumentChangeAfter.Invoke(Canvas.instance.GetCurrent(), "delete room");
         }
     }
 }
