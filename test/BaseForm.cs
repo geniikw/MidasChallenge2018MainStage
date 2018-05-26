@@ -73,7 +73,7 @@ namespace MidasMain
 
             canvas1.Clear();
 
-            GlobalEvent.OnDocumentChangeAfter?.Invoke("LoadButton");
+            GlobalEvent.OnDocumentChangeAfter?.Invoke(Canvas.instance.GetCurrent(), "LoadButton");
         }
 
         private void LoadButton(object sender, EventArgs e)
@@ -96,7 +96,7 @@ namespace MidasMain
                 }
             }
 
-            GlobalEvent.OnDocumentChangeAfter?.Invoke("LoadButton");
+            GlobalEvent.OnDocumentChangeAfter?.Invoke(Canvas.instance.GetCurrent(), "LoadButton");
         }
 
         private void SelectRoomButton(object sender, EventArgs e)
@@ -122,7 +122,7 @@ namespace MidasMain
 				canvas1.MakeRoom(new Room(0, new Rectangle(new Point(e.X - 75, e.Y - 75), new Size(150, 150)), -1));
 			else if (makeWhat == 1)
 				canvas1.MakeObject(new Furniture(new Point(e.X - 25, e.Y - 25), 50, 50, "새가구"));
-            GlobalEvent.OnDocumentChangeAfter?.Invoke("ADD item");
+            GlobalEvent.OnDocumentChangeAfter?.Invoke(Canvas.instance.GetCurrent(), "ADD item");
             makeWhat = -1;
 		}
 
@@ -385,6 +385,14 @@ namespace MidasMain
                 UndoManager.Undo();
             }
 
+        }
+
+        public void Validation(Document doc, string msg)
+        {
+            if (doc.ValidateConstruction())
+                canvas1.BackColor = Color.White;
+            else
+                canvas1.BackColor = Color.Red;
         }
 
        

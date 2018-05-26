@@ -22,7 +22,8 @@ namespace MidasMain.CanvasSpace
 
 		private void makeDoor(int idx, bool isDoor)
 		{
-			if (isVertical)
+            GlobalEvent.OnDocumentChangeBefore(Canvas.instance.GetCurrent(), "add door");
+            if (isVertical)
 				loc.X = 2;
 			else
 				loc.Y = 2;
@@ -40,10 +41,12 @@ namespace MidasMain.CanvasSpace
 			temp.isDoor = isDoor;
 
 			Canvas.instance.MakeDoor(temp);
-			
-		}
+            GlobalEvent.OnDocumentChangeAfter(Canvas.instance.GetCurrent(), "add door");
 
-		private void makeDoorToolStripMenuItem_Click(object sender, EventArgs e)
+
+        }
+
+        private void makeDoorToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			makeDoor(3, true);
 		}
