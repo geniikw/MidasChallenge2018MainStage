@@ -139,7 +139,6 @@
     <Compile Include="Canvas\DragItem.Designer.cs">
       <DependentUpon>DragItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="XMLSerializer.cs" />
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>

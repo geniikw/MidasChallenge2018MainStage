@@ -28,7 +28,6 @@ namespace MidasMain.Canvas
         public Canvas()
         {
             InitializeComponent();
-            this.AutoScroll = true;
             position = Location;
             OnDrag
                 .CombineLatest(OnDown.Select(a => PointUtil.Minus(Location, position)), (a, i) => PointUtil.Minus(Location, i))
@@ -152,5 +151,9 @@ namespace MidasMain.Canvas
             return document;
         }
 
+        private void Canvas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
