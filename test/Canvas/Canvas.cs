@@ -98,22 +98,40 @@ namespace MidasMain.CanvasSpace
 					}
 		}
 
+		private bool IsRoomHasDoor(int rIdx, int dIdx)
+		{
+			if(m_listDoor[dIdx].kind %2 == 0)	// vertical
+			{
+				if ((Math.Abs(m_listRoom[rIdx].Left - m_listDoor[dIdx].pA.X) <= 3 
+					|| Math.Abs(m_listRoom[rIdx].Right - m_listDoor[dIdx].pA.X) <= 3)
+					&& m_listRoom[rIdx].Top <= m_listDoor[dIdx].Top
+					&& m_listRoom[rIdx].Bottom >= m_listDoor[dIdx].Bottom)
+					return true;
+			}
+			else // horizontal
+			{
+				if ((Math.Abs(m_listRoom[rIdx].Top - m_listDoor[dIdx].pA.Y) <= 3
+					|| Math.Abs(m_listRoom[rIdx].Bottom - m_listDoor[dIdx].pA.Y) <= 3)
+					&& m_listRoom[rIdx].Left <= m_listDoor[dIdx].Left
+					&& m_listRoom[rIdx].Right >= m_listDoor[dIdx].Right)
+					return true;
+			}
+			return false;
+		}
+
 		public void BindDoorToRoom()
 		{
 			for (int i = 0; i < m_listRoom.Count; i++)
 				m_listRoom[i].doors.Clear();
 
 			for (int dIdx = 0; dIdx < m_listDoor.Count; dIdx++)
-			{
-				Rectangle doorRect = new Rectangle(m_listDoor[dIdx].Location, m_listDoor[dIdx].Size);
 				for (int rIdx = m_listRoom.Count - 1; rIdx >= 0; rIdx--)
-					if (doorRect.IntersectsWith(new Rectangle(m_listRoom[rIdx].Location, m_listRoom[rIdx].Size)))
+					if (IsRoomHasDoor(rIdx, dIdx))
 					{
 						Console.WriteLine("you find it?");
 						m_listRoom[rIdx].doors.Add(m_listDoor[dIdx]);
 						break;
 					}
-			}
 		}
 
         public void Clear()
