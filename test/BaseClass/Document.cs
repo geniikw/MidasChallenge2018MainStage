@@ -14,11 +14,12 @@ namespace MidasMain
         // 룸 과 아이디
         public List<Room> rooms;
         public List<Furniture> objects;
-
+        public List<Line> lines;
         public Document()
         {
             rooms = new List<Room>();
             objects = new List<Furniture>();
+            lines = new List<Line>();
         }
 
         //아이디가 존재하면 return false
@@ -268,9 +269,9 @@ namespace MidasMain
                 }
             }
         }
-        public List<Line> GetLinesOfRoom()
+        public void GetLinesOfRoom()
         {
-            List<Line> ret = new List<Line>();
+            lines.Clear();
 
             int left = int.MinValue;
             int right = int.MaxValue;
@@ -322,10 +323,10 @@ namespace MidasMain
                 }
             }*/
 
-            ret.AddRange(GetHorizontalLines(ref space, right, bottom));
-            ret.AddRange(GetVerticalLines(ref space, right, bottom));
+            lines.AddRange(GetHorizontalLines(ref space, right, bottom));
+            lines.AddRange(GetVerticalLines(ref space, right, bottom));
 
-            return ret;
+            //return lines;
         }
     }
 }
