@@ -133,11 +133,11 @@
       <DependentUpon>UCScaler.cs</DependentUpon>
     </Compile>
     <Compile Include="PointUtil.cs" />
-    <Compile Include="Creadit\CreaditPanel.cs">
+    <Compile Include="Credit\CreditPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Creadit\CreaditPanel.Designer.cs">
-      <DependentUpon>CreaditPanel.cs</DependentUpon>
+    <Compile Include="Credit\CreditPanel.Designer.cs">
+      <DependentUpon>CreditPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
@@ -179,8 +179,8 @@
     <EmbeddedResource Include="Canvas\UCWall.resx">
       <DependentUpon>UCWall.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Creadit\CreaditPanel.resx">
-      <DependentUpon>CreaditPanel.cs</DependentUpon>
+    <EmbeddedResource Include="Credit\CreditPanel.resx">
+      <DependentUpon>CreditPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -210,7 +210,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Creadit\Creadit.md">
+    <None Include="Credit\Credit.md">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -1,6 +1,6 @@
 ﻿namespace MidasMain.Creadit
 {
-    partial class CreaditPanel
+    partial class CreditPanel
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.

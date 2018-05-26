@@ -12,11 +12,11 @@ using Markdig;
 
 namespace MidasMain.Creadit
 {
-    public partial class CreaditPanel : UserControl
+    public partial class CreditPanel : UserControl
     {
-        readonly string CreaditPath = "Creadit/Creadit.md";
+        readonly string CreaditPath = "Credit/Credit.md";
 
-        public CreaditPanel()
+        public CreditPanel()
         {
             InitializeComponent();
 
