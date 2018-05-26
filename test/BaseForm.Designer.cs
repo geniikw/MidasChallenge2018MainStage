@@ -28,22 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.MainTab = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.ucRoom1 = new MidasMain.Canvas.UCRoom();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroTile4 = new MetroFramework.Controls.MetroTile();
+            this.metroTile3 = new MetroFramework.Controls.MetroTile();
+            this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.canvas1 = new MidasMain.Canvas.Canvas();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.creaditPanel1 = new MidasMain.Creadit.CreaditPanel();
-            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.metroTile3 = new MetroFramework.Controls.MetroTile();
-            this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.MainTab.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
-            this.metroTabPage3.SuspendLayout();
             this.metroPanel1.SuspendLayout();
+            this.metroTabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainTab
@@ -62,7 +60,6 @@
             // metroTabPage1
             // 
             this.metroTabPage1.Controls.Add(this.metroPanel1);
-            this.metroTabPage1.Controls.Add(this.ucRoom1);
             this.metroTabPage1.Controls.Add(this.canvas1);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
@@ -76,53 +73,6 @@
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 11;
-            // 
-            // ucRoom1
-            // 
-            this.ucRoom1.BackColor = System.Drawing.Color.Red;
-            this.ucRoom1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ucRoom1.CausesValidation = false;
-            this.ucRoom1.Location = new System.Drawing.Point(501, 164);
-            this.ucRoom1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.ucRoom1.Name = "ucRoom1";
-            this.ucRoom1.Size = new System.Drawing.Size(124, 124);
-            this.ucRoom1.TabIndex = 3;
-            // 
-            // canvas1
-            // 
-            this.canvas1.AutoScroll = true;
-            this.canvas1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.canvas1.Location = new System.Drawing.Point(0, 0);
-            this.canvas1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.canvas1.Name = "canvas1";
-            this.canvas1.Size = new System.Drawing.Size(860, 420);
-            this.canvas1.TabIndex = 2;
-            // 
-            // metroTabPage3
-            // 
-            this.metroTabPage3.Controls.Add(this.creaditPanel1);
-            this.metroTabPage3.HorizontalScrollbarBarColor = true;
-            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 12;
-            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(861, 420);
-            this.metroTabPage3.TabIndex = 2;
-            this.metroTabPage3.Text = "Creadit";
-            this.metroTabPage3.VerticalScrollbarBarColor = true;
-            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 11;
-            // 
-            // creaditPanel1
-            // 
-            this.creaditPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.creaditPanel1.Location = new System.Drawing.Point(0, 0);
-            this.creaditPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.creaditPanel1.Name = "creaditPanel1";
-            this.creaditPanel1.Padding = new System.Windows.Forms.Padding(23, 25, 23, 25);
-            this.creaditPanel1.Size = new System.Drawing.Size(861, 420);
-            this.creaditPanel1.TabIndex = 2;
             // 
             // metroPanel1
             // 
@@ -144,25 +94,16 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // metroTile1
+            // metroTile4
             // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Location = new System.Drawing.Point(20, 24);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(75, 76);
-            this.metroTile1.TabIndex = 2;
-            this.metroTile1.Text = "New";
-            this.metroTile1.UseSelectable = true;
-            // 
-            // metroTile2
-            // 
-            this.metroTile2.ActiveControl = null;
-            this.metroTile2.Location = new System.Drawing.Point(101, 24);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(75, 76);
-            this.metroTile2.TabIndex = 3;
-            this.metroTile2.Text = "Save";
-            this.metroTile2.UseSelectable = true;
+            this.metroTile4.ActiveControl = null;
+            this.metroTile4.Location = new System.Drawing.Point(101, 106);
+            this.metroTile4.Name = "metroTile4";
+            this.metroTile4.Size = new System.Drawing.Size(75, 76);
+            this.metroTile4.TabIndex = 5;
+            this.metroTile4.Text = "Test";
+            this.metroTile4.UseSelectable = true;
+            this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click);
             // 
             // metroTile3
             // 
@@ -174,16 +115,61 @@
             this.metroTile3.Text = "Load";
             this.metroTile3.UseSelectable = true;
             // 
-            // metroTile4
+            // metroTile2
             // 
-            this.metroTile4.ActiveControl = null;
-            this.metroTile4.Location = new System.Drawing.Point(101, 106);
-            this.metroTile4.Name = "metroTile4";
-            this.metroTile4.Size = new System.Drawing.Size(75, 76);
-            this.metroTile4.TabIndex = 5;
-            this.metroTile4.Text = "Test";
-            this.metroTile4.UseSelectable = true;
-            this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click);
+            this.metroTile2.ActiveControl = null;
+            this.metroTile2.Location = new System.Drawing.Point(101, 24);
+            this.metroTile2.Name = "metroTile2";
+            this.metroTile2.Size = new System.Drawing.Size(75, 76);
+            this.metroTile2.TabIndex = 3;
+            this.metroTile2.Text = "Save";
+            this.metroTile2.UseSelectable = true;
+            // 
+            // metroTile1
+            // 
+            this.metroTile1.ActiveControl = null;
+            this.metroTile1.Location = new System.Drawing.Point(20, 24);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(75, 76);
+            this.metroTile1.TabIndex = 2;
+            this.metroTile1.Text = "New";
+            this.metroTile1.UseSelectable = true;
+            // 
+            // canvas1
+            // 
+            this.canvas1.AutoScroll = true;
+            this.canvas1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.canvas1.Location = new System.Drawing.Point(0, 0);
+            this.canvas1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.canvas1.Name = "canvas1";
+            this.canvas1.Size = new System.Drawing.Size(860, 420);
+            this.canvas1.TabIndex = 2;
+            // 
+            // metroTabPage3
+            // 
+            this.metroTabPage3.Controls.Add(this.creaditPanel1);
+            this.metroTabPage3.HorizontalScrollbarBarColor = true;
+            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.HorizontalScrollbarSize = 12;
+            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.metroTabPage3.Name = "metroTabPage3";
+            this.metroTabPage3.Size = new System.Drawing.Size(860, 420);
+            this.metroTabPage3.TabIndex = 2;
+            this.metroTabPage3.Text = "Creadit";
+            this.metroTabPage3.VerticalScrollbarBarColor = true;
+            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.VerticalScrollbarSize = 11;
+            // 
+            // creaditPanel1
+            // 
+            this.creaditPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.creaditPanel1.Location = new System.Drawing.Point(0, 0);
+            this.creaditPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.creaditPanel1.Name = "creaditPanel1";
+            this.creaditPanel1.Padding = new System.Windows.Forms.Padding(23, 25, 23, 25);
+            this.creaditPanel1.Size = new System.Drawing.Size(860, 420);
+            this.creaditPanel1.TabIndex = 2;
             // 
             // BaseForm
             // 
@@ -197,8 +183,8 @@
             this.Text = "MIDAS2018";
             this.MainTab.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
-            this.metroTabPage3.ResumeLayout(false);
             this.metroPanel1.ResumeLayout(false);
+            this.metroTabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -210,7 +196,6 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private Creadit.CreaditPanel creaditPanel1;
         private Canvas.Canvas canvas1;
-		private Canvas.UCRoom ucRoom1;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroTile metroTile4;
         private MetroFramework.Controls.MetroTile metroTile3;

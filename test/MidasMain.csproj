@@ -145,6 +145,9 @@
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\Canvas.Render.resx">
+      <DependentUpon>Canvas.Render.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Canvas\Canvas.resx">
       <DependentUpon>Canvas.cs</DependentUpon>
     </EmbeddedResource>
