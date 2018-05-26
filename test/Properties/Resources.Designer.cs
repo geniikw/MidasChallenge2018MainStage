@@ -103,6 +103,16 @@ namespace MidasMain.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap rSofa {
+            get {
+                object obj = ResourceManager.GetObject("rSofa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap rTile0 {
             get {
                 object obj = ResourceManager.GetObject("rTile0", resourceCulture);
@@ -136,6 +146,16 @@ namespace MidasMain.Properties {
         internal static System.Drawing.Bitmap rTile3 {
             get {
                 object obj = ResourceManager.GetObject("rTile3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap rToilet {
+            get {
+                object obj = ResourceManager.GetObject("rToilet", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

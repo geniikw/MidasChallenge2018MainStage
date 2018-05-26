@@ -173,7 +173,7 @@ namespace MidasMain.CanvasSpace
 
             foreach (var o in m_listObject)
             {
-                doc.objects.Add(new Furniture(o.Location, o.Size.Width, o.Size.Height, o.Name));
+                doc.objects.Add(new Furniture(o.Location, o.Size.Width, o.Size.Height, o.Name,o.color, o.tileIdx));
             }
             foreach(var d in m_listDoor)
             {
