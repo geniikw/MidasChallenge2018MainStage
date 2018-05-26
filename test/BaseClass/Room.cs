@@ -10,10 +10,7 @@ namespace MidasMain
     public class Room
     {
         int depth;
-        public int A;
-        public int R;
-        public int G;
-        public int B;
+        int color;
         Rectangle rect;
         List<Door> doors;
         public int Depth
@@ -26,20 +23,13 @@ namespace MidasMain
             get { return rect; }
             set { rect = value; }
         }
-        public Color ColorValue
+        public int ColorValue
         {
             get {
-                var color = new Color();
-                
-
                 return color;
             }
             set {
-                A = value.A;
-                R = value.R;
-                G = value.G;
-                B = value.B;
-
+                color = value;
             }
         }
         
@@ -48,6 +38,7 @@ namespace MidasMain
             doors = new List<Door>();
             this.depth = depth;
             this.rect = rect;
+            this.ColorValue = color.ToArgb() ;
         }
         public Room()
         {
