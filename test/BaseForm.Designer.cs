@@ -31,23 +31,29 @@
             this.components = new System.ComponentModel.Container();
             this.MainTab = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroLink3 = new MetroFramework.Controls.MetroLink();
+            this.metroLink2 = new MetroFramework.Controls.MetroLink();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.furnitureView1 = new MidasMain.Canvas.FurnitureView();
             this.dragItem4 = new MidasMain.Canvas.DragItem();
             this.dragItem3 = new MidasMain.Canvas.DragItem();
             this.dragItem2 = new MidasMain.Canvas.DragItem();
             this.dragItem1 = new MidasMain.Canvas.DragItem();
             this.canvas1 = new MidasMain.Canvas.Canvas();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.creaditPanel1 = new MidasMain.Creadit.CreaditPanel();
+            this.htmlToolTip1 = new MetroFramework.Drawing.Html.HtmlToolTip();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.MainTab.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
+            this.metroPanel1.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainTab
             // 
             this.MainTab.Controls.Add(this.metroTabPage1);
-            this.MainTab.Controls.Add(this.metroTabPage2);
             this.MainTab.Controls.Add(this.metroTabPage3);
             this.MainTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTab.Location = new System.Drawing.Point(23, 75);
@@ -60,6 +66,8 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.metroPanel1);
+            this.metroTabPage1.Controls.Add(this.furnitureView1);
             this.metroTabPage1.Controls.Add(this.dragItem4);
             this.metroTabPage1.Controls.Add(this.dragItem3);
             this.metroTabPage1.Controls.Add(this.dragItem2);
@@ -78,12 +86,70 @@
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.VerticalScrollbarSize = 11;
             // 
+            // metroPanel1
+            // 
+            this.metroPanel1.Controls.Add(this.metroButton1);
+            this.metroPanel1.Controls.Add(this.metroLink3);
+            this.metroPanel1.Controls.Add(this.metroLink2);
+            this.metroPanel1.Controls.Add(this.metroLink1);
+            this.metroPanel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(0, 0);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(160, 420);
+            this.metroPanel1.TabIndex = 8;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
+            // 
+            // metroLink3
+            // 
+            this.metroLink3.Location = new System.Drawing.Point(19, 131);
+            this.metroLink3.Name = "metroLink3";
+            this.metroLink3.Size = new System.Drawing.Size(114, 40);
+            this.metroLink3.TabIndex = 11;
+            this.metroLink3.Text = "Load";
+            this.metroLink3.UseSelectable = true;
+            // 
+            // metroLink2
+            // 
+            this.metroLink2.Location = new System.Drawing.Point(19, 85);
+            this.metroLink2.Name = "metroLink2";
+            this.metroLink2.Size = new System.Drawing.Size(114, 40);
+            this.metroLink2.TabIndex = 10;
+            this.metroLink2.Text = "Save";
+            this.metroLink2.UseSelectable = true;
+            // 
+            // metroLink1
+            // 
+            this.metroLink1.Location = new System.Drawing.Point(19, 39);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(114, 40);
+            this.metroLink1.TabIndex = 9;
+            this.metroLink1.Tag = "";
+            this.metroLink1.Text = "New";
+            this.metroLink1.UseSelectable = true;
+            // 
+            // furnitureView1
+            // 
+            this.furnitureView1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.furnitureView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.furnitureView1.CausesValidation = false;
+            this.furnitureView1.Coordinate = new System.Drawing.Point(417, 211);
+            this.furnitureView1.Location = new System.Drawing.Point(417, 211);
+            this.furnitureView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.furnitureView1.Name = "furnitureView1";
+            this.furnitureView1.Size = new System.Drawing.Size(51, 50);
+            this.furnitureView1.TabIndex = 7;
+            // 
             // dragItem4
             // 
             this.dragItem4.BackColor = System.Drawing.SystemColors.Control;
             this.dragItem4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dragItem4.CausesValidation = false;
-            this.dragItem4.Location = new System.Drawing.Point(508, 205);
+            this.dragItem4.Location = new System.Drawing.Point(619, 214);
             this.dragItem4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.dragItem4.Name = "dragItem4";
             this.dragItem4.Size = new System.Drawing.Size(42, 47);
@@ -132,21 +198,6 @@
             this.canvas1.Size = new System.Drawing.Size(860, 420);
             this.canvas1.TabIndex = 2;
             // 
-            // metroTabPage2
-            // 
-            this.metroTabPage2.HorizontalScrollbarBarColor = true;
-            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 12;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(860, 420);
-            this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "Setting";
-            this.metroTabPage2.VerticalScrollbarBarColor = true;
-            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 11;
-            // 
             // metroTabPage3
             // 
             this.metroTabPage3.Controls.Add(this.creaditPanel1);
@@ -173,6 +224,20 @@
             this.creaditPanel1.Size = new System.Drawing.Size(860, 420);
             this.creaditPanel1.TabIndex = 2;
             // 
+            // htmlToolTip1
+            // 
+            this.htmlToolTip1.OwnerDraw = true;
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Location = new System.Drawing.Point(19, 214);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(116, 55);
+            this.metroButton1.TabIndex = 12;
+            this.metroButton1.Text = "TestDataLoad";
+            this.metroButton1.UseSelectable = true;
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
+            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -185,6 +250,7 @@
             this.Text = "MIDAS2018";
             this.MainTab.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
+            this.metroPanel1.ResumeLayout(false);
             this.metroTabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -194,7 +260,6 @@
 
         private MetroFramework.Controls.MetroTabControl MainTab;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
-        private MetroFramework.Controls.MetroTabPage metroTabPage2;
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private Creadit.CreaditPanel creaditPanel1;
         private Canvas.Canvas canvas1;
@@ -202,5 +267,12 @@
         private Canvas.DragItem dragItem3;
         private Canvas.DragItem dragItem2;
         private Canvas.DragItem dragItem4;
+        private Canvas.FurnitureView furnitureView1;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
+        private MetroFramework.Controls.MetroLink metroLink3;
+        private MetroFramework.Controls.MetroLink metroLink2;
+        private MetroFramework.Controls.MetroLink metroLink1;
+        private MetroFramework.Drawing.Html.HtmlToolTip htmlToolTip1;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }

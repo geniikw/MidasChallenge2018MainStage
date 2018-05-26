@@ -8,7 +8,7 @@ using System.Windows;
 namespace MidasMain.BaseClass
 {
     //전체를 포함하는 문서
-    class Document
+    public class Document
     {
         // 룸 과 아이디
         Dictionary<int, Room> rooms;

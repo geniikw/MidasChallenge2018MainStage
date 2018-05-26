@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MidasMain.BaseClass
 {
-    class Room
+    public class Room
     {
         int depth;
         Rectangle rect;
