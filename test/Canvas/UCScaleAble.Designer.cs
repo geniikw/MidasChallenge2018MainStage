@@ -1,4 +1,4 @@
-﻿namespace MidasMain.Canvas
+﻿namespace MidasMain.CanvasSpace
 {
 	partial class UCScaleAble
 	{
@@ -29,10 +29,10 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.scalerLeftTop = new MidasMain.Canvas.UCScaler();
-			this.scalerLeftBottom = new MidasMain.Canvas.UCScaler();
-			this.scalerRightTop = new MidasMain.Canvas.UCScaler();
-			this.scalerRightBottom = new MidasMain.Canvas.UCScaler();
+			this.scalerLeftTop = new MidasMain.CanvasSpace.UCScaler();
+			this.scalerLeftBottom = new MidasMain.CanvasSpace.UCScaler();
+			this.scalerRightTop = new MidasMain.CanvasSpace.UCScaler();
+			this.scalerRightBottom = new MidasMain.CanvasSpace.UCScaler();
 			this.SuspendLayout();
 			// 
 			// scalerLeftTop

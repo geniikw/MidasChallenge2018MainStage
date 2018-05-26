@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Reactive.Subjects;
 using System.Reactive.Linq;
 
-namespace MidasMain.Canvas
+namespace MidasMain.CanvasSpace
 {
     public partial class Canvas : UserControl
     {

@@ -1,4 +1,4 @@
-﻿namespace MidasMain.Canvas
+﻿namespace MidasMain.CanvasSpace
 {
 	partial class UCObject
 	{

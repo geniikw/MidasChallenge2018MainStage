@@ -16,8 +16,7 @@ namespace MidasMain
         public List<Furniture> objects;
         public List<Line> lines;
         public List<Door> doors;
-
-
+        
         public Document()
         {
             rooms = new List<Room>();

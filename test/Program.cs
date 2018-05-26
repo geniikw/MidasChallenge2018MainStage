@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MidasMain.CanvasSpace;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,10 +15,20 @@ namespace MidasMain
         /// </summary>
         [STAThread]
         static void Main()
-        {         
-            Application.EnableVisualStyles();
+        {
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BaseForm());
+            var bbb = new BaseForm();
+            var kh = new KeyboardHook(true);
+            //kh.KeyDown += Kh_KeyDown;
+            GlobalEvent.OnDocumentChange += UndoManager.Record;
+            //GlobalEvent.OnDocumentChange += (a, b) => bbb.GenBlock();
+            Application.EnableVisualStyles();
+            Application.Run(bbb);
+        }
+        private static void Kh_KeyDown(Keys key, bool Shift, bool Ctrl, bool Alt)
+        {
+            Console.WriteLine(key);
+
         }
     }
 }

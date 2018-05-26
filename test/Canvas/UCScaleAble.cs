@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MidasMain.Canvas
+namespace MidasMain.CanvasSpace
 {
 	public partial class UCScaleAble : DragItem
 	{
@@ -31,7 +31,9 @@ namespace MidasMain.Canvas
 
 		public override void PointerDown(object sender, MouseEventArgs e)
 		{
-			base.PointerDown(sender, e);
+            GlobalEvent.OnDocumentChange?.Invoke(Canvas.instance.GetCurrent(), "SizeChange name");
+
+            base.PointerDown(sender, e);
 			Canvas.instance.AllFocusOut();
 			FocusIn();
 		}
@@ -43,7 +45,7 @@ namespace MidasMain.Canvas
 
 		public override void PointerUp(object sender, MouseEventArgs e)
 		{
-			base.PointerUp(sender, e);
+            base.PointerUp(sender, e);
 		}
 
 		public void InitScalers()
@@ -64,7 +66,7 @@ namespace MidasMain.Canvas
 			scalerRightBottom.where = Where.rightbottom;
 			scalerRightBottom.Visible = false;
 		}
-
+        
 		public void FocusIn()
 		{
 			isSelected = true;

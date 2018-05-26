@@ -12,7 +12,7 @@ using System.Reactive;
 using System.Reactive.Linq;
 using ReactiveAnimation;
 
-namespace MidasMain.Canvas
+namespace MidasMain.CanvasSpace
 {
     public partial class DragItem : UserControl
     {
@@ -47,6 +47,7 @@ namespace MidasMain.Canvas
 
         public virtual void PointerDown(object sender, MouseEventArgs e)
         {
+            GlobalEvent.OnDocumentChange.Invoke(Canvas.instance.GetCurrent(),"Move");
             OnDown.OnNext(e);
         }
 

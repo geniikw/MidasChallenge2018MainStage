@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using MidasMain.Canvas;
+using MidasMain.CanvasSpace;
 using ReactiveAnimation;
 
 namespace MidasMain
@@ -162,7 +162,22 @@ namespace MidasMain
                 f => metroPanel1.Size = new Size((int)f.CurrentValue, metroPanel1.Size.Height));
         }
 
-        private void metroButtonTest_Click(object sender, EventArgs e)
+
+
+        public void GenerateBlock(object sender, EventArgs e)
+        {
+            GenBlock();
+        }
+
+        public void ClearBlock()
+        {
+            foreach(var c in canvas1.Controls)
+            {
+
+            }
+        }
+
+        public void GenBlock()
         {
             Document a = canvas1.GetCurrent();
             a.GetLinesOfRoom();
@@ -173,16 +188,16 @@ namespace MidasMain
                 Size tSize = new Size(PointUtil.Minus(line.pB, line.pA));
                 if (tSize.Width == 0)
                 {
-					temp.isVertical = true;
-					temp.Location = PointUtil.Plus(line.pA, new Point(-2, 2));
-					tSize.Width = 5;
+                    temp.isVertical = true;
+                    temp.Location = PointUtil.Plus(line.pA, new Point(-2, 2));
+                    tSize.Width = 5;
                     tSize.Height -= 2;
                 }
                 else
                 {
-					temp.isVertical = false;
-					temp.Location = PointUtil.Plus(line.pA, new Point(2, -2));
-					tSize.Height = 5;
+                    temp.isVertical = false;
+                    temp.Location = PointUtil.Plus(line.pA, new Point(2, -2));
+                    tSize.Height = 5;
                     tSize.Width -= 2;
                 }
                 temp.Size = tSize;
@@ -191,5 +206,24 @@ namespace MidasMain
                 //Console.WriteLine("draw loc :" + temp.Location + "size : " + temp.Size);
             }
         }
-	}
+
+        private void canvas1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BaseForm_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+        }
+
+        private void KeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Z && e.Control)
+            {
+                UndoManager.Undo();
+            }
+
+        }
+    }
 }
