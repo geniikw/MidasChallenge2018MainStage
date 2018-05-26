@@ -13,7 +13,9 @@ namespace MidasMain
         int color;
         Rectangle rect;
         List<Door> doors;
-        public int Depth
+		public int tileIdx = -1;
+
+		public int Depth
         {
             get { return depth; }
             set { depth = value; }
@@ -33,13 +35,15 @@ namespace MidasMain
             }
         }
         
-        public Room(int depth, Rectangle rect, Color color = default(Color))
+        public Room(int depth, Rectangle rect, int _tileIdx, Color color = default(Color))
         {
             doors = new List<Door>();
             this.depth = depth;
             this.rect = rect;
             this.ColorValue = color.ToArgb() ;
+			tileIdx = _tileIdx;
         }
+
         public Room()
         {
             doors = new List<Door>();
