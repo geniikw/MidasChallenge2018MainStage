@@ -45,14 +45,14 @@ namespace MidasMain.CanvasSpace
             if (input.Y < 0)
                 input.Y = 0;
 
-            //var maxW = BaseForm.instance.Width - 200;
-            //var maxH = BaseForm.instance.Height - 280;
-            
-            //if (input.X > maxW)
-            //    input.X = maxW;
-            //if (input.Y > maxH)
-            //    input.Y = maxH;
-            return input;
+			var maxW = BaseForm.instance.Width - 50 - Size.Width;
+			var maxH = BaseForm.instance.Height - 120 - Size.Height;
+
+			if (input.X > maxW)
+				input.X = maxW - 5;
+			if (input.Y > maxH)
+				input.Y = maxH - 5;
+			return input;
         }
 
         public Point GetOffset(Point mousePoint)
