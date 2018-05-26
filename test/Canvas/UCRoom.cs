@@ -140,5 +140,31 @@ namespace MidasMain.CanvasSpace
 			tileIdx = 3;
 			BackgroundImage = Properties.Resources.rTile3;
 		}
-	}
+
+        private void depthUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var list = Canvas.instance.m_listRoom;
+            var md = list.IndexOf(this);
+            if (md == list.Count - 1)
+                return;
+            var swapd =list[md + 1];
+            list[md + 1] = this;
+            list[md] = swapd;
+            GlobalEvent.OnDocumentChangeAfter.Invoke(Canvas.instance.GetCurrent(), "depth up");
+
+        }
+
+        private void depthDownToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var list = Canvas.instance.m_listRoom;
+            var md = list.IndexOf(this);
+            if (md == 0)
+                return;
+            var swapd = list[md - 1];
+            list[md - 1] = this;
+            list[md] = swapd;
+            GlobalEvent.OnDocumentChangeAfter.Invoke(Canvas.instance.GetCurrent(), "depth down");
+
+        }
+    }
 }

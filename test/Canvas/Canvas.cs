@@ -20,7 +20,7 @@ namespace MidasMain.CanvasSpace
         Subject<MouseEventArgs> OnDrag = new Subject<MouseEventArgs>();
         Subject<MouseEventArgs> OnUp = new Subject<MouseEventArgs>();
 
-		List<UCRoom> m_listRoom = new List<UCRoom>();
+		public List<UCRoom> m_listRoom = new List<UCRoom>();
         List<UCObject> m_listObject = new List<UCObject>();
         List<UCDoor> m_listDoor = new List<UCDoor>();
 
