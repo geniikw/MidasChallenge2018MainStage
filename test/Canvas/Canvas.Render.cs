@@ -13,7 +13,12 @@ namespace MidasMain.Canvas
         public void SetupDocument(Document doc)
         {
             current = doc;
-
+            
+            foreach(var room in doc.rooms)
+            {
+                var makeRoom = new UCRoom();
+                makeRoom.roomData = room;
+            }
         }
 
     }
