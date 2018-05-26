@@ -150,7 +150,7 @@ namespace MidasMain.CanvasSpace
             var n = 0;
             foreach (var r in m_listRoom)
             {
-                doc.AddRoom(new Room(n, new Rectangle(r.Location, r.Size)));
+                doc.AddRoom(new Room(n, new Rectangle(r.Location, r.Size), r.BackColor));
             }
 
             foreach (var o in m_listObject)
@@ -163,7 +163,6 @@ namespace MidasMain.CanvasSpace
             }
 
             return doc;
-
         }
 
         public void MakeRoom(Room nRoom)

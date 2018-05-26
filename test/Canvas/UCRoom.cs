@@ -24,6 +24,7 @@ namespace MidasMain.CanvasSpace
         {
             Location = data.Rect.Location;
             Size = data.Rect.Size;
+            BackColor = data.color;
         }
 
 		public override void PointerDown(object sender, MouseEventArgs e)
@@ -51,5 +52,25 @@ namespace MidasMain.CanvasSpace
 			Canvas.instance.BindObjectToRoom();
 			Console.WriteLine("loc is " + this.Location);
 		}
-	}
+
+        private void redToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.Red;
+        }
+
+        private void blueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.Blue;
+        }
+
+        private void greenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.Green;
+        }
+
+        private void whiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.White;
+        }
+    }
 }

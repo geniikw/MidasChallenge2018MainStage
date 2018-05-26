@@ -10,6 +10,7 @@ namespace MidasMain
     public class Room
     {
         int depth;
+        public Color color;
         Rectangle rect;
         List<Door> doors;
         public int Depth
@@ -22,17 +23,20 @@ namespace MidasMain
             get { return rect; }
             set { rect = value; }
         }
-        public Room(int depth, Rectangle rect)
+        
+        public Room(int depth, Rectangle rect, Color color = default(Color))
         {
             doors = new List<Door>();
             this.depth = depth;
             this.rect = rect;
+            this.color = color;
         }
         public Room()
         {
             doors = new List<Door>();
             depth = 0;
             rect = new Rectangle();
+            color = default(Color);
         }
 
         public List<Line> ConvertRectToLines()

@@ -28,56 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
-            this.oolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.metroContextMenu1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // metroContextMenu1
-            // 
-            this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.oolStripMenuItem,
-            this.renameToolStripMenuItem});
-            this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(142, 48);
-            // 
-            // oolStripMenuItem
-            // 
-            this.oolStripMenuItem.Name = "oolStripMenuItem";
-            this.oolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-            this.oolStripMenuItem.Text = "AddMember";
-            // 
-            // renameToolStripMenuItem
-            // 
-            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
-            this.renameToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-            this.renameToolStripMenuItem.Text = "Rename";
             // 
             // DragItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.CausesValidation = false;
-            this.ContextMenuStrip = this.metroContextMenu1;
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DragItem";
-            this.Size = new System.Drawing.Size(109, 100);
+            this.Size = new System.Drawing.Size(125, 125);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PointerDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PointerMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.PointerUp);
-            this.metroContextMenu1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
-        private System.Windows.Forms.ToolStripMenuItem oolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem renameToolStripMenuItem;
     }
 }
