@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{79136BC4-E282-406F-9EFC-1BD2A0BFF18A}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>MidasMain</RootNamespace>
     <AssemblyName>MidasMain</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -30,6 +30,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Markdig, Version=0.15.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -90,11 +93,17 @@
     <Compile Include="Canvas\Canvas.Designer.cs">
       <DependentUpon>Canvas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Canvas\FurnitureView.cs">
+    <Compile Include="Canvas\UCRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Canvas\FurnitureView.Designer.cs">
-      <DependentUpon>FurnitureView.cs</DependentUpon>
+    <Compile Include="Canvas\UCRoom.Designer.cs">
+      <DependentUpon>UCRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas\UCScaler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Canvas\UCScaler.Designer.cs">
+      <DependentUpon>UCScaler.cs</DependentUpon>
     </Compile>
     <Compile Include="PointUtil.cs" />
     <Compile Include="Creadit\CreaditPanel.cs">
@@ -123,8 +132,11 @@
     <EmbeddedResource Include="Canvas\Canvas.resx">
       <DependentUpon>Canvas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Canvas\FurnitureView.resx">
-      <DependentUpon>FurnitureView.cs</DependentUpon>
+    <EmbeddedResource Include="Canvas\UCRoom.resx">
+      <DependentUpon>UCRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\UCScaler.resx">
+      <DependentUpon>UCScaler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Creadit\CreaditPanel.resx">
       <DependentUpon>CreaditPanel.cs</DependentUpon>
