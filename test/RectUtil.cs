@@ -32,7 +32,6 @@ namespace MidasMain
         {
             if (GetRectType(rect) == RECT_TYPE.LINE)
             {
-
                 l = new Line(new Point(rect.Left, rect.Top), new Point(rect.Right, rect.Bottom));
                 return true;
             }

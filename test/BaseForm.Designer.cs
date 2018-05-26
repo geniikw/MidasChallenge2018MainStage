@@ -42,7 +42,7 @@
 			this.metroTile1 = new MetroFramework.Controls.MetroTile();
 			this.canvas1 = new MidasMain.CanvasSpace.Canvas();
 			this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-			this.creaditPanel1 = new MidasMain.Creadit.CreaditPanel();
+			this.creditPanel1 = new MidasMain.Creadit.CreditPanel();
 			this.MainTab.SuspendLayout();
 			this.metroTabPage1.SuspendLayout();
 			this.metroPanel1.SuspendLayout();
@@ -220,7 +220,7 @@
 			// 
 			// metroTabPage3
 			// 
-			this.metroTabPage3.Controls.Add(this.creaditPanel1);
+			this.metroTabPage3.Controls.Add(this.creditPanel1);
 			this.metroTabPage3.HorizontalScrollbarBarColor = true;
 			this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
 			this.metroTabPage3.HorizontalScrollbarSize = 10;
@@ -228,19 +228,19 @@
 			this.metroTabPage3.Name = "metroTabPage3";
 			this.metroTabPage3.Size = new System.Drawing.Size(752, 328);
 			this.metroTabPage3.TabIndex = 2;
-			this.metroTabPage3.Text = "Creadit";
+			this.metroTabPage3.Text = "Credit";
 			this.metroTabPage3.VerticalScrollbarBarColor = true;
 			this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
 			this.metroTabPage3.VerticalScrollbarSize = 10;
 			// 
 			// creaditPanel1
 			// 
-			this.creaditPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.creaditPanel1.Location = new System.Drawing.Point(0, 0);
-			this.creaditPanel1.Name = "creaditPanel1";
-			this.creaditPanel1.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
-			this.creaditPanel1.Size = new System.Drawing.Size(752, 328);
-			this.creaditPanel1.TabIndex = 2;
+			this.creditPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.creditPanel1.Location = new System.Drawing.Point(0, 0);
+			this.creditPanel1.Name = "creditPanel1";
+			this.creditPanel1.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
+			this.creditPanel1.Size = new System.Drawing.Size(752, 328);
+			this.creditPanel1.TabIndex = 2;
 			// 
 			// BaseForm
 			// 
@@ -265,7 +265,7 @@
         private MetroFramework.Controls.MetroTabControl MainTab;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
-        private Creadit.CreaditPanel creaditPanel1;
+        private Creadit.CreditPanel creditPanel1;
         private CanvasSpace.Canvas canvas1;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroTile metroTile4;

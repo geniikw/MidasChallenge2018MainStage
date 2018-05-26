@@ -1,4 +1,4 @@
-﻿# Creadit
+﻿# Credit
 
 PM - geniikw <br/>
 
