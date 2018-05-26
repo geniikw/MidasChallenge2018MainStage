@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SuspendLayout();
             // 
             // Canvas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Canvas";
-            this.Size = new System.Drawing.Size(652, 522);
+            this.Size = new System.Drawing.Size(745, 652);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownReceiver);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseDragReceiver);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpReceiver);
@@ -44,5 +46,6 @@
         }
 
         #endregion
+        
     }
 }
