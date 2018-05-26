@@ -46,8 +46,8 @@ namespace MidasMain
             {
                 using ( var fs = (FileStream)dia.OpenFile())
                 {
-                    var doc = canvas1.GetCurrent();
-                    var sr = new XmlSerializer(typeof(Document));
+					var doc = canvas1.GetCurrent();
+					var sr = new XmlSerializer(typeof(Document));
 
                     sr.Serialize(fs, doc);
                 }
