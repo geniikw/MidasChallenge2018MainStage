@@ -143,12 +143,12 @@ namespace MidasMain.Canvas
         {
             var doc = new Document();
             var n = 0;
-            foreach(var r in m_listRoom)
+            foreach (var r in m_listRoom)
             {
                 doc.AddRoom(new Room(n, new Rectangle(r.Location, r.Size)));
             }
 
-            foreach(var o in m_listObject)
+            foreach (var o in m_listObject)
             {
                 doc.objects.Add(new Furniture(o.Location, o.Size.Width, o.Size.Height, o.Name));
             }
@@ -156,7 +156,7 @@ namespace MidasMain.Canvas
 
         }
 
-		public void MakeRoom(Room nRoom)
+        public void MakeRoom(Room nRoom)
 		{
 			var makeRoom = new UCRoom();
 			this.Controls.Add(makeRoom);
