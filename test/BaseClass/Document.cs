@@ -13,10 +13,12 @@ namespace MidasMain
     {
         // 룸 과 아이디
         public List<Room> rooms;
+        public List<Furniture> objects;
 
         public Document()
         {
             rooms = new List<Room>();
+            objects = new List<Furniture>();
         }
 
         //아이디가 존재하면 return false
