@@ -65,28 +65,6 @@ namespace MidasMain.Canvas
 
         public List<UCRoom> listRoom = new List<UCRoom>();
 
-        public void SetupDocument(Document doc)
-        {
-            var idx = 10000;
-            foreach (var room in doc.rooms)
-            {
-                var makeRoom = new UCRoom();
-                this.Controls.Add(makeRoom);
-                makeRoom.SetupRoom(room);
-                makeRoom.Visible = true;
-                listRoom.Add(makeRoom);
-                Canvas.instance.Controls.SetChildIndex(makeRoom, idx++);
-                Console.WriteLine(room.Rect);
-            }
-            var n = 0;
-            foreach(var f in doc.objects)
-            {
-                var makeobj = new UCObject();
-                this.Controls.Add(makeobj);
-                makeobj.SetupData(f);
-                Canvas.instance.Controls.SetChildIndex(makeobj, n++);
-
-            }
-        }
+    
     }
 }
