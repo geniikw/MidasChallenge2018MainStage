@@ -45,7 +45,13 @@ namespace MidasMain.CanvasSpace
 			instance = this;
 		}
 
-        public void MoveChild(Point move)
+		public void RemoveDoor(UCDoor uCDoor)
+		{
+			m_listDoor.Remove(uCDoor);
+			BindDoorToRoom();
+		}
+
+		public void MoveChild(Point move)
         {
             foreach (Control c in Parent.Controls)
             {

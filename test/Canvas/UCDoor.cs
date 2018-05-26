@@ -36,6 +36,12 @@ namespace MidasMain.CanvasSpace
 				pB = PointUtil.Plus(pA, new Point(50, 0));
 		}
 
+		private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			Canvas.instance.RemoveDoor(this);
+			this.Dispose();
+		}
+
 		public void DragStart()
 		{
 			startPoint = pA;
