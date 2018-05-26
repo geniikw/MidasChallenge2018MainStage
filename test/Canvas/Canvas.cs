@@ -14,6 +14,7 @@ namespace MidasMain.Canvas
 {
     public partial class Canvas : UserControl
     {
+		public static Canvas instance;
 
         Subject<MouseEventArgs> OnDown = new Subject<MouseEventArgs>();
         Subject<MouseEventArgs> OnDrag = new Subject<MouseEventArgs>();
@@ -35,7 +36,9 @@ namespace MidasMain.Canvas
                 .Select(b => PointUtil.Minus(b[1], b[0]))
                 .Subscribe(d => MoveChild(d));
             OnUp.Subscribe(d => position = Location);
-        }
+
+			instance = this;
+		}
 
         public void MoveChild(Point move)
         {

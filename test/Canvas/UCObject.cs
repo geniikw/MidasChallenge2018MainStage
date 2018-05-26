@@ -16,5 +16,12 @@ namespace MidasMain.Canvas
 		{
 			InitializeComponent();
 		}
+
+		public override void PointerUp(object sender, MouseEventArgs e)
+		{
+			base.PointerUp(sender, e);
+			Console.WriteLine("check object in room");
+			//Canvas.instance.CheckRoom
+		}
 	}
 }

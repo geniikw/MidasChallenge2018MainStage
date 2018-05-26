@@ -148,6 +148,9 @@
     <EmbeddedResource Include="Canvas\Canvas.resx">
       <DependentUpon>Canvas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\UCObject.resx">
+      <DependentUpon>UCObject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Canvas\UCScaleAble.resx">
       <DependentUpon>UCScaleAble.cs</DependentUpon>
     </EmbeddedResource>
