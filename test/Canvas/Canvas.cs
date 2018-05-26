@@ -92,6 +92,24 @@ namespace MidasMain.CanvasSpace
 					}
 		}
 
+		public void BindDoorToRoom()
+		{
+			for (int i = 0; i < m_listRoom.Count; i++)
+				m_listRoom[i].doors.Clear();
+
+			for (int dIdx = 0; dIdx < m_listDoor.Count; dIdx++)
+			{
+				Rectangle doorRect = new Rectangle(m_listDoor[dIdx].Location, m_listDoor[dIdx].Size);
+				for (int rIdx = m_listRoom.Count - 1; rIdx >= 0; rIdx--)
+					if (doorRect.IntersectsWith(new Rectangle(m_listRoom[rIdx].Location, m_listRoom[rIdx].Size)))
+					{
+						Console.WriteLine("you find it?");
+						m_listRoom[rIdx].doors.Add(m_listDoor[dIdx]);
+						break;
+					}
+			}
+		}
+
         public void Clear()
         {
             List<Control> delList = new List<Control>();
@@ -237,6 +255,7 @@ namespace MidasMain.CanvasSpace
 				}
 			}
 			m_listDoor.Add(uDoor);
+
 			return uDoor;
 		}
 

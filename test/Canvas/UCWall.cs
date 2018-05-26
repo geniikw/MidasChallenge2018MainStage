@@ -41,7 +41,9 @@ namespace MidasMain.CanvasSpace
 			temp.isDoor = isDoor;
 
 			Canvas.instance.MakeDoor(temp);
-            GlobalEvent.OnDocumentChangeAfter(Canvas.instance.GetCurrent(), "add door");
+			Canvas.instance.BindDoorToRoom();
+
+			GlobalEvent.OnDocumentChangeAfter(Canvas.instance.GetCurrent(), "add door");
 
 
         }

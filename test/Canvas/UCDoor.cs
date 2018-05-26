@@ -15,6 +15,7 @@ namespace MidasMain.CanvasSpace
 		public Point pA, pB;
 		public int kind;
 		public bool isDoor;
+		public Point startPoint, startLoc;
 
 		public UCDoor()
 		{
@@ -33,6 +34,18 @@ namespace MidasMain.CanvasSpace
 				pB = PointUtil.Plus(pA, new Point(0, 50));
 			else
 				pB = PointUtil.Plus(pA, new Point(50, 0));
+		}
+
+		public void DragStart()
+		{
+			startPoint = pA;
+			startLoc = Location;
+		}
+
+		public void Dragging(Point dP)
+		{
+			pA = PointUtil.Plus(startPoint, dP);
+			Location = PointUtil.Plus(startLoc, dP);
 		}
 	}
 }
