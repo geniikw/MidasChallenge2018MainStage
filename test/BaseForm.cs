@@ -19,7 +19,7 @@ namespace MidasMain
             InitializeComponent();
         }
 
-        private void metroTile4_Click(object sender, EventArgs e)
+        private void MakeTestDataButton(object sender, EventArgs e)
         {
             current = new Document();
             current.AddRoom(new Room(0, new Rectangle(new Point(300, 100), new Size(100, 100))));
@@ -34,6 +34,16 @@ namespace MidasMain
         }
 
         private void SaveButton(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NewButton(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoadButton(object sender, EventArgs e)
         {
 
         }

@@ -138,8 +138,25 @@ namespace MidasMain.Canvas
                 m_listObject.Add(makeobj);
                 makeobj.SetupData(f);
                 Canvas.instance.Controls.SetChildIndex(makeobj, n++);
-
             }
         }
+
+        public Document GetCurrent()
+        {
+            var document = new Document();
+            foreach(var r in m_listRoom)
+            {
+                document.AddRoom(new Room(m_listRoom.IndexOf(r), new Rectangle(r.Location, r.Size)));
+                
+            }
+
+            foreach(var o in m_listObject)
+            {
+                document.objects.Add(new Furniture(o.Location, o.Size.Width, o.Size.Height, o.Name));
+            }
+
+            return document;
+        }
+
     }
 }

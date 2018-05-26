@@ -105,7 +105,7 @@
             this.metroTile4.TabIndex = 5;
             this.metroTile4.Text = "Test";
             this.metroTile4.UseSelectable = true;
-            this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click);
+            this.metroTile4.Click += new System.EventHandler(this.MakeTestDataButton);
             // 
             // metroTile3
             // 
@@ -117,6 +117,7 @@
             this.metroTile3.TabIndex = 4;
             this.metroTile3.Text = "Load";
             this.metroTile3.UseSelectable = true;
+            this.metroTile3.Click += new System.EventHandler(this.LoadButton);
             // 
             // metroTile2
             // 
@@ -140,6 +141,7 @@
             this.metroTile1.TabIndex = 2;
             this.metroTile1.Text = "New";
             this.metroTile1.UseSelectable = true;
+            this.metroTile1.Click += new System.EventHandler(this.NewButton);
             // 
             // canvas1
             // 
@@ -160,7 +162,7 @@
             this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(861, 420);
+            this.metroTabPage3.Size = new System.Drawing.Size(860, 420);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "Creadit";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
@@ -174,7 +176,7 @@
             this.creaditPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.creaditPanel1.Name = "creaditPanel1";
             this.creaditPanel1.Padding = new System.Windows.Forms.Padding(23, 25, 23, 25);
-            this.creaditPanel1.Size = new System.Drawing.Size(861, 420);
+            this.creaditPanel1.Size = new System.Drawing.Size(860, 420);
             this.creaditPanel1.TabIndex = 2;
             // 
             // BaseForm
