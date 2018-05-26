@@ -110,5 +110,88 @@ namespace MidasMain
 
 			makeWhat = -1;
 		}
-	}
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            if (CloseAnimation == null)
+                return;
+            metroButton2.Visible = true;
+            CloseAnimation.Start();
+            CreateOpenAnimation();
+            CloseAnimation = null;
+            metroButton1.Visible = false;
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            if (OpenAnimation == null)
+                return;
+            metroButton1.Visible = true;
+            OpenAnimation.Start();
+            CreateCloseAnimation();
+            OpenAnimation = null;
+            metroButton2.Visible = false;
+        }
+
+        public void CreateOpenAnimation()
+        {
+            OpenAnimation = new Animation()
+            {
+                DurationInFrames = Animation.FromTimeSpanToDurationInFrames(0.2),
+                EasingFunction = ef => Easing.EaseInOut(ef, EasingType.Quadratic)
+            };
+            OpenAnimation.AnimateOnControlThread(
+                metroPanel1,
+                ObservableHelper.FixedValue(0f),
+                ObservableHelper.FixedValue(menuSize),
+                f => metroPanel1.Size = new Size((int)f.CurrentValue, metroPanel1.Size.Height));
+        }
+
+        public void CreateCloseAnimation()
+        {
+            CloseAnimation = new Animation()
+            {
+                DurationInFrames = Animation.FromTimeSpanToDurationInFrames(0.2),
+                EasingFunction = ef => Easing.EaseInOut(ef, EasingType.Quadratic)
+            };
+            CloseAnimation.AnimateOnControlThread(
+                metroPanel1,
+                ObservableHelper.FixedValue(menuSize),
+                ObservableHelper.FixedValue(0f),
+                f => metroPanel1.Size = new Size((int)f.CurrentValue, metroPanel1.Size.Height));
+        }
+
+        // DEBUGGING @@
+        private void metroButton3_Click(object sender, EventArgs e)
+        {
+            Document a = canvas1.GetCurrent();
+            a.GetLinesOfRoom();
+            foreach (Line line in a.lines)
+            {
+                PictureBox temp = new PictureBox();
+                canvas1.Controls.Add(temp);
+                temp.Location = PointUtil.Plus(line.pA, new Point(3, 3));
+                Size tSize = new Size(PointUtil.Minus(line.pB, line.pA));
+                if (tSize.Width == 0)
+                {
+                    tSize.Width = 3;
+                    tSize.Height -= 6;
+                }
+                else
+                {
+                    tSize.Height = 3;
+                    tSize.Width -= 6;
+                }
+                temp.BackColor = Color.Blue;
+                temp.Size = tSize;
+                canvas1.Controls.SetChildIndex(temp, 0);
+
+                Console.WriteLine("draw loc :" + temp.Location + "size : " + temp.Size);
+
+                //temp.Location = new Point(0);
+                //temp.Size = new Size(500, 500);
+            }
+        }
+
+    }
 }
