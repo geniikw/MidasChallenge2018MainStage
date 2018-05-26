@@ -145,7 +145,7 @@ namespace MidasMain.CanvasSpace
         public Document GetCurrent()
         {
             var doc = new Document();
-            var n = 0;
+            var n = 1;
             foreach (var r in m_listRoom)
             {
                 doc.AddRoom(new Room(n++, new Rectangle(r.Location, r.Size), r.BackColor));

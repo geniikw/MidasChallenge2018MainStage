@@ -98,7 +98,7 @@ namespace MidasMain
                                         }
                                         
                                     }
-                                    near = space[j + 1, k];
+                                    near = space[j , k + 1];
                                     if(!passBy.Contains(near) && near >= 0)
                                     {
                                         passBy.Add(near);
@@ -170,11 +170,11 @@ namespace MidasMain
                             {
                                 endCondition = true;
                             }
-                            else if (k + 1 < h && space[k + 1, j] == -1)
+                            else if (k + 1 < w && space[k + 1, j] == -1)
                             {
                                 endCondition = true;
                             }
-                            else if (j + 1 < w && space[k, j +1] != -1)
+                            else if (j + 1 < h && space[k, j +1] != -1)
                             {
                                 endCondition = true;
                             }
@@ -184,16 +184,16 @@ namespace MidasMain
                                 if (passBy.Count < 2)
                                 {
                                     int near = -1;
-                                    if (k - 1 < 0)
+                                    if (j - 1 < 0)
                                     {
                                         if (!passBy.Contains(0))
                                         {
                                             passBy.Add(0);
                                         }
                                     }
-                                    else if (space[k, j - 1] != -1)
+                                    else if (space[k -1, j] != -1)
                                     {
-                                        near = space[k, j - 1];
+                                        near = space[k - 1, j];
                                         if (near >= 0)
                                         {
                                             if (!passBy.Contains(near))
@@ -318,9 +318,129 @@ namespace MidasMain
 
             //return lines;
         }
+        public bool ValidateConstruction2()
+        {
+            GetLinesOfRoom();
+            List<Rectangle> connectedWalls = new List<Rectangle>();
+
+
+            // 연결되어있는 벽들을 불러옴
+            foreach (var line in lines)
+            {
+                var lineRect = line.ToRect();
+                foreach (var door in doors)
+                {
+                    var tempLine = new Line(door.pA, door.pB);
+                    var doorRect = tempLine.ToRect();
+
+                    if (doorRect.IntersectsWith(lineRect))
+                    {
+                        doorRect.Intersect(lineRect);
+                        connectedWalls.Add(doorRect);
+                        break;
+                    }
+                }
+            }
+
+            int right = int.MinValue;
+            int bottom = int.MinValue;
+            foreach (var r in rooms)
+            {
+                if (right < r.Rect.Left + r.Rect.Width)
+                {
+                    right = r.Rect.Left + r.Rect.Width;
+                }
+                if (bottom < r.Rect.Top + r.Rect.Height)
+                {
+                    bottom = r.Rect.Top + r.Rect.Height;
+                }
+
+            }
+
+            int[,] space = new int[right + 1, bottom + 1];
+
+            int depth = 1;
+            foreach (var r in rooms)
+            {
+                DrawRect(ref space, r.Rect, depth++);
+                
+            }
+
+            foreach(var door in doors)
+            {
+                var rect = new Line(door.pA, door.pB).ToRect();
+                FillRect(ref space, rect, 0);
+            }
+
+            return CheckSpaceValidate(ref space, right, bottom);
+
+        }
+        private void FillRect(ref int[,] space, Rectangle rect, int depth)
+        {
+            int w = rect.Width == 0 ? 1 : rect.Width;
+            int h = rect.Height == 0 ? 1 : rect.Width;
+            for (int k = rect.Left; k < rect.Left + w; k++)
+            {
+                for (int j = rect.Top; j < rect.Top + h; j++)
+                {
+                    space[k, j] = depth;
+                    
+                }
+            }
+        }
+        private bool CheckSpaceValidate(ref int[,] space, int w, int h)
+        {
+            for(int k = 0; k < w; k++)
+            {
+                for(int j = 0; j < h; j++)
+                {
+                    if(space[k,j] == 0) // empty
+                    {
+                        ZeroVirus(ref space, w, h, k, j);
+                    }
+                }
+            }
+
+            bool success = true;
+            for (int k = 0; k < w; k++)
+            {
+                for (int j = 0; j < h; j++)
+                {
+                    if (space[k, j] > 0) // not wall not 
+                    {
+                        success = false;
+                        break;
+                    }
+                }
+            }
+
+            return success;
+        }
+        private void ZeroVirus(ref int[,] space, int w, int h, int x, int y, bool checkZero = false)
+        {
+            if (x < 0)
+                return;
+            if (y < 0)
+                return;
+            if (y >= h)
+                return;
+            if (x >= w)
+                return;
+            if (space[x, y] == -1) // wall
+                return;
+            if (checkZero && space[x, y] == 0)
+                return;
+
+            space[x, y] = 0;
+            ZeroVirus(ref space, w, h, x + 1, y, true);
+            ZeroVirus(ref space, w, h, x - 1, y, true);
+            ZeroVirus(ref space, w, h, x , y + 1, true);
+            ZeroVirus(ref space, w, h, x , y - 1, true);
+        }
 
         public bool ValidateConstruction()
         {
+            GetLinesOfRoom();
             List<Line> connectedWalls = new List<Line>();
 
 
@@ -353,7 +473,7 @@ namespace MidasMain
             {
                 if (wall.from == currentRoom && wall.to != null)
                 {
-                    if (dict.ContainsKey(wall.to))
+                    if (!dict.ContainsKey(wall.to))
                     {
                         dict.Add(wall.to, 1);
                         previousRoom.Add(wall.to);
@@ -362,7 +482,7 @@ namespace MidasMain
                 }
                 else if (wall.to == currentRoom && wall.from != null)
                 {
-                    if (dict.ContainsKey(wall.to))
+                    if (!dict.ContainsKey(wall.from))
                     {
                         dict.Add(wall.from, 1);
                         previousRoom.Add(wall.from);
@@ -382,7 +502,7 @@ namespace MidasMain
                     {
                         if (wall.from == currentRoom && wall.to != null)
                         {
-                            if (dict.ContainsKey(wall.to))
+                            if (!dict.ContainsKey(wall.to))
                             {
                                 dict.Add(wall.to, 1);
                                 nextRoom.Add(wall.to);
@@ -391,7 +511,7 @@ namespace MidasMain
                         }
                         else if (wall.to == currentRoom && wall.from != null)
                         {
-                            if (dict.ContainsKey(wall.to))
+                            if (!dict.ContainsKey(wall.to))
                             {
                                 dict.Add(wall.from, 1);
                                 nextRoom.Add(wall.from);

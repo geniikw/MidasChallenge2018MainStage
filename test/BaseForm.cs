@@ -170,6 +170,11 @@ namespace MidasMain
         {
             GenBlock();
         }
+        public void ValidateConstruction()
+        {
+            Document a = canvas1.GetCurrent();
+            Console.WriteLine(a.ValidateConstruction());
+        }
         public void CaputreScreen()
         {
             using (Bitmap bmp = new Bitmap(this.Width, this.Height))
