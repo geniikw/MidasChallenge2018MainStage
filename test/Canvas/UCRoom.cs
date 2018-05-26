@@ -20,6 +20,12 @@ namespace MidasMain.Canvas
 			objects = new List<UCObject>();
 		}
 
+        public void SetupRoom(Room data)
+        {
+            Location = data.Rect.Location;
+            Size = data.Rect.Size;
+        }
+
 		public override void PointerDown(object sender, MouseEventArgs e)
 		{
 			base.PointerDown(sender, e);

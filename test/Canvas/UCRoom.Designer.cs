@@ -28,15 +28,14 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.SuspendLayout();
-			// 
-			// UCRoom
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.Name = "UCRoom";
-			this.ResumeLayout(false);
+            this.SuspendLayout();
+            // 
+            // UCRoom
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Name = "UCRoom";
+            this.ResumeLayout(false);
 
 		}
 

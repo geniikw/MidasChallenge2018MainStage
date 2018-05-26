@@ -64,18 +64,7 @@ namespace MidasMain.Canvas
         {
             OnUp.OnNext(e);
         }
-
-        public void SetupDocument(Document doc)
-        {
-            foreach (var room in doc.rooms)
-            {
-                var makeRoom = new UCRoom();
-
-                makeRoom.Visible = true;
-                m_listRoom.Add(makeRoom);
-            }
-        }
-
+        
 		private bool IsObjectInRoom(Point rLoc, Size rSize, Point oLoc, Size oSize)
 		{
 			Console.WriteLine("??");
@@ -106,5 +95,29 @@ namespace MidasMain.Canvas
 			obj.inRoom = null;
 			return -1;
 		}
+
+        public void SetupDocument(Document doc)
+        {
+            var idx = 10000;
+            foreach (var room in doc.rooms)
+            {
+                var makeRoom = new UCRoom();
+                this.Controls.Add(makeRoom);
+                makeRoom.SetupRoom(room);
+                makeRoom.Visible = true;
+                m_listRoom.Add(makeRoom);
+                Canvas.instance.Controls.SetChildIndex(makeRoom, idx++);
+                Console.WriteLine(room.Rect);
+            }
+            var n = 0;
+            foreach (var f in doc.objects)
+            {
+                var makeobj = new UCObject();
+                this.Controls.Add(makeobj);
+                makeobj.SetupData(f);
+                Canvas.instance.Controls.SetChildIndex(makeobj, n++);
+
+            }
+        }
     }
 }
