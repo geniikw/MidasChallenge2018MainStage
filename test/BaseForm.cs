@@ -22,7 +22,6 @@ namespace MidasMain
         private void metroButton1_Click(object sender, EventArgs e)
         {
             current = new Document();
-            current.
         }
     }
 }
