@@ -29,8 +29,14 @@ namespace MidasMain
         {
             pA = new Point();
             pB = new Point();
-            
         }
+
+        public Door(Point a, Point b)
+        {
+            pA = a;
+            pB = b;
+        }
+
         public Door(DoorType type, float posRatio)
         {
             this.type = type;

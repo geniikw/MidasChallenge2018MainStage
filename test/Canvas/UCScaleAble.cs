@@ -31,7 +31,7 @@ namespace MidasMain.CanvasSpace
 
 		public override void PointerDown(object sender, MouseEventArgs e)
 		{
-            GlobalEvent.OnDocumentChange?.Invoke(Canvas.instance.GetCurrent(), "SizeChange name");
+            GlobalEvent.OnDocumentChangeBefore?.Invoke(Canvas.instance.GetCurrent(), "SizeChange name");
 
             base.PointerDown(sender, e);
 			Canvas.instance.AllFocusOut();
@@ -45,6 +45,8 @@ namespace MidasMain.CanvasSpace
 
 		public override void PointerUp(object sender, MouseEventArgs e)
 		{
+            GlobalEvent.OnDocumentChangeAfter?.Invoke("SizeChange name");
+
             base.PointerUp(sender, e);
 		}
 

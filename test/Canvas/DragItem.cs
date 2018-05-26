@@ -33,11 +33,28 @@ namespace MidasMain.CanvasSpace
                 .SkipUntil(OnDown)
                 .TakeUntil(OnUp)
                 .Repeat()
-                .Subscribe(p => Location = Parent.PointToClient( PointToScreen( p)));
+                .Subscribe(p => Location = Clamp( Parent.PointToClient( PointToScreen( p))));
             
             OnUp.Subscribe(arg => Invalidate());
         }
-        
+
+        Point Clamp(Point input)
+        {
+            if (input.X < 0)
+                input.X = 0;
+            if (input.Y < 0)
+                input.Y = 0;
+
+            var maxW = BaseForm.instance.Width - 200;
+            var maxH = BaseForm.instance.Height - 200;
+            
+            if (input.X > maxW)
+                input.X = maxW;
+            if (input.Y > maxH)
+                input.Y = maxH;
+            return input;
+        }
+
         public Point GetOffset(Point mousePoint)
         {
             var smp = PointToScreen(mousePoint);
@@ -47,7 +64,7 @@ namespace MidasMain.CanvasSpace
 
         public virtual void PointerDown(object sender, MouseEventArgs e)
         {
-            GlobalEvent.OnDocumentChange.Invoke(Canvas.instance.GetCurrent(),"Move");
+            GlobalEvent.OnDocumentChangeBefore.Invoke(Canvas.instance.GetCurrent(),"Move");
             OnDown.OnNext(e);
         }
 
@@ -58,6 +75,7 @@ namespace MidasMain.CanvasSpace
 
         public virtual void PointerUp(object sender, MouseEventArgs e)
         {
+            GlobalEvent.OnDocumentChangeAfter?.Invoke("Location change");
             OnUp.OnNext(e);
         }
     }

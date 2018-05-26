@@ -22,6 +22,7 @@ namespace MidasMain.CanvasSpace
 
 		List<UCRoom> m_listRoom = new List<UCRoom>();
         List<UCObject> m_listObject = new List<UCObject>();
+        List<UCDoor> m_listDoor = new List<UCDoor>();
 
 		Point position = Point.Empty;
 		public int makeWhat = -1;	// -1 : none, 0 : room, 1 : door
@@ -113,7 +114,6 @@ namespace MidasMain.CanvasSpace
         public void SetupDocument(Document doc)
         {
             Clear();
-
             var idx = 10000;
             foreach (var room in doc.rooms)
             {
@@ -135,8 +135,18 @@ namespace MidasMain.CanvasSpace
                 makeobj.SetupData(f);
 				makeobj.UpdateScalerPosition();
 				Canvas.instance.Controls.SetChildIndex(makeobj, n++);
-
             }
+            n = 1000;
+            foreach(var d in doc.doors)
+            {
+                var makeDoor = new UCDoor();
+                this.Controls.Add(makeDoor);
+                m_listDoor.Add(makeDoor);
+                makeDoor.Setup(d);
+                //todo setupdata;
+               Canvas.instance.Controls.SetChildIndex(makeDoor, n++);
+            }
+
         }
 
         public Document GetCurrent()
@@ -152,6 +162,11 @@ namespace MidasMain.CanvasSpace
             {
                 doc.objects.Add(new Furniture(o.Location, o.Size.Width, o.Size.Height, o.Name));
             }
+            foreach(var d in m_listDoor)
+            {
+                doc.doors.Add(new Door(d.pA, d.pB));
+            }
+
             return doc;
 
         }
@@ -218,7 +233,9 @@ namespace MidasMain.CanvasSpace
 
 			for (int i = 0; i < m_listRoom.Count; i++)
 				this.Controls.SetChildIndex(m_listRoom[m_listRoom.Count - i - 1], i+ m_listObject.Count);
-		}
+
+
+        }
 
 		public void AllFocusOut()
 		{

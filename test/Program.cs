@@ -19,8 +19,11 @@ namespace MidasMain
             Application.SetCompatibleTextRenderingDefault(false);
             var bbb = new BaseForm();
             //kh.KeyDown += Kh_KeyDown;
-            GlobalEvent.OnDocumentChange += UndoManager.Record;
-            //GlobalEvent.OnDocumentChange += (a, b) => bbb.GenBlock();
+            GlobalEvent.OnDocumentChangeBefore += UndoManager.Record;
+            GlobalEvent.OnDocumentChangeAfter += msg => bbb.GenBlock();
+            GlobalEvent.OnDocumentChangeAfter += msg => Canvas.instance.SetZIndex();
+
+            UndoManager.UndoCallback += () => bbb.GenBlock();
             Application.EnableVisualStyles();
             Application.Run(bbb);
         }

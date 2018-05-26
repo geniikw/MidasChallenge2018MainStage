@@ -21,5 +21,12 @@ namespace MidasMain.CanvasSpace
 			this.BackColor = Color.Transparent;
 			InitializeComponent(); 
 		}
+
+        public void Setup(Door d)
+        {
+            pA = d.pA;
+            pB = d.pB;
+            //Location = new Point((pA.X+pB.X)/2, pA.Y + pB.
+        }
 	}
 }

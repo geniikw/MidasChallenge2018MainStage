@@ -16,6 +16,8 @@ namespace MidasMain
 {
     public partial class BaseForm : MetroFramework.Forms.MetroForm
     {
+        public static BaseForm instance;
+        
         public Animation CloseAnimation;
         public Animation OpenAnimation;
 
@@ -26,6 +28,7 @@ namespace MidasMain
 
         public BaseForm()
         {
+            instance = this;
             InitializeComponent();
 
             CreateCloseAnimation();
@@ -162,8 +165,6 @@ namespace MidasMain
                 f => metroPanel1.Size = new Size((int)f.CurrentValue, metroPanel1.Size.Height));
         }
 
-
-
         public void GenerateBlock(object sender, EventArgs e)
         {
             GenBlock();
@@ -177,11 +178,16 @@ namespace MidasMain
                 if (c is UCWall)
                     toDel.Push(c);
             }
-
+            foreach(var d in toDel)
+            {
+                canvas1.Controls.Remove(d);
+                d.Dispose();
+            }
         }
 
         public void GenBlock()
         {
+            ClearBlock();
             Document a = canvas1.GetCurrent();
             a.GetLinesOfRoom();
             foreach (Line line in a.lines)

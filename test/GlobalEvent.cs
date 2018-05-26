@@ -8,7 +8,9 @@ namespace MidasMain.CanvasSpace
 {
     public static class GlobalEvent
     {
-        public static Action<Document, string> OnDocumentChange;
+        public static Action<Document, string> OnDocumentChangeBefore;
+        public static Action<string> OnDocumentChangeAfter;
+
 
     }
 }
