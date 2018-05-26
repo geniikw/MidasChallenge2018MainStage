@@ -97,11 +97,11 @@
     <Compile Include="Canvas\Canvas.Render.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Canvas\UCRoom.cs">
+    <Compile Include="Canvas\UCScaleAble.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Canvas\UCRoom.Designer.cs">
-      <DependentUpon>UCRoom.cs</DependentUpon>
+    <Compile Include="Canvas\UCScaleAble.Designer.cs">
+      <DependentUpon>UCScaleAble.cs</DependentUpon>
     </Compile>
     <Compile Include="Canvas\UCScaler.cs">
       <SubType>UserControl</SubType>
@@ -136,8 +136,8 @@
     <EmbeddedResource Include="Canvas\Canvas.resx">
       <DependentUpon>Canvas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Canvas\UCRoom.resx">
-      <DependentUpon>UCRoom.cs</DependentUpon>
+    <EmbeddedResource Include="Canvas\UCScaleAble.resx">
+      <DependentUpon>UCScaleAble.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Canvas\UCScaler.resx">
       <DependentUpon>UCScaler.cs</DependentUpon>

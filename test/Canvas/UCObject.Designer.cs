@@ -1,6 +1,6 @@
 ﻿namespace MidasMain.Canvas
 {
-	partial class UCRoom
+	partial class UCObject
 	{
 		/// <summary> 
 		/// 필수 디자이너 변수입니다.

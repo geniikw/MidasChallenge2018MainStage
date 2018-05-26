@@ -13,9 +13,6 @@ namespace MidasMain.Canvas
         public void SetupDocument(Document doc)
         {
             current = doc;
-            
-            foreach(var room in doc.r)
-
 
         }
 

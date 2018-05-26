@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace MidasMain.Canvas
 {
-	public partial class UCRoom : UCScaleAble
+	public partial class UCObject : UCScaleAble
 	{
-		public List<UCObject> objects;
-
-		public UCRoom()
+		public UCObject()
 		{
 			InitializeComponent();
 		}
-
-		
 	}
 }

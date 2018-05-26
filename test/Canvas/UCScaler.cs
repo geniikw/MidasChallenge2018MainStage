@@ -14,7 +14,7 @@ namespace MidasMain.Canvas
 
 	public partial class UCScaler : DragItem
 	{
-		public UCRoom thisRoom;
+		public UCScaleAble thisRoom;
 		private Point mouse0, location0;
 		private Size size0;
 		private bool isClick = false;
@@ -32,7 +32,6 @@ namespace MidasMain.Canvas
 
 			mouse0 = PointToScreen(e.Location);
 			location0 = thisRoom.Location;
-			Console.WriteLine("ddd : " + location0.X + ", " + location0.Y);
 			size0 = thisRoom.Size;
 			isClick = true;
 		}
@@ -42,18 +41,16 @@ namespace MidasMain.Canvas
 			if (isClick)
 			{
 				Point dPoint = PointUtil.Minus(PointToScreen(e.Location), mouse0);
-				Console.WriteLine("delta : " + dPoint.X + ", " + dPoint.Y);
+				//Console.WriteLine("delta : " + dPoint.X + ", " + dPoint.Y);
 				//Console.WriteLine("room : " + thisRoom.Location.X + ", " + thisRoom.Location.Y);
 				switch (where)
 				{
 					case Where.leftbottom:
 						thisRoom.Location = new Point(location0.X + dPoint.X, location0.Y);
 						thisRoom.Size = new Size(size0.Width - dPoint.X, size0.Height + dPoint.Y);
-						//PointUtil.Plus(location0, dPoint);
 						break;
 					case Where.lefttop:
 						thisRoom.Location = PointUtil.Plus(location0, dPoint);
-						Console.WriteLine("delta : " + thisRoom.Location.X + ", " + thisRoom.Location.Y);
 						thisRoom.Size = new Size(PointUtil.Minus(new Point(size0), dPoint));
 						break;
 					case Where.rightbottom:

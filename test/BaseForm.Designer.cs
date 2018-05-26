@@ -35,7 +35,7 @@
 			this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
 			this.canvas1 = new MidasMain.Canvas.Canvas();
 			this.creaditPanel1 = new MidasMain.Creadit.CreaditPanel();
-			this.ucRoom1 = new MidasMain.Canvas.UCRoom();
+			this.ucRoom1 = new MidasMain.Canvas.UCScaleAble();
 			this.MainTab.SuspendLayout();
 			this.metroTabPage1.SuspendLayout();
 			this.metroTabPage3.SuspendLayout();
@@ -151,6 +151,6 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private Creadit.CreaditPanel creaditPanel1;
         private Canvas.Canvas canvas1;
-		private Canvas.UCRoom ucRoom1;
+		private Canvas.UCScaleAble ucRoom1;
 	}
 }
