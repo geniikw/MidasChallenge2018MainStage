@@ -21,6 +21,14 @@ namespace MidasMain
             this.width = width;
             this.height = height;
         }
+
+        public Furniture()
+        {
+            this.name = "";
+            this.coordinate = Point.Empty;
+            this.width = 0;
+            this.height = 0;
+        }
     }
 
 

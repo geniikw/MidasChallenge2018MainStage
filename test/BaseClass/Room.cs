@@ -27,8 +27,12 @@ namespace MidasMain
             doors = new List<Door>();
             this.depth = depth;
             this.rect = rect;
-
-            
+        }
+        public Room()
+        {
+            doors = new List<Door>();
+            depth = 0;
+            rect = new Rectangle();
         }
 
         public List<Line> ConvertRectToLines()

@@ -24,10 +24,12 @@ namespace MidasMain.Canvas
         List<UCObject> m_listObject = new List<UCObject>();
 
 		Point position = Point.Empty;
+		public int makeWhat = -1;	// -1 : none, 0 : room, 1 : door
 
         public Canvas()
         {
             InitializeComponent();
+            this.AutoScroll = true;
             position = Location;
             OnDrag
                 .CombineLatest(OnDown.Select(a => PointUtil.Minus(Location, position)), (a, i) => PointUtil.Minus(Location, i))
@@ -67,9 +69,9 @@ namespace MidasMain.Canvas
         
 		private bool IsObjectInRoom(Point rLoc, Size rSize, Point oLoc, Size oSize)
 		{
-			if (rLoc.X < oLoc.X && rLoc.Y < oLoc.Y && 
-				rLoc.X + rSize.Width > oLoc.X + oSize.Width && 
-				rLoc.Y + rSize.Height > oLoc.Y + oSize.Height)
+			if (rLoc.X <= oLoc.X && rLoc.Y <= oLoc.Y && 
+				rLoc.X + rSize.Width >= oLoc.X + oSize.Width && 
+				rLoc.Y + rSize.Height >= oLoc.Y + oSize.Height)
 				return true;
 
 			return false;
@@ -81,7 +83,7 @@ namespace MidasMain.Canvas
 				m_listRoom[i].objects.Clear();
 
 			for (int oIdx = 0; oIdx < m_listObject.Count; oIdx++)
-				for (int rIdx = 0; rIdx < m_listRoom.Count; rIdx++)
+				for (int rIdx = m_listRoom.Count-1; rIdx >=0; rIdx--)
 					if (IsObjectInRoom(m_listRoom[rIdx].Location, m_listRoom[rIdx].Size, m_listObject[oIdx].Location, m_listObject[oIdx].Size))
 					{
 						m_listRoom[rIdx].objects.Add(m_listObject[oIdx]);
@@ -119,8 +121,9 @@ namespace MidasMain.Canvas
                 this.Controls.Add(makeRoom);
                 makeRoom.SetupRoom(room);
                 makeRoom.Visible = true;
-                m_listRoom.Add(makeRoom);
-                Canvas.instance.Controls.SetChildIndex(makeRoom, idx++);
+				makeRoom.UpdateScalerPosition();
+				m_listRoom.Add(makeRoom);
+				this.Controls.SetChildIndex(makeRoom, idx++);
                 Console.WriteLine(room.Rect);
             }
             var n = 0;
@@ -130,30 +133,40 @@ namespace MidasMain.Canvas
                 this.Controls.Add(makeobj);
                 m_listObject.Add(makeobj);
                 makeobj.SetupData(f);
-                Canvas.instance.Controls.SetChildIndex(makeobj, n++);
+				makeobj.UpdateScalerPosition();
+				Canvas.instance.Controls.SetChildIndex(makeobj, n++);
+
             }
         }
 
-        public Document GetCurrent()
-        {
-            var document = new Document();
-            foreach(var r in m_listRoom)
-            {
-                document.AddRoom(new Room(m_listRoom.IndexOf(r), new Rectangle(r.Location, r.Size)));
-                
-            }
+		public void MakeRoom(Room nRoom)
+		{
+			var makeRoom = new UCRoom();
+			this.Controls.Add(makeRoom);
+			makeRoom.SetupRoom(nRoom);
+			makeRoom.Visible = true;
+			m_listRoom.Add(makeRoom);
+			makeRoom.UpdateScalerPosition();
+			SetZIndex();
+		}
 
-            foreach(var o in m_listObject)
-            {
-                document.objects.Add(new Furniture(o.Location, o.Size.Width, o.Size.Height, o.Name));
-            }
+		public void MakeObject(Furniture obj)
+		{
+			var makeObj = new UCObject();
+			this.Controls.Add(makeObj);
+			m_listObject.Add(makeObj);
+			makeObj.SetupData(obj);
+			makeObj.UpdateScalerPosition();
+			SetZIndex();
+		}
 
-            return document;
-        }
+		public void SetZIndex()
+		{
+			for(int i=0; i<m_listObject.Count; i++)
+				this.Controls.SetChildIndex(m_listObject[m_listObject.Count-i-1], i);
 
-        private void Canvas_Load(object sender, EventArgs e)
-        {
-
-        }
+			for (int i = 0; i < m_listRoom.Count; i++)
+				this.Controls.SetChildIndex(m_listRoom[m_listRoom.Count - i - 1], i+ m_listObject.Count);
+		}
     }
 }
