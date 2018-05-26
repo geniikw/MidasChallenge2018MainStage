@@ -47,7 +47,7 @@
             this.setColorToolStripMenuItem,
             this.setTileToolStripMenuItem});
             this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(137, 52);
+            this.metroContextMenu1.Size = new System.Drawing.Size(211, 80);
             // 
             // setColorToolStripMenuItem
             // 
@@ -56,7 +56,7 @@
             this.whiteToolStripMenuItem,
             this.redToolStripMenuItem});
             this.setColorToolStripMenuItem.Name = "setColorToolStripMenuItem";
-            this.setColorToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
+            this.setColorToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.setColorToolStripMenuItem.Text = "SetColor";
             // 
             // blackToolStripMenuItem
@@ -64,6 +64,7 @@
             this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
             this.blackToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.blackToolStripMenuItem.Text = "Black";
+            this.blackToolStripMenuItem.Click += new System.EventHandler(this.blackToolStripMenuItem_Click);
             // 
             // whiteToolStripMenuItem
             // 
@@ -85,7 +86,7 @@
             this.sofaToolStripMenuItem,
             this.tolietToolStripMenuItem});
             this.setTileToolStripMenuItem.Name = "setTileToolStripMenuItem";
-            this.setTileToolStripMenuItem.Size = new System.Drawing.Size(136, 24);
+            this.setTileToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
             this.setTileToolStripMenuItem.Text = "SetTile";
             // 
             // sofaToolStripMenuItem

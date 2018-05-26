@@ -25,6 +25,7 @@ namespace MidasMain
             m_redo.Push(new KeyValuePair<string, Document>("undo", Canvas.instance.GetCurrent()));
             Canvas.instance.SetupDocument(pair.Value);
             UndoCallback?.Invoke();
+            
         }
 
         public static void Redo()

@@ -107,5 +107,12 @@ namespace MidasMain.CanvasSpace
             color = Color.Red.ToArgb();
             SetupRender();
         }
+
+        private void blackToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tileIdx = -1;
+            color = Color.Black.ToArgb();
+            SetupRender();
+        }
     }
 }

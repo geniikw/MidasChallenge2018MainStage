@@ -25,7 +25,9 @@ namespace MidasMain
             GlobalEvent.OnDocumentChangeAfter += (a, b) => bbb.GenBlock();
             GlobalEvent.OnDocumentChangeAfter += BaseForm.instance.Validation;
 
-			UndoManager.UndoCallback += () => bbb.GenBlock();
+            UndoManager.UndoCallback += () => bbb.ClearBlock();
+            UndoManager.UndoCallback += () => Canvas.instance.SetZIndex();
+            UndoManager.UndoCallback += () => bbb.GenBlock();
             Application.EnableVisualStyles();
             Application.Run(bbb);
         }
