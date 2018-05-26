@@ -180,6 +180,20 @@ namespace MidasMain
         {
             GenBlock();
         }
+        public void ValidateConstruction()
+        {
+            Document a = canvas1.GetCurrent();
+            Console.WriteLine(a.ValidateConstruction());
+        }
+        public void CaputreScreen()
+        {
+            using (Bitmap bmp = new Bitmap(this.Width, this.Height))
+            {
+                Rectangle rect = new Rectangle(canvas1.Location, canvas1.Size);
+                canvas1.DrawToBitmap(bmp, rect);
+                bmp.Save(@"C:/Users/jonghun/Desktop/output.png", ImageFormat.Png); // make sure path exists!
+            }
+        }
         private void CaputreScreen(object sender, EventArgs e)
         {
             var dia = new SaveFileDialog();
