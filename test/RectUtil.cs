@@ -17,12 +17,12 @@ namespace MidasMain
         };
         public static RECT_TYPE GetRectType(Rectangle rect)
         {
-            
-            if(rect.Width == 0 && rect.Height == 0)
+
+            if (rect.Width == 0 && rect.Height == 0)
             {
                 return RECT_TYPE.POINT;
             }
-            else if(rect.Width == 0 || rect.Height == 0)
+            else if (rect.Width == 0 || rect.Height == 0)
             {
                 return RECT_TYPE.LINE;
             }
@@ -30,9 +30,9 @@ namespace MidasMain
         }
         public static bool ConvertToLine(Rectangle rect, out Line l)
         {
-            if(GetRectType(rect) == RECT_TYPE.LINE)
+            if (GetRectType(rect) == RECT_TYPE.LINE)
             {
-                
+
                 l = new Line(new Point(rect.Left, rect.Top), new Point(rect.Right, rect.Bottom));
                 return true;
             }
@@ -41,7 +41,7 @@ namespace MidasMain
         }
         public static bool ConvertToPoint(Rectangle rect, out Point p)
         {
-            if(GetRectType(rect) == RECT_TYPE.POINT)
+            if (GetRectType(rect) == RECT_TYPE.POINT)
             {
                 p = new Point(rect.Left, rect.Top);
                 return true;
