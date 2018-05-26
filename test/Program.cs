@@ -18,7 +18,6 @@ namespace MidasMain
         {
             Application.SetCompatibleTextRenderingDefault(false);
             var bbb = new BaseForm();
-            var kh = new KeyboardHook(true);
             //kh.KeyDown += Kh_KeyDown;
             GlobalEvent.OnDocumentChange += UndoManager.Record;
             //GlobalEvent.OnDocumentChange += (a, b) => bbb.GenBlock();

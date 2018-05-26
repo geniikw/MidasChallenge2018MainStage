@@ -171,10 +171,13 @@ namespace MidasMain
 
         public void ClearBlock()
         {
-            foreach(var c in canvas1.Controls)
+            Stack<Control> toDel = new Stack<Control>();
+            foreach(Control c in canvas1.Controls)
             {
-
+                if (c is UCWall)
+                    toDel.Push(c);
             }
+
         }
 
         public void GenBlock()

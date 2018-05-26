@@ -106,6 +106,7 @@
     <Compile Include="Canvas\UCWall.Designer.cs">
       <DependentUpon>UCWall.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalEvent.cs" />
     <Compile Include="MiMath.cs" />
     <Compile Include="Canvas\UCObject.cs">
       <SubType>UserControl</SubType>
@@ -153,6 +154,7 @@
       <DependentUpon>DragItem.cs</DependentUpon>
     </Compile>
     <Compile Include="RectUtil.cs" />
+    <Compile Include="UndoManager.cs" />
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>

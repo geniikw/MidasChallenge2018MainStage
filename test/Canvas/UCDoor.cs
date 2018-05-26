@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MidasMain.Canvas
+namespace MidasMain.CanvasSpace
 {
 	public partial class UCDoor : UserControl
 	{
