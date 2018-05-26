@@ -80,7 +80,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnimationExample.cs" />
     <Compile Include="BaseClass\Document.cs" />
     <Compile Include="BaseClass\Door.cs" />
     <Compile Include="BaseClass\Furniture.cs" />
@@ -91,6 +90,12 @@
     </Compile>
     <Compile Include="Canvas\Canvas.Designer.cs">
       <DependentUpon>Canvas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas\FurnitureView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Canvas\FurnitureView.Designer.cs">
+      <DependentUpon>FurnitureView.cs</DependentUpon>
     </Compile>
     <Compile Include="PointUtil.cs" />
     <Compile Include="Creadit\CreaditPanel.cs">
@@ -107,7 +112,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UML\UMLModel.cs" />
     <Compile Include="Canvas\DragItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -119,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Canvas\Canvas.resx">
       <DependentUpon>Canvas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\FurnitureView.resx">
+      <DependentUpon>FurnitureView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Creadit\CreaditPanel.resx">
       <DependentUpon>CreaditPanel.cs</DependentUpon>

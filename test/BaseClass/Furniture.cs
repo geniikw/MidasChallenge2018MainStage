@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MidasMain.BaseClass
 {
-    class Furniture
+    public class Furniture
     {
         Point coordinate;
         float width;

@@ -8,7 +8,7 @@ using System.Windows;
 namespace MidasMain.BaseClass
 {
     //전체를 포함하는 문서
-    class Document
+    public class Document
     {
         // 룸 과 아이디
         Dictionary<int, Room> rooms;
@@ -49,20 +49,44 @@ namespace MidasMain.BaseClass
 
         public List<Line> GetLinesOfRoom(Room room)
         {
-            var sorted = rooms.OrderBy(r => r.Value.Depth);
+            var sorted = rooms.OrderBy(r => -r.Value.Depth);
 
             List<Line> lines = new List<Line>();
 
-
-
             foreach (var rm in sorted)
             {
-                if (rm.Value == room)
+
+                //첫 아이템 이니셜라이즈
+                if(lines.Count == 0)
                 {
+                    var init = rm.Value.ConvertRectToLines();
+                    foreach (var l in init)
+                    {
+                        l.from = rm.Value;
+                        lines.Add(l);
+                    }
                     continue;
                 }
 
+
+                var rectLines = rm.Value.ConvertRectToLines();
+                foreach( var l in rectLines)
+                {
+                    l.from = rm.Value;
+                }
             }
+
+            List<Line> lineOfRoom = new List<Line>();
+            foreach(var line in lines)
+            {
+                if(line.from == room || line.to == room)
+                {
+                    lineOfRoom.Add(line);
+                }
+            }
+
+            return lineOfRoom;
+
         }
     }
 }

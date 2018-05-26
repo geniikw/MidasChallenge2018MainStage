@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace MidasMain.BaseClass
 {
-    class Line
+    public class Line
     {
         public Point x;
         public Point y;
 
-        public Room from;
-        public Room to;
+        public Room from = null;
+        public Room to = null;
         public Line(Point x, Point y, Room from, Room to)
         {
             this.x = x;

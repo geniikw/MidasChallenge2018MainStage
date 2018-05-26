@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MidasMain.BaseClass
 {
-    class Room
+    public class Room
     {
         int depth;
         Rectangle rect;
@@ -31,7 +31,7 @@ namespace MidasMain.BaseClass
             
         }
 
-        private List<Line> ConvertRectToLines()
+        public List<Line> ConvertRectToLines()
         {
             Point lt = new Point(rect.Left, rect.Top);
             Point lb = new Point(rect.Left, rect.Bottom);

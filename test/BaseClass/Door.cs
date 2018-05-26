@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MidasMain.BaseClass
 {
-    class Door
+    public class Door
     {
         //range 0~1
         float posRatio;
