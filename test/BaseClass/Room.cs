@@ -27,8 +27,30 @@ namespace MidasMain
             doors = new List<Door>();
             this.depth = depth;
             this.rect = rect;
+
+            
         }
 
+        public List<Line> ConvertRectToLines()
+        {
+            Point lt = new Point(rect.Left, rect.Top);
+            Point lb = new Point(rect.Left, rect.Bottom);
+            Point rt = new Point(rect.Right, rect.Top);
+            Point rb = new Point(rect.Right, rect.Bottom);
+
+            List<Line> returnList = new List<Line>();
+
+            returnList.Add(new Line(lt, rt));
+            returnList.Add(new Line(lt, lb));
+            returnList.Add(new Line(rt, rb));
+            returnList.Add(new Line(lb, rb));
+
+            return returnList;
+        }
+
+
+
+        
         
     }
 }
