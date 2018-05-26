@@ -11,7 +11,7 @@ namespace MidasMain
     public class Document
     {
         // 룸 과 아이디
-        List<Room> rooms;
+        public List<Room> rooms;
 
         public Document()
         {

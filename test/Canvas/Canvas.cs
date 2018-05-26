@@ -15,7 +15,6 @@ namespace MidasMain.Canvas
     public partial class Canvas : UserControl
     {
 
-
         Subject<MouseEventArgs> OnDown = new Subject<MouseEventArgs>();
         Subject<MouseEventArgs> OnDrag = new Subject<MouseEventArgs>();
         Subject<MouseEventArgs> OnUp = new Subject<MouseEventArgs>();
