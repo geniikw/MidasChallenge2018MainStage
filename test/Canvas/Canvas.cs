@@ -139,6 +139,23 @@ namespace MidasMain.Canvas
             }
         }
 
+        public Document GetCurrent()
+        {
+            var doc = new Document();
+            var n = 0;
+            foreach(var r in m_listRoom)
+            {
+                doc.AddRoom(new Room(n, new Rectangle(r.Location, r.Size)));
+            }
+
+            foreach(var o in m_listObject)
+            {
+                doc.objects.Add(new Furniture(o.Location, o.Size.Width, o.Size.Height, o.Name));
+            }
+            return doc;
+
+        }
+
 		public void MakeRoom(Room nRoom)
 		{
 			var makeRoom = new UCRoom();
