@@ -39,9 +39,9 @@ namespace MidasMain
         private void SaveButton(object sender, EventArgs e)
         {
             var dia = new SaveFileDialog();
-            dia.Filter = "*.xml";
+            dia.Filter = "XMLfile|*.xml";
             dia.Title = "Save an document File";
-            var path = dia.ShowDialog();
+            dia.ShowDialog();
             if(dia.FileName != "")
             {
                 using ( var fs = (FileStream)dia.OpenFile())
@@ -52,7 +52,6 @@ namespace MidasMain
                     sr.Serialize(fs, doc);
                 }
             }
-
         }
 
         private void NewButton(object sender, EventArgs e)
@@ -62,7 +61,21 @@ namespace MidasMain
 
         private void LoadButton(object sender, EventArgs e)
         {
+            var dia = new OpenFileDialog();
+            dia.Filter = "XMLfile|*.xml";
+            dia.Title = "Load";
+            dia.ShowDialog();
+            if (dia.FileName != "")
+            {
+                using (var fs = (FileStream)dia.OpenFile())
+                {
+                    var doc = canvas1.GetCurrent();
+                    var sr = new XmlSerializer(typeof(Document));
 
+                    var output = sr.Deserialize(fs);
+                    canvas1.SetupDocument((Document)output);
+                }
+            }
         }
 
 		private void metroButtonObject_Click(object sender, EventArgs e)
