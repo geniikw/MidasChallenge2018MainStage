@@ -23,7 +23,6 @@ namespace MidasMain
             GlobalEvent.OnDocumentChangeBefore += (a,b) => bbb.ClearBlock();
             GlobalEvent.OnDocumentChangeAfter += (a, b) => Canvas.instance.SetZIndex();
             GlobalEvent.OnDocumentChangeAfter += (a, b) => bbb.GenBlock();
-            GlobalEvent.OnDocumentChangeAfter += BaseForm.instance.Validation;
 
             UndoManager.UndoCallback += () => bbb.ClearBlock();
             UndoManager.UndoCallback += () => Canvas.instance.SetZIndex();
