@@ -9,14 +9,9 @@ namespace MidasMain
 {
     public class Door
     {
-        //range 0~1
-        float posRatio;
-        public Rectangle rect;
-        public float PositionRatio
-        {
-            get { return posRatio; }
-            set { posRatio = value; }
-        }
+        public Point pA;
+        public Point pB;
+
         public enum DoorType
         {
             Door,
@@ -29,10 +24,15 @@ namespace MidasMain
             get { return type; }
             set { type = value; }
         }
+        public Door()
+        {
+            pA = new Point();
+            pB = new Point();
+            
+        }
         public Door(DoorType type, float posRatio)
         {
             this.type = type;
-            this.posRatio = posRatio;
         }
     }
 }
