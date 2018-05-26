@@ -25,13 +25,6 @@ namespace MidasMain
 
         }
 
-        public void RemoveRoom(int id)
-        {
-            if (rooms.ContainsKey(id))
-            {
-                rooms.Remove(id);
-            }
-        }
 
         public Room GetRoom(int id)
         {
@@ -41,7 +34,7 @@ namespace MidasMain
 
         public List<Line> GetLinesOfRoom(Room room)
         {
-            var sorted = rooms.OrderBy(r => -r.Value.Depth);
+            var sorted = rooms.OrderBy(r => -r.Depth);
 
             List<Line> lines = new List<Line>();
 
@@ -51,20 +44,20 @@ namespace MidasMain
                 //첫 아이템 이니셜라이즈
                 if(lines.Count == 0)
                 {
-                    var init = rm.Value.ConvertRectToLines();
+                    var init = rm.ConvertRectToLines();
                     foreach (var l in init)
                     {
-                        l.from = rm.Value;
+                        l.from = rm;
                         lines.Add(l);
                     }
                     continue;
                 }
 
 
-                var rectLines = rm.Value.ConvertRectToLines();
+                var rectLines = rm.ConvertRectToLines();
                 foreach( var l in rectLines)
                 {
-                    l.from = rm.Value;
+                    l.from = rm;
                 }
             }
 
