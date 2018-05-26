@@ -14,9 +14,11 @@ namespace MidasMain.Canvas
         {
             current = doc;
             
-            foreach(var room in doc.r)
-
-
+            foreach(var room in doc.rooms)
+            {
+                var makeRoom = new UCRoom();
+                makeRoom.roomData = room;
+            }
         }
 
     }

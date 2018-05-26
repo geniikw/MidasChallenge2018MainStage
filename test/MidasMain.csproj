@@ -96,6 +96,9 @@
     <Compile Include="Canvas\Canvas.Render.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Canvas\UCRoom.Data.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Canvas\UCRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
