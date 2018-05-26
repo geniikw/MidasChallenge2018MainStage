@@ -21,7 +21,7 @@ namespace MidasMain.CanvasSpace
         Subject<MouseEventArgs> OnUp = new Subject<MouseEventArgs>();
 
 		public List<UCRoom> m_listRoom = new List<UCRoom>();
-        List<UCObject> m_listObject = new List<UCObject>();
+        public List<UCObject> m_listObject = new List<UCObject>();
         List<UCDoor> m_listDoor = new List<UCDoor>();
 
 		Point position = Point.Empty;
