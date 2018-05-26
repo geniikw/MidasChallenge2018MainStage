@@ -119,7 +119,7 @@ namespace MidasMain
             GlobalEvent.OnDocumentChangeBefore?.Invoke(Canvas.instance.GetCurrent(), "AddItem");
 
             if (makeWhat == 0)
-				canvas1.MakeRoom(new Room(0, new Rectangle(new Point(e.X - 75, e.Y - 75), new Size(150, 150))));
+				canvas1.MakeRoom(new Room(0, new Rectangle(new Point(e.X - 75, e.Y - 75), new Size(150, 150)), -1));
 			else if (makeWhat == 1)
 				canvas1.MakeObject(new Furniture(new Point(e.X - 25, e.Y - 25), 50, 50, "새가구"));
             GlobalEvent.OnDocumentChangeAfter?.Invoke("ADD item");
@@ -297,7 +297,9 @@ namespace MidasMain
         }
         private void CaputreScreen(object sender, EventArgs e)
         {
-            var dia = new SaveFileDialog();
+			canvas1.AllFocusOut();
+			GlobalEvent.OnDocumentChangeBefore.Invoke(null,"");
+			var dia = new SaveFileDialog();
             dia.Filter = "PNGImage|*.png";
             dia.Title = "Export Image";
             dia.ShowDialog();
