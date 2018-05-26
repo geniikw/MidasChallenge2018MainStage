@@ -75,7 +75,7 @@
 			this.scalerRightBottom.Size = new System.Drawing.Size(10, 10);
 			this.scalerRightBottom.TabIndex = 3;
 			// 
-			// UCRoom
+			// UCScaleAble
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,7 +84,8 @@
 			this.Controls.Add(this.scalerRightTop);
 			this.Controls.Add(this.scalerLeftBottom);
 			this.Controls.Add(this.scalerLeftTop);
-			this.Name = "UCRoom";
+			this.Name = "UCScaleAble";
+			this.Load += new System.EventHandler(this.UCScaleAble_Load);
 			this.ResumeLayout(false);
 
 		}

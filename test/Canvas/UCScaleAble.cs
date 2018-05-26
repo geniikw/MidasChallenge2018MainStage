@@ -18,7 +18,7 @@ namespace MidasMain.Canvas
 		{
 			InitializeComponent();
 			InitScalers();
-			UpdateScalerPosition();
+			
 		}
 
 		public void UpdateScalerPosition()
@@ -66,6 +66,11 @@ namespace MidasMain.Canvas
 			scalerRightTop.Visible = a;
 			scalerLeftBottom.Visible = a;
 			scalerRightBottom.Visible = a;
+		}
+
+		private void UCScaleAble_Load(object sender, EventArgs e)
+		{
+			UpdateScalerPosition();
 		}
 	}
 }
