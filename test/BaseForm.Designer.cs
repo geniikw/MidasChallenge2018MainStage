@@ -85,7 +85,6 @@
             this.ucRoom1.Location = new System.Drawing.Point(501, 164);
             this.ucRoom1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ucRoom1.Name = "ucRoom1";
-            this.ucRoom1.roomData = null;
             this.ucRoom1.Size = new System.Drawing.Size(124, 124);
             this.ucRoom1.TabIndex = 3;
             // 

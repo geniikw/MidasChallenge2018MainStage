@@ -17,7 +17,7 @@ namespace MidasMain.Canvas
             foreach(var room in doc.rooms)
             {
                 var makeRoom = new UCRoom();
-                makeRoom.roomData = room;
+
                 makeRoom.Visible = true;
             }
         }
