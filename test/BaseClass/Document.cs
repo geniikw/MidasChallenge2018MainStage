@@ -11,6 +11,7 @@ namespace MidasMain
     public class Document
     {
         // 룸 과 아이디
+        public List<Room> rooms;
 
         public Document()
         {
@@ -30,7 +31,7 @@ namespace MidasMain
             return rooms[id];
         }
 
-
+        
         public List<Line> GetLinesOfRoom(Room room)
         {
             var sorted = rooms.OrderBy(r => -r.Depth);
