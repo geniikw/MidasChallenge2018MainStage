@@ -43,8 +43,10 @@ namespace MidasMain.Canvas
 		public override void PointerUp(object sender, MouseEventArgs e)
 		{
 			base.PointerUp(sender, e);
-			foreach (UCObject obj in objects)
-				obj.PointerUp(sender, e);
+			for (int i = 0; i < objects.Count; i++)
+				objects[i].PointerUp(sender, e);
+
+			Canvas.instance.BindObjectToRoom();
 		}
 	}
 }
