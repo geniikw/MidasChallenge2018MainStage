@@ -20,7 +20,9 @@ namespace MidasMain.Canvas
         Subject<MouseEventArgs> OnDrag = new Subject<MouseEventArgs>();
         Subject<MouseEventArgs> OnUp = new Subject<MouseEventArgs>();
 
-        Point position = Point.Empty;
+		List<UCRoom> m_listRoom = new List<UCRoom>();
+
+		Point position = Point.Empty;
 
         public Canvas()
         {
@@ -63,8 +65,6 @@ namespace MidasMain.Canvas
             OnUp.OnNext(e);
         }
 
-        List<UCRoom> m_listRoom = new List<UCRoom>();
-
         public void SetupDocument(Document doc)
         {
             foreach (var room in doc.rooms)
@@ -75,5 +75,36 @@ namespace MidasMain.Canvas
                 m_listRoom.Add(makeRoom);
             }
         }
+
+		private bool IsObjectInRoom(Point rLoc, Size rSize, Point oLoc, Size oSize)
+		{
+			Console.WriteLine("??");
+			if (rLoc.X < oLoc.X && rLoc.Y < oLoc.Y && 
+				rLoc.X + rSize.Width > oLoc.X + oSize.Width && 
+				rLoc.Y + rSize.Height > oLoc.Y + oSize.Height)
+				return true;
+
+			return false;
+		}
+
+		public int SearchRommForObject(UCObject obj)
+		{
+			if (obj.inRoom != null)
+				obj.inRoom.objects.Remove(obj);
+
+			for (int i = 0; i < m_listRoom.Count; i++)
+			{
+				if (IsObjectInRoom(m_listRoom[i].Location, m_listRoom[i].Size, obj.Location, obj.Size))
+				{
+					Console.WriteLine("obj is in " + i);
+					m_listRoom[i].objects.Add(obj);
+					obj.inRoom = m_listRoom[i];
+					return i;
+				}
+			}
+
+			obj.inRoom = null;
+			return -1;
+		}
     }
 }

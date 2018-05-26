@@ -17,8 +17,28 @@ namespace MidasMain.Canvas
 		public UCRoom()
 		{
 			InitializeComponent();
+			objects = new List<UCObject>();
 		}
 
-		
+		public override void PointerDown(object sender, MouseEventArgs e)
+		{
+			base.PointerDown(sender, e);
+			foreach (UCObject obj in objects)
+				obj.PointerDown(sender, e);
+		}
+
+		public override void PointerMove(object sender, MouseEventArgs e)
+		{
+			base.PointerMove(sender, e);
+			foreach (UCObject obj in objects)
+				obj.PointerMove(sender, e);
+		}
+
+		public override void PointerUp(object sender, MouseEventArgs e)
+		{
+			base.PointerUp(sender, e);
+			foreach (UCObject obj in objects)
+				obj.PointerUp(sender, e);
+		}
 	}
 }
