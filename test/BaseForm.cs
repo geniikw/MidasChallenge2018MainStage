@@ -22,13 +22,13 @@ namespace MidasMain
         private void metroTile4_Click(object sender, EventArgs e)
         {
             current = new Document();
-            current.AddRoom(new Room(0, new Rectangle(new Point(100, 100), new Size(100, 100))));
-            current.AddRoom(new Room(1, new Rectangle(new Point(200, 100), new Size(100, 100))));
-            current.AddRoom(new Room(2, new Rectangle(new Point(100, 200), new Size(100, 100))));
+            current.AddRoom(new Room(0, new Rectangle(new Point(300, 100), new Size(100, 100))));
+            current.AddRoom(new Room(1, new Rectangle(new Point(400, 100), new Size(100, 100))));
+            current.AddRoom(new Room(2, new Rectangle(new Point(300, 200), new Size(100, 100))));
 
-            current.objects.Add(new Furniture(new Point(200, 200), 50, 50, "냉장고"));
-            current.objects.Add(new Furniture(new Point(200, 250), 50, 50, "TV"));
-            current.objects.Add(new Furniture(new Point(150, 200), 50, 50, "냉장고"));
+            current.objects.Add(new Furniture(new Point(400, 200), 50, 50, "냉장고"));
+            current.objects.Add(new Furniture(new Point(400, 250), 50, 50, "TV"));
+            current.objects.Add(new Furniture(new Point(350, 200), 50, 50, "냉장고"));
             
             canvas1.SetupDocument(current);
         }

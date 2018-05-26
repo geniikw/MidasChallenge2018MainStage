@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.components = new System.ComponentModel.Container();
 			this.MainTab = new MetroFramework.Controls.MetroTabControl();
 			this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
 			this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
@@ -39,8 +38,6 @@
 			this.canvas1 = new MidasMain.Canvas.Canvas();
 			this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
 			this.creaditPanel1 = new MidasMain.Creadit.CreaditPanel();
-			this.ucObject1 = new MidasMain.Canvas.UCObject();
-			this.ucRoom1 = new MidasMain.Canvas.UCRoom();
 			this.MainTab.SuspendLayout();
 			this.metroTabPage1.SuspendLayout();
 			this.metroPanel1.SuspendLayout();
@@ -61,8 +58,6 @@
 			// 
 			// metroTabPage1
 			// 
-			this.metroTabPage1.Controls.Add(this.ucRoom1);
-			this.metroTabPage1.Controls.Add(this.ucObject1);
 			this.metroTabPage1.Controls.Add(this.metroPanel1);
 			this.metroTabPage1.Controls.Add(this.canvas1);
 			this.metroTabPage1.HorizontalScrollbarBarColor = true;
@@ -173,29 +168,9 @@
 			this.creaditPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.creaditPanel1.Location = new System.Drawing.Point(0, 0);
 			this.creaditPanel1.Name = "creaditPanel1";
-			this.creaditPanel1.Padding = new System.Windows.Forms.Padding(20, 20, 20, 20);
+			this.creaditPanel1.Padding = new System.Windows.Forms.Padding(20);
 			this.creaditPanel1.Size = new System.Drawing.Size(752, 328);
 			this.creaditPanel1.TabIndex = 2;
-			// 
-			// ucObject1
-			// 
-			this.ucObject1.BackColor = System.Drawing.Color.Blue;
-			this.ucObject1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.ucObject1.CausesValidation = false;
-			this.ucObject1.Location = new System.Drawing.Point(307, 104);
-			this.ucObject1.Name = "ucObject1";
-			this.ucObject1.Size = new System.Drawing.Size(109, 100);
-			this.ucObject1.TabIndex = 5;
-			// 
-			// ucRoom1
-			// 
-			this.ucRoom1.BackColor = System.Drawing.Color.Red;
-			this.ucRoom1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.ucRoom1.CausesValidation = false;
-			this.ucRoom1.Location = new System.Drawing.Point(478, 59);
-			this.ucRoom1.Name = "ucRoom1";
-			this.ucRoom1.Size = new System.Drawing.Size(206, 199);
-			this.ucRoom1.TabIndex = 6;
 			// 
 			// BaseForm
 			// 
@@ -225,7 +200,5 @@
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile metroTile1;
-		private Canvas.UCRoom ucRoom1;
-		private Canvas.UCObject ucObject1;
 	}
 }
