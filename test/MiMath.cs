@@ -8,7 +8,6 @@ namespace MidasMain
     {
         public static int PointOnWhichSideOfLineSegment(Point linePoint1, Point linePoint2, Point point)
         {
-
             Point lineVec = PointUtil.Minus(linePoint2, linePoint1);
             Point pointVec = PointUtil.Minus( point , linePoint1);
 
