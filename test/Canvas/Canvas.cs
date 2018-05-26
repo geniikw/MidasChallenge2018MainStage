@@ -114,7 +114,7 @@ namespace MidasMain.CanvasSpace
         public void SetupDocument(Document doc)
         {
             Clear();
-            var idx = 10000;
+            var n = 0;
             foreach (var room in doc.rooms)
             {
                 var makeRoom = new UCRoom();
@@ -123,10 +123,8 @@ namespace MidasMain.CanvasSpace
                 makeRoom.Visible = true;
 				makeRoom.UpdateScalerPosition();
 				m_listRoom.Add(makeRoom);
-				this.Controls.SetChildIndex(makeRoom, idx++);
                 Console.WriteLine(room.Rect);
             }
-            var n = 0;
             foreach (var f in doc.objects)
             {
                 var makeobj = new UCObject();
@@ -134,9 +132,7 @@ namespace MidasMain.CanvasSpace
                 m_listObject.Add(makeobj);
                 makeobj.SetupData(f);
 				makeobj.UpdateScalerPosition();
-				Canvas.instance.Controls.SetChildIndex(makeobj, n++);
             }
-            n = 1000;
             foreach(var d in doc.doors)
             {
                 var makeDoor = new UCDoor();
@@ -144,7 +140,6 @@ namespace MidasMain.CanvasSpace
                 m_listDoor.Add(makeDoor);
                 makeDoor.Setup(d);
                 //todo setupdata;
-               Canvas.instance.Controls.SetChildIndex(makeDoor, n++);
             }
 
         }
@@ -228,6 +223,9 @@ namespace MidasMain.CanvasSpace
 
 		public void SetZIndex()
 		{
+
+
+
 			for(int i=0; i<m_listObject.Count; i++)
 				this.Controls.SetChildIndex(m_listObject[m_listObject.Count-i-1], i);
 
