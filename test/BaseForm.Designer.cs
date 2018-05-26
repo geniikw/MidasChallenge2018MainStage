@@ -37,9 +37,10 @@
 			this.metroTile3 = new MetroFramework.Controls.MetroTile();
 			this.metroTile2 = new MetroFramework.Controls.MetroTile();
 			this.metroTile1 = new MetroFramework.Controls.MetroTile();
-			this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
 			this.canvas1 = new MidasMain.Canvas.Canvas();
+			this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
 			this.creaditPanel1 = new MidasMain.Creadit.CreaditPanel();
+			this.metroButton1 = new MetroFramework.Controls.MetroButton();
 			this.MainTab.SuspendLayout();
 			this.metroTabPage1.SuspendLayout();
 			this.metroPanel1.SuspendLayout();
@@ -77,6 +78,7 @@
 			// metroPanel1
 			// 
 			this.metroPanel1.BackColor = System.Drawing.SystemColors.HotTrack;
+			this.metroPanel1.Controls.Add(this.metroButton1);
 			this.metroPanel1.Controls.Add(this.metroButtonObject);
 			this.metroPanel1.Controls.Add(this.metroButtonRoom);
 			this.metroPanel1.Controls.Add(this.metroTile4);
@@ -168,6 +170,17 @@
 			this.metroTile1.UseSelectable = true;
 			this.metroTile1.Click += new System.EventHandler(this.NewButton);
 			// 
+			// canvas1
+			// 
+			this.canvas1.AutoScroll = true;
+			this.canvas1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.canvas1.Location = new System.Drawing.Point(0, 0);
+			this.canvas1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.canvas1.Name = "canvas1";
+			this.canvas1.Size = new System.Drawing.Size(752, 328);
+			this.canvas1.TabIndex = 2;
+			this.canvas1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas1_MouseDown);
+			// 
 			// metroTabPage3
 			// 
 			this.metroTabPage3.Controls.Add(this.creaditPanel1);
@@ -183,17 +196,6 @@
 			this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
 			this.metroTabPage3.VerticalScrollbarSize = 10;
 			// 
-			// canvas1
-			// 
-			this.canvas1.AutoScroll = true;
-			this.canvas1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.canvas1.Location = new System.Drawing.Point(0, 0);
-			this.canvas1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.canvas1.Name = "canvas1";
-			this.canvas1.Size = new System.Drawing.Size(752, 328);
-			this.canvas1.TabIndex = 2;
-			this.canvas1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas1_MouseDown);
-			// 
 			// creaditPanel1
 			// 
 			this.creaditPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -202,6 +204,16 @@
 			this.creaditPanel1.Padding = new System.Windows.Forms.Padding(20);
 			this.creaditPanel1.Size = new System.Drawing.Size(752, 328);
 			this.creaditPanel1.TabIndex = 2;
+			// 
+			// metroButton1
+			// 
+			this.metroButton1.Location = new System.Drawing.Point(45, 277);
+			this.metroButton1.Name = "metroButton1";
+			this.metroButton1.Size = new System.Drawing.Size(75, 23);
+			this.metroButton1.TabIndex = 8;
+			this.metroButton1.Text = "metroButton1";
+			this.metroButton1.UseSelectable = true;
+			this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
 			// 
 			// BaseForm
 			// 
@@ -233,5 +245,6 @@
         private MetroFramework.Controls.MetroTile metroTile1;
 		private MetroFramework.Controls.MetroTile metroButtonObject;
 		private MetroFramework.Controls.MetroTile metroButtonRoom;
+		private MetroFramework.Controls.MetroButton metroButton1;
 	}
 }

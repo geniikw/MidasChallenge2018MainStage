@@ -49,6 +49,7 @@ namespace MidasMain.Canvas
 				objects[i].PointerUpCalledByRoom(sender, e);
 
 			Canvas.instance.BindObjectToRoom();
+			Console.WriteLine("loc is " + this.Location);
 		}
 	}
 }

@@ -101,5 +101,37 @@ namespace MidasMain
 
 			makeWhat = -1;
 		}
+
+		// DEBUGGING @@
+		private void metroButton1_Click(object sender, EventArgs e)
+		{
+			Document a = canvas1.GetCurrent();
+			a.GetLinesOfRoom();
+			foreach(Line line in a.lines)
+			{
+				PictureBox temp = new PictureBox();
+				canvas1.Controls.Add(temp);
+				temp.Location = PointUtil.Plus(line.pA, new Point(3, 3));
+				Size tSize = new Size(PointUtil.Minus(line.pB, line.pA));
+				if (tSize.Width == 0)
+				{
+					tSize.Width = 3;
+					tSize.Height -= 6;
+				}
+				else
+				{
+					tSize.Height = 3;
+					tSize.Width -= 6;
+				}
+				temp.BackColor = Color.Blue;
+				temp.Size = tSize;
+				canvas1.Controls.SetChildIndex(temp, 0);
+
+				Console.WriteLine("draw loc :" + temp.Location + "size : " + temp.Size);
+
+				//temp.Location = new Point(0);
+				//temp.Size = new Size(500, 500);
+			}
+		}
 	}
 }
