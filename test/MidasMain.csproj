@@ -94,6 +94,12 @@
     <Compile Include="Canvas\Canvas.Designer.cs">
       <DependentUpon>Canvas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Canvas\UCWall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Canvas\UCWall.Designer.cs">
+      <DependentUpon>UCWall.cs</DependentUpon>
+    </Compile>
     <Compile Include="MiMath.cs" />
     <Compile Include="Canvas\UCObject.cs">
       <SubType>UserControl</SubType>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Canvas\UCScaler.resx">
       <DependentUpon>UCScaler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\UCWall.resx">
+      <DependentUpon>UCWall.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Creadit\CreaditPanel.resx">
       <DependentUpon>CreaditPanel.cs</DependentUpon>
