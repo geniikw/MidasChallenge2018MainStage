@@ -35,7 +35,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "UCRoom";
-            this.Load += new System.EventHandler(this.UCRoom_Load);
             this.ResumeLayout(false);
 
 		}
