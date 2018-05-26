@@ -123,6 +123,7 @@ namespace MidasMain.CanvasSpace
                 makeRoom.SetupRoom(room);
                 makeRoom.Visible = true;
 				makeRoom.UpdateScalerPosition();
+				
 				m_listRoom.Add(makeRoom);
                 Console.WriteLine(room.Rect);
             }
@@ -149,7 +150,7 @@ namespace MidasMain.CanvasSpace
             var n = 1;
             foreach (var r in m_listRoom)
             {
-                doc.AddRoom(new Room(n++, new Rectangle(r.Location, r.Size), r.BackColor));
+                doc.AddRoom(new Room(n++, new Rectangle(r.Location, r.Size), r.tileIdx, r.BackColor));
             }
 
             foreach (var o in m_listObject)

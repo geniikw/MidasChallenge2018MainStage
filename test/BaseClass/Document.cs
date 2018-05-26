@@ -331,15 +331,19 @@ namespace MidasMain
                 var lineRect = line.ToRect();
                 foreach (var door in doors)
                 {
-                    var tempLine = new Line(door.pA, door.pB);
-                    var doorRect = tempLine.ToRect();
-
-                    if (doorRect.IntersectsWith(lineRect))
+                    if(door.isDoor)
                     {
-                        doorRect.Intersect(lineRect);
-                        connectedWalls.Add(doorRect);
-                        break;
+                        var tempLine = new Line(door.pA, door.pB);
+                        var doorRect = tempLine.ToRect();
+
+                        if (doorRect.IntersectsWith(lineRect))
+                        {
+                            doorRect.Intersect(lineRect);
+                            connectedWalls.Add(doorRect);
+                            break;
+                        }
                     }
+                    
                 }
             }
 
@@ -451,13 +455,17 @@ namespace MidasMain
                 var lineRect = line.ToRect();
                 foreach (var door in doors)
                 {
-                    var tempLine = new Line(door.pA, door.pB);
-                    var doorRect = tempLine.ToRect();
-
-                    if (doorRect.IntersectsWith(lineRect))
+                    if(door.isDoor)
                     {
-                        connectedWalls.Add(line);
-                        break;
+                        var tempLine = new Line(door.pA, door.pB);
+                        var doorRect = tempLine.ToRect();
+
+                        if (doorRect.IntersectsWith(lineRect))
+                        {
+                            connectedWalls.Add(line);
+                            break;
+                        }
+
                     }
                 }
             }
