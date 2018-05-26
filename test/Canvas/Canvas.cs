@@ -21,6 +21,7 @@ namespace MidasMain.Canvas
         Subject<MouseEventArgs> OnUp = new Subject<MouseEventArgs>();
 
 		List<UCRoom> m_listRoom = new List<UCRoom>();
+        List<UCObject> m_listObject = new List<UCObject>();
 
 		Point position = Point.Empty;
 
@@ -91,13 +92,33 @@ namespace MidasMain.Canvas
 					return i;
 				}
 			}
-
 			obj.inRoom = null;
 			return -1;
 		}
 
+        public void Clear()
+        {
+            List<Control> delList = new List<Control>();
+            foreach (Control child in Controls)
+            {
+                if (child is UCRoom || child is UCObject)
+                    delList.Add(child);
+            }
+
+            m_listObject.Clear();
+            m_listRoom.Clear();
+
+            foreach (var todel in delList)
+            {
+                Controls.Remove(todel);
+                todel.Dispose();
+            }
+        }
+
         public void SetupDocument(Document doc)
         {
+            Clear();
+
             var idx = 10000;
             foreach (var room in doc.rooms)
             {
@@ -114,6 +135,7 @@ namespace MidasMain.Canvas
             {
                 var makeobj = new UCObject();
                 this.Controls.Add(makeobj);
+                m_listObject.Add(makeobj);
                 makeobj.SetupData(f);
                 Canvas.instance.Controls.SetChildIndex(makeobj, n++);
 

@@ -32,5 +32,10 @@ namespace MidasMain
             
             canvas1.SetupDocument(current);
         }
+
+        private void SaveButton(object sender, EventArgs e)
+        {
+
+        }
     }
 }
