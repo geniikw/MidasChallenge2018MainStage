@@ -18,7 +18,6 @@ namespace MidasMain.CanvasSpace
 		{
 			InitializeComponent();
 			InitScalers();
-			
 		}
 
 		public void UpdateScalerPosition()

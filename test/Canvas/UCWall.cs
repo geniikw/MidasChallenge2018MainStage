@@ -23,9 +23,9 @@ namespace MidasMain.CanvasSpace
 		private void makeDoor(int idx, bool isDoor)
 		{
 			if (isVertical)
-				loc.X = 0;
+				loc.X = 2;
 			else
-				loc.Y = 0;
+				loc.Y = 2;
 
 			Point newLoc = PointUtil.Plus(this.Location, loc);
 			if (isVertical && newLoc.Y + 50 > this.Bottom)
