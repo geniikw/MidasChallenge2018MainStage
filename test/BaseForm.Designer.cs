@@ -31,11 +31,11 @@
 			this.components = new System.ComponentModel.Container();
 			this.MainTab = new MetroFramework.Controls.MetroTabControl();
 			this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+			this.canvas1 = new MidasMain.Canvas.Canvas();
 			this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
 			this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-			this.canvas1 = new MidasMain.Canvas.Canvas();
 			this.creaditPanel1 = new MidasMain.Creadit.CreaditPanel();
-			this.ucRoom1 = new MidasMain.Canvas.UCScaleAble();
+			this.ucRoom2 = new MidasMain.Canvas.UCRoom();
 			this.MainTab.SuspendLayout();
 			this.metroTabPage1.SuspendLayout();
 			this.metroTabPage3.SuspendLayout();
@@ -56,7 +56,7 @@
 			// 
 			// metroTabPage1
 			// 
-			this.metroTabPage1.Controls.Add(this.ucRoom1);
+			this.metroTabPage1.Controls.Add(this.ucRoom2);
 			this.metroTabPage1.Controls.Add(this.canvas1);
 			this.metroTabPage1.HorizontalScrollbarBarColor = true;
 			this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
@@ -69,6 +69,16 @@
 			this.metroTabPage1.VerticalScrollbarBarColor = true;
 			this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
 			this.metroTabPage1.VerticalScrollbarSize = 10;
+			// 
+			// canvas1
+			// 
+			this.canvas1.AutoScroll = true;
+			this.canvas1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.canvas1.Location = new System.Drawing.Point(0, 0);
+			this.canvas1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.canvas1.Name = "canvas1";
+			this.canvas1.Size = new System.Drawing.Size(752, 328);
+			this.canvas1.TabIndex = 2;
 			// 
 			// metroTabPage2
 			// 
@@ -99,16 +109,6 @@
 			this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
 			this.metroTabPage3.VerticalScrollbarSize = 10;
 			// 
-			// canvas1
-			// 
-			this.canvas1.AutoScroll = true;
-			this.canvas1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.canvas1.Location = new System.Drawing.Point(0, 0);
-			this.canvas1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.canvas1.Name = "canvas1";
-			this.canvas1.Size = new System.Drawing.Size(752, 328);
-			this.canvas1.TabIndex = 2;
-			// 
 			// creaditPanel1
 			// 
 			this.creaditPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -118,15 +118,15 @@
 			this.creaditPanel1.Size = new System.Drawing.Size(752, 328);
 			this.creaditPanel1.TabIndex = 2;
 			// 
-			// ucRoom1
+			// ucRoom2
 			// 
-			this.ucRoom1.BackColor = System.Drawing.Color.Red;
-			this.ucRoom1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.ucRoom1.CausesValidation = false;
-			this.ucRoom1.Location = new System.Drawing.Point(108, 149);
-			this.ucRoom1.Name = "ucRoom1";
-			this.ucRoom1.Size = new System.Drawing.Size(109, 100);
-			this.ucRoom1.TabIndex = 3;
+			this.ucRoom2.BackColor = System.Drawing.Color.Red;
+			this.ucRoom2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.ucRoom2.CausesValidation = false;
+			this.ucRoom2.Location = new System.Drawing.Point(531, 104);
+			this.ucRoom2.Name = "ucRoom2";
+			this.ucRoom2.Size = new System.Drawing.Size(109, 100);
+			this.ucRoom2.TabIndex = 4;
 			// 
 			// BaseForm
 			// 
@@ -151,6 +151,6 @@
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private Creadit.CreaditPanel creaditPanel1;
         private Canvas.Canvas canvas1;
-		private Canvas.UCScaleAble ucRoom1;
+		private Canvas.UCRoom ucRoom2;
 	}
 }

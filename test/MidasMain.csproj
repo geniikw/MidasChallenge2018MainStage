@@ -97,6 +97,18 @@
     <Compile Include="Canvas\Canvas.Render.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Canvas\UCObject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Canvas\UCObject.Designer.cs">
+      <DependentUpon>UCObject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Canvas\UCRoom.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Canvas\UCRoom.Designer.cs">
+      <DependentUpon>UCRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Canvas\UCScaleAble.cs">
       <SubType>UserControl</SubType>
     </Compile>
