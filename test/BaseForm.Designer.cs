@@ -35,13 +35,13 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButtonObject = new MetroFramework.Controls.MetroTile();
             this.metroButtonRoom = new MetroFramework.Controls.MetroTile();
-            this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.canvas1 = new MidasMain.CanvasSpace.Canvas();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.creditPanel1 = new MidasMain.Creadit.CreditPanel();
+            this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.MainTab.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -137,6 +137,7 @@
             this.metroButtonObject.TabIndex = 7;
             this.metroButtonObject.Text = "Object";
             this.metroButtonObject.UseSelectable = true;
+            this.metroButtonObject.Click += new System.EventHandler(this.SelectRoomButton);
             // 
             // metroButtonRoom
             // 
@@ -149,18 +150,7 @@
             this.metroButtonRoom.TabIndex = 6;
             this.metroButtonRoom.Text = "Room";
             this.metroButtonRoom.UseSelectable = true;
-            // 
-            // metroTile4
-            // 
-            this.metroTile4.ActiveControl = null;
-            this.metroTile4.Location = new System.Drawing.Point(101, 106);
-            this.metroTile4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.metroTile4.Name = "metroTile4";
-            this.metroTile4.Size = new System.Drawing.Size(75, 76);
-            this.metroTile4.TabIndex = 5;
-            this.metroTile4.Text = "Test";
-            this.metroTile4.UseSelectable = true;
-            this.metroTile4.Click += new System.EventHandler(this.MakeTestDataButton);
+            this.metroButtonRoom.Click += new System.EventHandler(this.SelectObjectButton);
             // 
             // metroTile3
             // 
@@ -218,7 +208,7 @@
             this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(861, 420);
+            this.metroTabPage3.Size = new System.Drawing.Size(860, 420);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "Credit";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
@@ -232,8 +222,20 @@
             this.creditPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.creditPanel1.Name = "creditPanel1";
             this.creditPanel1.Padding = new System.Windows.Forms.Padding(23, 25, 23, 25);
-            this.creditPanel1.Size = new System.Drawing.Size(861, 420);
+            this.creditPanel1.Size = new System.Drawing.Size(860, 420);
             this.creditPanel1.TabIndex = 2;
+            // 
+            // metroTile4
+            // 
+            this.metroTile4.ActiveControl = null;
+            this.metroTile4.Location = new System.Drawing.Point(101, 106);
+            this.metroTile4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.metroTile4.Name = "metroTile4";
+            this.metroTile4.Size = new System.Drawing.Size(75, 76);
+            this.metroTile4.TabIndex = 5;
+            this.metroTile4.Text = "Export";
+            this.metroTile4.UseSelectable = true;
+            this.metroTile4.Click += new System.EventHandler(this.CaputreScreen);
             // 
             // BaseForm
             // 
