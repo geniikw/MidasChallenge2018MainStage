@@ -69,11 +69,17 @@ namespace MidasMain
 
         private void NewButton(object sender, EventArgs e)
         {
+            GlobalEvent.OnDocumentChangeBefore?.Invoke(Canvas.instance.GetCurrent(), "LoadButton");
+
             canvas1.Clear();
+
+            GlobalEvent.OnDocumentChangeAfter?.Invoke("LoadButton");
         }
 
         private void LoadButton(object sender, EventArgs e)
         {
+            GlobalEvent.OnDocumentChangeBefore?.Invoke(Canvas.instance.GetCurrent(), "LoadButton");
+
             var dia = new OpenFileDialog();
             dia.Filter = "XMLfile|*.xml";
             dia.Title = "Load";
@@ -89,14 +95,16 @@ namespace MidasMain
                     canvas1.SetupDocument((Document)output);
                 }
             }
+
+            GlobalEvent.OnDocumentChangeAfter?.Invoke("LoadButton");
         }
 
-		private void metroButtonObject_Click(object sender, EventArgs e)
+        private void SelectRoomButton(object sender, EventArgs e)
 		{
 			makeWhat = 1;
 		}
 		
-		private void metroButtonRoom_Click(object sender, EventArgs e)
+		private void SelectObjectButton(object sender, EventArgs e)
 		{
 			makeWhat = 0;
 		}
@@ -169,14 +177,28 @@ namespace MidasMain
         {
             GenBlock();
         }
-        public void CaputreScreen()
+        private void CaputreScreen(object sender, EventArgs e)
         {
-            using (Bitmap bmp = new Bitmap(this.Width, this.Height))
+            var dia = new SaveFileDialog();
+            dia.Filter = "PNGImage|*.png";
+            dia.Title = "Export Image";
+            dia.ShowDialog();
+            if (dia.FileName != "")
             {
-                Rectangle rect = new Rectangle(canvas1.Location, canvas1.Size);
-                canvas1.DrawToBitmap(bmp, rect);
-                bmp.Save(@"C:/Users/jonghun/Desktop/output.png", ImageFormat.Png); // make sure path exists!
+                using (var fs = (FileStream)dia.OpenFile())
+                {
+                    using (Bitmap bmp = new Bitmap(this.Width, this.Height))
+                    {
+                        Rectangle rect = new Rectangle(canvas1.Location, canvas1.Size);
+                        canvas1.DrawToBitmap(bmp, rect);
+                        
+                        bmp.Save(fs, ImageFormat.Png); // make sure path exists!
+                    }
+
+                }
             }
+
+           
         }
         public void ClearBlock()
         {
@@ -242,5 +264,7 @@ namespace MidasMain
             }
 
         }
+
+       
     }
 }

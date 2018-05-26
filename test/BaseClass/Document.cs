@@ -239,9 +239,6 @@ namespace MidasMain
                     {
                         started = false;
                     }
-
-
-
                 }
             }
 
@@ -274,6 +271,10 @@ namespace MidasMain
             int right = int.MinValue;
             int bottom = int.MinValue;
             int top = int.MinValue;
+
+            if (rooms.Count == 0)
+                return;
+
             foreach (var r in rooms)
             {
                 if (right < r.Rect.Left + r.Rect.Width )
