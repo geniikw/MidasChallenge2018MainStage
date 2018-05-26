@@ -103,6 +103,7 @@ namespace MidasMain.CanvasSpace
 
             m_listObject.Clear();
             m_listRoom.Clear();
+            m_listDoor.Clear();
 
             foreach (var todel in delList)
             {
