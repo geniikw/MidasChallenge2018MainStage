@@ -253,5 +253,21 @@ namespace MidasMain.CanvasSpace
 
             Console.WriteLine(((Control)sender).Name);
         }
-    }
+
+		public bool IsInRoom(Point loc, Size size)
+		{
+			Rectangle objRect = new Rectangle(loc, size);
+			for (int i= m_listRoom.Count-1; i>=0; i--)
+			{
+				Rectangle roomRect = new Rectangle(m_listRoom[i].Location, m_listRoom[i].Size);
+				if (IsObjectInRoom(m_listRoom[i].Location, m_listRoom[i].Size, loc, size))
+					return true;
+
+				if (objRect.IntersectsWith(roomRect))
+					return false;
+			}
+			return false;
+		}
+
+	}
 }
