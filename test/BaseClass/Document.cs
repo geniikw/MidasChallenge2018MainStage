@@ -163,23 +163,17 @@ namespace MidasMain
                         else
                         {
                             bool endCondition = false;
-                            if (k - 1 > 0 && space[j, k - 1] == -1)
+                            if (k - 1 > 0 && space[k -1, j] == -1)
                             {
                                 endCondition = true;
                             }
-                            if (k + 1 < h && space[j, k + 1] == -1)
+                            else if (k + 1 < h && space[k + 1, j] == -1)
                             {
                                 endCondition = true;
                             }
-                            if (j + 1 < w && space[j + 1, k] != -1)
+                            else if (j + 1 < w && space[k, j +1] != -1)
                             {
                                 endCondition = true;
-                            }
-                            if (endCondition)
-                            {
-                                started = false;
-                                ret.Add(new Line(new System.Drawing.Point(from, k),
-                                    new System.Drawing.Point(j, k)));
                             }
                             else
                             {
@@ -229,8 +223,8 @@ namespace MidasMain
                                     t = rooms.Where(x => x.Depth == passBy[1]).FirstOrDefault();
                                 }
 
-                                Line li = new Line(new System.Drawing.Point(from, k),
-                                    new System.Drawing.Point(j, k), f, t);
+                                Line li = new Line(new System.Drawing.Point(k, from),
+                                    new System.Drawing.Point(k, j),f,t);
 
 
                                 ret.Add(li);
@@ -274,27 +268,20 @@ namespace MidasMain
             lines.Clear();
 
             int left = int.MinValue;
-            int right = int.MaxValue;
-            int bottom = int.MaxValue;
+            int right = int.MinValue;
+            int bottom = int.MinValue;
             int top = int.MinValue;
             foreach (var r in rooms)
             {
-                if(left < r.Rect.Left)
+                if (right < r.Rect.Left + r.Rect.Width )
                 {
-                    left = r.Rect.Left;
+                    right = r.Rect.Left + r.Rect.Width;
                 }
-                if (right > r.Rect.Right)
+                if (bottom < r.Rect.Top + r.Rect.Height)
                 {
-                    right = r.Rect.Right;
+                    bottom = r.Rect.Top + r.Rect.Height;
                 }
-                if (bottom > r.Rect.Bottom)
-                {
-                    bottom = r.Rect.Bottom;
-                }
-                if (top < r.Rect.Top)
-                {
-                    top = r.Rect.Top;
-                }
+
             }
 
             int[,] space = new int[right + 1, bottom +1];
