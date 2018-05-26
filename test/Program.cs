@@ -21,8 +21,9 @@ namespace MidasMain
             //kh.KeyDown += Kh_KeyDown;
             GlobalEvent.OnDocumentChangeBefore += UndoManager.Record;
             GlobalEvent.OnDocumentChangeBefore += (a,b) => bbb.ClearBlock();
-            GlobalEvent.OnDocumentChangeAfter += msg => Canvas.instance.SetZIndex();
-            GlobalEvent.OnDocumentChangeAfter += msg => bbb.GenBlock();
+            GlobalEvent.OnDocumentChangeAfter += (a, b) => Canvas.instance.SetZIndex();
+            GlobalEvent.OnDocumentChangeAfter += (a, b) => bbb.GenBlock();
+            GlobalEvent.OnDocumentChangeAfter += BaseForm.instance.Validation;
 
             UndoManager.UndoCallback += () => bbb.GenBlock();
             Application.EnableVisualStyles();

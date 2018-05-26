@@ -75,7 +75,7 @@ namespace MidasMain.CanvasSpace
 
         public virtual void PointerUp(object sender, MouseEventArgs e)
         {
-            GlobalEvent.OnDocumentChangeAfter?.Invoke("Location change");
+            GlobalEvent.OnDocumentChangeAfter?.Invoke(Canvas.instance.GetCurrent(), "Location change");
             OnUp.OnNext(e);
         }
     }

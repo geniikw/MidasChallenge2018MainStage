@@ -44,7 +44,7 @@ namespace MidasMain.CanvasSpace
 
 		public override void PointerUp(object sender, MouseEventArgs e)
 		{
-            GlobalEvent.OnDocumentChangeAfter?.Invoke("SizeChange name");
+            GlobalEvent.OnDocumentChangeAfter?.Invoke(Canvas.instance.GetCurrent(), "SizeChange name");
 
             base.PointerUp(sender, e);
 		}
