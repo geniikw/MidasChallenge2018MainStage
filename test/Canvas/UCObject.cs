@@ -60,6 +60,8 @@ namespace MidasMain.CanvasSpace
 		{
 			tempLoc = Location;
 			base.PointerDown(sender, e);
+
+			BaseForm.instance.SetObjectName(Name);
 		}
 
 		public void PointerUpCalledByRoom(object sender, MouseEventArgs e)
@@ -83,14 +85,18 @@ namespace MidasMain.CanvasSpace
 
         private void tolietToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            tileIdx = 0;
+			Name = "Toilet";
+			BaseForm.instance.SetObjectName(Name);
+			tileIdx = 0;
             SetupRender();
         }
 
         private void sofaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tileIdx = 1;
+			Name = "Sofa";
             SetupRender();
+			BaseForm.instance.SetObjectName(Name);
         }
        
 

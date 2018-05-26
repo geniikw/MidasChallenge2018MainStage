@@ -33,7 +33,7 @@ namespace MidasMain
             InitializeComponent();
 
             CreateCloseAnimation();
-        }
+		}
 
         private void MakeTestDataButton(object sender, EventArgs e)
         {
@@ -401,5 +401,10 @@ namespace MidasMain
             else
                 MetroFramework.MetroMessageBox.Show(this, "Fail");
         }
+
+		public void SetObjectName(String name)
+		{
+			AlarmLabel.Text = name;
+		}
     }
 }

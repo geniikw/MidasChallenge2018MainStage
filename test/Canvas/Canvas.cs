@@ -323,6 +323,8 @@ namespace MidasMain.CanvasSpace
 
 			for (int i = 0; i < m_listRoom.Count; i++)
 				m_listRoom[i].FocusOut();
+
+			BaseForm.instance.SetObjectName("");
 		}
         
         private void DragTest(object sender, DragEventArgs e)
