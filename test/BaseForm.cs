@@ -90,6 +90,8 @@ namespace MidasMain
 
 		private void canvas1_MouseDown(object sender, MouseEventArgs e)
 		{
+			canvas1.AllFocusOut();
+
 			if (makeWhat == -1)
 				return;
 			else if (makeWhat == 0)

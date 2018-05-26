@@ -82,7 +82,7 @@ namespace MidasMain.Canvas
 			for (int i = 0; i < m_listRoom.Count; i++)
 				m_listRoom[i].objects.Clear();
 
-			for (int oIdx = 0; oIdx < m_listObject.Count; oIdx++)
+			for (int oIdx = m_listObject.Count-1; oIdx >= 0; oIdx--)
 				for (int rIdx = m_listRoom.Count-1; rIdx >=0; rIdx--)
 					if (IsObjectInRoom(m_listRoom[rIdx].Location, m_listRoom[rIdx].Size, m_listObject[oIdx].Location, m_listObject[oIdx].Size))
 					{
@@ -185,5 +185,16 @@ namespace MidasMain.Canvas
 			for (int i = 0; i < m_listRoom.Count; i++)
 				this.Controls.SetChildIndex(m_listRoom[m_listRoom.Count - i - 1], i+ m_listObject.Count);
 		}
+
+		public void AllFocusOut()
+		{
+			for (int i = 0; i < m_listObject.Count; i++)
+				m_listObject[i].FocusOut();
+
+			for (int i = 0; i < m_listRoom.Count; i++)
+				m_listRoom[i].FocusOut();
+		}
+
+		
     }
 }

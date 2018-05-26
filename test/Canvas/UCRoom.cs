@@ -28,9 +28,11 @@ namespace MidasMain.Canvas
 
 		public override void PointerDown(object sender, MouseEventArgs e)
 		{
-			base.PointerDown(sender, e);
 			foreach (UCObject obj in objects)
 				obj.PointerDown(sender, e);
+			base.PointerDown(sender, e);
+
+			Console.WriteLine("Room click!");
 		}
 
 		public override void PointerMove(object sender, MouseEventArgs e)

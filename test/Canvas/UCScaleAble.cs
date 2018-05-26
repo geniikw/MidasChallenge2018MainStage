@@ -32,6 +32,8 @@ namespace MidasMain.Canvas
 		public override void PointerDown(object sender, MouseEventArgs e)
 		{
 			base.PointerDown(sender, e);
+			Canvas.instance.AllFocusOut();
+			FocusIn();
 		}
 
 		public override void PointerMove(object sender, MouseEventArgs e)
@@ -48,24 +50,37 @@ namespace MidasMain.Canvas
 		{
 			scalerLeftTop.thisRoom = this;
 			scalerLeftTop.where = Where.lefttop;
+			scalerLeftTop.Visible = false;
 
 			scalerRightTop.thisRoom = this;
 			scalerRightTop.where = Where.righttop;
+			scalerRightTop.Visible = false;
 
 			scalerLeftBottom.thisRoom = this;
 			scalerLeftBottom.where = Where.leftbottom;
+			scalerLeftBottom.Visible = false;
 
 			scalerRightBottom.thisRoom = this;
 			scalerRightBottom.where = Where.rightbottom;
+			scalerRightBottom.Visible = false;
 		}
 
-		public void DoSelect(bool a)
+		public void FocusIn()
 		{
-			isSelected = a;
-			scalerLeftTop.Visible = a;
-			scalerRightTop.Visible = a;
-			scalerLeftBottom.Visible = a;
-			scalerRightBottom.Visible = a;
+			isSelected = true;
+			scalerLeftTop.Visible = true;
+			scalerRightTop.Visible = true;
+			scalerLeftBottom.Visible = true;
+			scalerRightBottom.Visible = true;
+		}
+
+		public void FocusOut()
+		{
+			isSelected = false;
+			scalerLeftTop.Visible = false;
+			scalerRightTop.Visible = false;
+			scalerLeftBottom.Visible = false;
+			scalerRightBottom.Visible = false;
 		}
 
 		private void UCScaleAble_Load(object sender, EventArgs e)
