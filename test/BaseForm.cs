@@ -12,7 +12,8 @@ namespace MidasMain
 {
     public partial class BaseForm : MetroFramework.Forms.MetroForm
     {
-        public Document current; 
+        public Document current;
+		int makeWhat = -1;
         
         public BaseForm()
         {
@@ -37,5 +38,27 @@ namespace MidasMain
         {
 
         }
-    }
+
+		private void metroButtonObject_Click(object sender, EventArgs e)
+		{
+			makeWhat = 1;
+		}
+		
+		private void metroButtonRoom_Click(object sender, EventArgs e)
+		{
+			makeWhat = 0;
+		}
+
+		private void canvas1_MouseDown(object sender, MouseEventArgs e)
+		{
+			if (makeWhat == -1)
+				return;
+			else if (makeWhat == 0)
+				canvas1.MakeRoom(new Room(0, new Rectangle(new Point(e.X - 75, e.Y - 75), new Size(150, 150))));
+			else if (makeWhat == 1)
+				canvas1.MakeObject(new Furniture(new Point(e.X - 25, e.Y - 25), 50, 50, "새가구"));
+
+			makeWhat = -1;
+		}
+	}
 }
