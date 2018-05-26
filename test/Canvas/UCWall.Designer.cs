@@ -28,63 +28,66 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
-			this.makeDoorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.makeDoorUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.makeDoorLeftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.makeDoorRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.metroContextMenu1.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// metroContextMenu1
-			// 
-			this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.components = new System.ComponentModel.Container();
+            this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.makeDoorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeDoorUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeDoorLeftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeDoorRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metroContextMenu1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // metroContextMenu1
+            // 
+            this.metroContextMenu1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.makeDoorToolStripMenuItem,
             this.makeDoorUpToolStripMenuItem,
             this.makeDoorLeftToolStripMenuItem,
             this.makeDoorRightToolStripMenuItem});
-			this.metroContextMenu1.Name = "metroContextMenu1";
-			this.metroContextMenu1.Size = new System.Drawing.Size(167, 114);
-			// 
-			// makeDoorToolStripMenuItem
-			// 
-			this.makeDoorToolStripMenuItem.Name = "makeDoorToolStripMenuItem";
-			this.makeDoorToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-			this.makeDoorToolStripMenuItem.Text = "Make door down";
-			this.makeDoorToolStripMenuItem.Click += new System.EventHandler(this.makeDoorToolStripMenuItem_Click);
-			// 
-			// makeDoorUpToolStripMenuItem
-			// 
-			this.makeDoorUpToolStripMenuItem.Name = "makeDoorUpToolStripMenuItem";
-			this.makeDoorUpToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-			this.makeDoorUpToolStripMenuItem.Text = "Make door up";
-			this.makeDoorUpToolStripMenuItem.Click += new System.EventHandler(this.makeDoorUpToolStripMenuItem_Click);
-			// 
-			// makeDoorLeftToolStripMenuItem
-			// 
-			this.makeDoorLeftToolStripMenuItem.Name = "makeDoorLeftToolStripMenuItem";
-			this.makeDoorLeftToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-			this.makeDoorLeftToolStripMenuItem.Text = "Make door left";
-			this.makeDoorLeftToolStripMenuItem.Click += new System.EventHandler(this.makeDoorLeftToolStripMenuItem_Click);
-			// 
-			// makeDoorRightToolStripMenuItem
-			// 
-			this.makeDoorRightToolStripMenuItem.Name = "makeDoorRightToolStripMenuItem";
-			this.makeDoorRightToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-			this.makeDoorRightToolStripMenuItem.Text = "Make door Right";
-			this.makeDoorRightToolStripMenuItem.Click += new System.EventHandler(this.makeDoorRightToolStripMenuItem_Click);
-			// 
-			// UCWall
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Green;
-			this.ContextMenuStrip = this.metroContextMenu1;
-			this.Name = "UCWall";
-			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UCWall_MouseDown);
-			this.metroContextMenu1.ResumeLayout(false);
-			this.ResumeLayout(false);
+            this.metroContextMenu1.Name = "metroContextMenu1";
+            this.metroContextMenu1.Size = new System.Drawing.Size(197, 100);
+            // 
+            // makeDoorToolStripMenuItem
+            // 
+            this.makeDoorToolStripMenuItem.Name = "makeDoorToolStripMenuItem";
+            this.makeDoorToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
+            this.makeDoorToolStripMenuItem.Text = "Make door down";
+            this.makeDoorToolStripMenuItem.Click += new System.EventHandler(this.makeDoorToolStripMenuItem_Click);
+            // 
+            // makeDoorUpToolStripMenuItem
+            // 
+            this.makeDoorUpToolStripMenuItem.Name = "makeDoorUpToolStripMenuItem";
+            this.makeDoorUpToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
+            this.makeDoorUpToolStripMenuItem.Text = "Make door up";
+            this.makeDoorUpToolStripMenuItem.Click += new System.EventHandler(this.makeDoorUpToolStripMenuItem_Click);
+            // 
+            // makeDoorLeftToolStripMenuItem
+            // 
+            this.makeDoorLeftToolStripMenuItem.Name = "makeDoorLeftToolStripMenuItem";
+            this.makeDoorLeftToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
+            this.makeDoorLeftToolStripMenuItem.Text = "Make door left";
+            this.makeDoorLeftToolStripMenuItem.Click += new System.EventHandler(this.makeDoorLeftToolStripMenuItem_Click);
+            // 
+            // makeDoorRightToolStripMenuItem
+            // 
+            this.makeDoorRightToolStripMenuItem.Name = "makeDoorRightToolStripMenuItem";
+            this.makeDoorRightToolStripMenuItem.Size = new System.Drawing.Size(196, 24);
+            this.makeDoorRightToolStripMenuItem.Text = "Make door Right";
+            this.makeDoorRightToolStripMenuItem.Click += new System.EventHandler(this.makeDoorRightToolStripMenuItem_Click);
+            // 
+            // UCWall
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Green;
+            this.ContextMenuStrip = this.metroContextMenu1;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "UCWall";
+            this.Size = new System.Drawing.Size(0, 0);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UCWall_MouseDown);
+            this.metroContextMenu1.ResumeLayout(false);
+            this.ResumeLayout(false);
 
 		}
 
