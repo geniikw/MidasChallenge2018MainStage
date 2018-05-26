@@ -17,6 +17,13 @@ namespace MidasMain.Canvas
 			InitializeComponent();
 		}
 
+        public void SetupData(Furniture input)
+        {
+            Location = input.coordinate;
+            Size = new Size(input.width, input.height);
+            
+        }
+
 		public override void PointerUp(object sender, MouseEventArgs e)
 		{
 			base.PointerUp(sender, e);
