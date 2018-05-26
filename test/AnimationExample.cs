@@ -11,7 +11,7 @@ namespace MidasMain
     {
         public void Animation()
         {
-
+            
             //Animation ani = new Animation()
             //{
             //    DurationInFrames = Animation.FromTimeSpanToDurationInFrames(1),
