@@ -22,7 +22,6 @@ namespace MidasMain
         public void AddRoom(Room room)
         {
             rooms.Add(room);
-
         }
 
 
