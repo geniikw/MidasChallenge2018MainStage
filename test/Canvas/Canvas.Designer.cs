@@ -28,14 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.furnitureView1 = new MidasMain.Canvas.FurnitureView();
             this.SuspendLayout();
+            // 
+            // furnitureView1
+            // 
+            this.furnitureView1.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.furnitureView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.furnitureView1.CausesValidation = false;
+            this.furnitureView1.Location = new System.Drawing.Point(283, 182);
+            this.furnitureView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.furnitureView1.Name = "furnitureView1";
+            this.furnitureView1.Size = new System.Drawing.Size(75, 61);
+            this.furnitureView1.TabIndex = 0;
             // 
             // Canvas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.furnitureView1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Canvas";
-            this.Size = new System.Drawing.Size(652, 522);
+            this.Size = new System.Drawing.Size(745, 652);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MouseDownReceiver);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MouseDragReceiver);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MouseUpReceiver);
@@ -44,5 +59,7 @@
         }
 
         #endregion
+
+        private FurnitureView furnitureView1;
     }
 }
