@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MidasMain.BaseClass
+namespace MidasMain
 {
-    class Door
+    public class Door
     {
         //range 0~1
         float posRatio;

@@ -12,10 +12,17 @@ namespace MidasMain
 {
     public partial class BaseForm : MetroFramework.Forms.MetroForm
     {
+        public Document current; 
+        
         public BaseForm()
         {
             InitializeComponent();
         }
 
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            current = new Document();
+            current.
+        }
     }
 }

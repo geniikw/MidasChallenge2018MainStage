@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MidasMain.BaseClass
+namespace MidasMain
 {
-    class Room
+    public class Room
     {
         int depth;
         Rectangle rect;
