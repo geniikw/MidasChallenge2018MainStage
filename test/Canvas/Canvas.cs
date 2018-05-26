@@ -97,7 +97,7 @@ namespace MidasMain.CanvasSpace
             List<Control> delList = new List<Control>();
             foreach (Control child in Controls)
             {
-                if (child is UCRoom || child is UCObject)
+                if (child is UCRoom || child is UCObject || child is UCDoor)
                     delList.Add(child);
             }
 

@@ -28,23 +28,23 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
-			this.makeDoorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.makeDoorUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.makeDoorLeftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.makeDoorRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.makeWindowDownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.makeWindowUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.makeWindowLeftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.makeWindowRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.metroContextMenu1.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// metroContextMenu1
-			// 
-			this.metroContextMenu1.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.components = new System.ComponentModel.Container();
+            this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.makeDoorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeDoorUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeDoorLeftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeDoorRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeWindowDownToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeWindowUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeWindowLeftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.makeWindowRightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.metroContextMenu1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // metroContextMenu1
+            // 
+            this.metroContextMenu1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.makeDoorToolStripMenuItem,
             this.makeDoorUpToolStripMenuItem,
             this.makeDoorLeftToolStripMenuItem,
@@ -53,76 +53,77 @@
             this.makeWindowUpToolStripMenuItem,
             this.makeWindowLeftToolStripMenuItem,
             this.makeWindowRightToolStripMenuItem});
-			this.metroContextMenu1.Name = "metroContextMenu1";
-			this.metroContextMenu1.Size = new System.Drawing.Size(184, 202);
-			// 
-			// makeDoorToolStripMenuItem
-			// 
-			this.makeDoorToolStripMenuItem.Name = "makeDoorToolStripMenuItem";
-			this.makeDoorToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-			this.makeDoorToolStripMenuItem.Text = "Make door down";
-			this.makeDoorToolStripMenuItem.Click += new System.EventHandler(this.makeDoorToolStripMenuItem_Click);
-			// 
-			// makeDoorUpToolStripMenuItem
-			// 
-			this.makeDoorUpToolStripMenuItem.Name = "makeDoorUpToolStripMenuItem";
-			this.makeDoorUpToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-			this.makeDoorUpToolStripMenuItem.Text = "Make door up";
-			this.makeDoorUpToolStripMenuItem.Click += new System.EventHandler(this.makeDoorUpToolStripMenuItem_Click);
-			// 
-			// makeDoorLeftToolStripMenuItem
-			// 
-			this.makeDoorLeftToolStripMenuItem.Name = "makeDoorLeftToolStripMenuItem";
-			this.makeDoorLeftToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-			this.makeDoorLeftToolStripMenuItem.Text = "Make door left";
-			this.makeDoorLeftToolStripMenuItem.Click += new System.EventHandler(this.makeDoorLeftToolStripMenuItem_Click);
-			// 
-			// makeDoorRightToolStripMenuItem
-			// 
-			this.makeDoorRightToolStripMenuItem.Name = "makeDoorRightToolStripMenuItem";
-			this.makeDoorRightToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-			this.makeDoorRightToolStripMenuItem.Text = "Make door right";
-			this.makeDoorRightToolStripMenuItem.Click += new System.EventHandler(this.makeDoorRightToolStripMenuItem_Click);
-			// 
-			// makeWindowDownToolStripMenuItem
-			// 
-			this.makeWindowDownToolStripMenuItem.Name = "makeWindowDownToolStripMenuItem";
-			this.makeWindowDownToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-			this.makeWindowDownToolStripMenuItem.Text = "Make window down";
-			this.makeWindowDownToolStripMenuItem.Click += new System.EventHandler(this.makeWindowDownToolStripMenuItem_Click);
-			// 
-			// makeWindowUpToolStripMenuItem
-			// 
-			this.makeWindowUpToolStripMenuItem.Name = "makeWindowUpToolStripMenuItem";
-			this.makeWindowUpToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-			this.makeWindowUpToolStripMenuItem.Text = "Make window up";
-			this.makeWindowUpToolStripMenuItem.Click += new System.EventHandler(this.makeWindowUpToolStripMenuItem_Click);
-			// 
-			// makeWindowLeftToolStripMenuItem
-			// 
-			this.makeWindowLeftToolStripMenuItem.Name = "makeWindowLeftToolStripMenuItem";
-			this.makeWindowLeftToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-			this.makeWindowLeftToolStripMenuItem.Text = "Make window left";
-			this.makeWindowLeftToolStripMenuItem.Click += new System.EventHandler(this.makeWindowLeftToolStripMenuItem_Click);
-			// 
-			// makeWindowRightToolStripMenuItem
-			// 
-			this.makeWindowRightToolStripMenuItem.Name = "makeWindowRightToolStripMenuItem";
-			this.makeWindowRightToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-			this.makeWindowRightToolStripMenuItem.Text = "Make window Right";
-			this.makeWindowRightToolStripMenuItem.Click += new System.EventHandler(this.makeWindowRightToolStripMenuItem_Click);
-			// 
-			// UCWall
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.Green;
-			this.ContextMenuStrip = this.metroContextMenu1;
-			this.Name = "UCWall";
-			this.Size = new System.Drawing.Size(100, 100);
-			this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UCWall_MouseDown);
-			this.metroContextMenu1.ResumeLayout(false);
-			this.ResumeLayout(false);
+            this.metroContextMenu1.Name = "metroContextMenu1";
+            this.metroContextMenu1.Size = new System.Drawing.Size(218, 196);
+            // 
+            // makeDoorToolStripMenuItem
+            // 
+            this.makeDoorToolStripMenuItem.Name = "makeDoorToolStripMenuItem";
+            this.makeDoorToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.makeDoorToolStripMenuItem.Text = "Make door down";
+            this.makeDoorToolStripMenuItem.Click += new System.EventHandler(this.makeDoorToolStripMenuItem_Click);
+            // 
+            // makeDoorUpToolStripMenuItem
+            // 
+            this.makeDoorUpToolStripMenuItem.Name = "makeDoorUpToolStripMenuItem";
+            this.makeDoorUpToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.makeDoorUpToolStripMenuItem.Text = "Make door up";
+            this.makeDoorUpToolStripMenuItem.Click += new System.EventHandler(this.makeDoorUpToolStripMenuItem_Click);
+            // 
+            // makeDoorLeftToolStripMenuItem
+            // 
+            this.makeDoorLeftToolStripMenuItem.Name = "makeDoorLeftToolStripMenuItem";
+            this.makeDoorLeftToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.makeDoorLeftToolStripMenuItem.Text = "Make door left";
+            this.makeDoorLeftToolStripMenuItem.Click += new System.EventHandler(this.makeDoorLeftToolStripMenuItem_Click);
+            // 
+            // makeDoorRightToolStripMenuItem
+            // 
+            this.makeDoorRightToolStripMenuItem.Name = "makeDoorRightToolStripMenuItem";
+            this.makeDoorRightToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.makeDoorRightToolStripMenuItem.Text = "Make door right";
+            this.makeDoorRightToolStripMenuItem.Click += new System.EventHandler(this.makeDoorRightToolStripMenuItem_Click);
+            // 
+            // makeWindowDownToolStripMenuItem
+            // 
+            this.makeWindowDownToolStripMenuItem.Name = "makeWindowDownToolStripMenuItem";
+            this.makeWindowDownToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.makeWindowDownToolStripMenuItem.Text = "Make window down";
+            this.makeWindowDownToolStripMenuItem.Click += new System.EventHandler(this.makeWindowDownToolStripMenuItem_Click);
+            // 
+            // makeWindowUpToolStripMenuItem
+            // 
+            this.makeWindowUpToolStripMenuItem.Name = "makeWindowUpToolStripMenuItem";
+            this.makeWindowUpToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.makeWindowUpToolStripMenuItem.Text = "Make window up";
+            this.makeWindowUpToolStripMenuItem.Click += new System.EventHandler(this.makeWindowUpToolStripMenuItem_Click);
+            // 
+            // makeWindowLeftToolStripMenuItem
+            // 
+            this.makeWindowLeftToolStripMenuItem.Name = "makeWindowLeftToolStripMenuItem";
+            this.makeWindowLeftToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.makeWindowLeftToolStripMenuItem.Text = "Make window left";
+            this.makeWindowLeftToolStripMenuItem.Click += new System.EventHandler(this.makeWindowLeftToolStripMenuItem_Click);
+            // 
+            // makeWindowRightToolStripMenuItem
+            // 
+            this.makeWindowRightToolStripMenuItem.Name = "makeWindowRightToolStripMenuItem";
+            this.makeWindowRightToolStripMenuItem.Size = new System.Drawing.Size(217, 24);
+            this.makeWindowRightToolStripMenuItem.Text = "Make window Right";
+            this.makeWindowRightToolStripMenuItem.Click += new System.EventHandler(this.makeWindowRightToolStripMenuItem_Click);
+            // 
+            // UCWall
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Green;
+            this.ContextMenuStrip = this.metroContextMenu1;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "UCWall";
+            this.Size = new System.Drawing.Size(0, 0);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.UCWall_MouseDown);
+            this.metroContextMenu1.ResumeLayout(false);
+            this.ResumeLayout(false);
 
 		}
 
