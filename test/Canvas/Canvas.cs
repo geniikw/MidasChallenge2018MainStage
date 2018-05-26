@@ -194,7 +194,13 @@ namespace MidasMain.Canvas
 			for (int i = 0; i < m_listRoom.Count; i++)
 				m_listRoom[i].FocusOut();
 		}
+        
+        private void DragTest(object sender, DragEventArgs e)
+        {
+            if (!(sender is Control))
+                return;
 
-		
+            Console.WriteLine(((Control)sender).Name);
+        }
     }
 }
