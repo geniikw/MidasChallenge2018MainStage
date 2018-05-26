@@ -94,6 +94,7 @@
     <Compile Include="Canvas\Canvas.Designer.cs">
       <DependentUpon>Canvas.cs</DependentUpon>
     </Compile>
+    <Compile Include="MiMath.cs" />
     <Compile Include="Canvas\UCObject.cs">
       <SubType>UserControl</SubType>
     </Compile>
