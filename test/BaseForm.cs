@@ -187,15 +187,16 @@ namespace MidasMain
         }
         public void CaputreScreen()
         {
+                InvertZOrderOfControls(canvas1);
             using (Bitmap bmp = new Bitmap(this.Width, this.Height))
             {
-                InvertZOrderOfControls(canvas1);
                 Rectangle rect = new Rectangle(canvas1.Location, canvas1.Size);
                 canvas1.DrawToBitmap(bmp, rect);
                 bmp.Save(@"C:/Users/jonghun/Desktop/output.png", ImageFormat.Png); // make sure path exists!
-                InvertZOrderOfControls(canvas1);
+                //InvertZOrderOfControls(canvas1);
             }
         }
+
         private static void InvertZOrderOfControls(Control ctrlParent)
 
         {
@@ -259,11 +260,6 @@ namespace MidasMain
             }
 
         }
-
-
-
-
-
         private static Control FindControlWithMinZOrder(Control ctrlParent, List<Control> children)
 
         {
@@ -295,9 +291,14 @@ namespace MidasMain
             return ctrlMin;
 
         }
+
+
+
+
         private void CaputreScreen(object sender, EventArgs e)
         {
 			canvas1.AllFocusOut();
+            InvertZOrderOfControls(canvas1);
 			GlobalEvent.OnDocumentChangeBefore.Invoke(null,"");
 			var dia = new SaveFileDialog();
             dia.Filter = "PNGImage|*.png";
@@ -317,8 +318,9 @@ namespace MidasMain
 
                 }
             }
+            InvertZOrderOfControls(canvas1);
 
-           
+
         }
         public void ClearBlock()
         {
