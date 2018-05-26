@@ -72,6 +72,7 @@ namespace MidasMain.Canvas
 			base.PointerUp(sender, e);
 			thisRoom.PointerUp(sender, e);
 			isClick = false;
+			Canvas.instance.BindObjectToRoom();
 		}
 	}
 }

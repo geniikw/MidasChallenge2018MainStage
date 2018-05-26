@@ -24,9 +24,15 @@ namespace MidasMain.Canvas
             
         }
 
+		public void PointerUpCalledByRoom(object sender, MouseEventArgs e)
+		{
+			base.PointerUp(sender, e);
+		}
+
 		public override void PointerUp(object sender, MouseEventArgs e)
 		{
 			base.PointerUp(sender, e);
+			Canvas.instance.BindObjectToRoom();
 		}
 	}
 }

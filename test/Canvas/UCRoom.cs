@@ -44,7 +44,7 @@ namespace MidasMain.Canvas
 		{
 			base.PointerUp(sender, e);
 			for (int i = 0; i < objects.Count; i++)
-				objects[i].PointerUp(sender, e);
+				objects[i].PointerUpCalledByRoom(sender, e);
 
 			Canvas.instance.BindObjectToRoom();
 		}
