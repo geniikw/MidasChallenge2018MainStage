@@ -320,7 +320,7 @@ namespace MidasMain
             //return lines;
         }
 
-       /* public bool ValidateConstruction()
+        /*public bool ValidateConstruction()
         {
             List<Line> connectedWalls = new List<Line>();
 
