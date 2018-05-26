@@ -9,23 +9,31 @@ namespace MidasMain
 {
     public class Line
     {
-        public Point x;
-        public Point y;
+        public Point pA;
+        public Point pB;
 
         public Room from = null;
         public Room to = null;
-        public Line(Point x, Point y, Room from, Room to)
+        public Line(Point a, Point b, Room from, Room to)
         {
-            this.x = x;
-            this.y = y;
+            pA = a;
+            pB = b;
             this.from = from;
             this.to = to;
         }
 
-        public Line(Point x, Point y)
+        public bool IsPointAIncludedIn(Room room)
         {
-            this.x = x;
-            this.y = y;
+            return room.Rect.Contains(pA);
+        }
+        public bool IsPointBIncludedIn(Room room)
+        {
+            return room.Rect.Contains(pB);
+        }
+        public Line(Point a, Point b)
+        {
+            pA = a;
+            pB = b;
             
         }
 
