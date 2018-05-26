@@ -23,8 +23,8 @@ namespace MidasMain.Canvas
 
         public Canvas()
         {
-            this.AutoScroll = true;
             InitializeComponent();
+            this.AutoScroll = true;
             position = Location;
             OnDrag
                 .CombineLatest(OnDown.Select(a => PointUtil.Minus(Location, position)), (a, i) => PointUtil.Minus(Location, i))
@@ -58,6 +58,19 @@ namespace MidasMain.Canvas
         private void MouseUpReceiver(object sender, MouseEventArgs e)
         {
             OnUp.OnNext(e);
+        }
+
+        List<UCRoom> m_listRoom = new List<UCRoom>();
+
+        public void SetupDocument(Document doc)
+        {
+            foreach (var room in doc.rooms)
+            {
+                var makeRoom = new UCRoom();
+
+                makeRoom.Visible = true;
+                m_listRoom.Add(makeRoom);
+            }
         }
     }
 }

@@ -88,15 +88,6 @@
     <Compile Include="BaseClass\Furniture.cs" />
     <Compile Include="BaseClass\Line.cs" />
     <Compile Include="BaseClass\Room.cs" />
-    <Compile Include="Canvas\Canvas.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Canvas\Canvas.Designer.cs">
-      <DependentUpon>Canvas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Canvas\Canvas.Render.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="Canvas\UCObject.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,6 +112,12 @@
     <Compile Include="Canvas\UCScaler.Designer.cs">
       <DependentUpon>UCScaler.cs</DependentUpon>
     </Compile>
+    <Compile Include="Canvas\Canvas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Canvas\Canvas.Designer.cs">
+      <DependentUpon>Canvas.cs</DependentUpon>
+    </Compile>
     <Compile Include="PointUtil.cs" />
     <Compile Include="Creadit\CreaditPanel.cs">
       <SubType>UserControl</SubType>
@@ -144,12 +141,6 @@
     </Compile>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Canvas\Canvas.Render.resx">
-      <DependentUpon>Canvas.Render.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Canvas\Canvas.resx">
-      <DependentUpon>Canvas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Canvas\UCScaleAble.resx">
       <DependentUpon>UCScaleAble.cs</DependentUpon>
