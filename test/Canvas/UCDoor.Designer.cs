@@ -28,7 +28,25 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
+			this.metroContextMenu1 = new MetroFramework.Controls.MetroContextMenu(this.components);
+			this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.metroContextMenu1.SuspendLayout();
 			this.SuspendLayout();
+			// 
+			// metroContextMenu1
+			// 
+			this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.removeToolStripMenuItem});
+			this.metroContextMenu1.Name = "metroContextMenu1";
+			this.metroContextMenu1.Size = new System.Drawing.Size(153, 48);
+			// 
+			// removeToolStripMenuItem
+			// 
+			this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+			this.removeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.removeToolStripMenuItem.Text = "remove";
+			this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
 			// 
 			// UCDoor
 			// 
@@ -36,14 +54,19 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+			this.ContextMenuStrip = this.metroContextMenu1;
 			this.ForeColor = System.Drawing.Color.Transparent;
 			this.Margin = new System.Windows.Forms.Padding(0);
 			this.Name = "UCDoor";
 			this.Size = new System.Drawing.Size(50, 50);
+			this.metroContextMenu1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
+
+		private MetroFramework.Controls.MetroContextMenu metroContextMenu1;
+		private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
 	}
 }
