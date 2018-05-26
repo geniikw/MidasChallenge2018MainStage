@@ -157,7 +157,7 @@ namespace MidasMain.CanvasSpace
             }
             foreach(var d in m_listDoor)
             {
-                doc.doors.Add(new Door(d.pA, d.kind));
+                doc.doors.Add(new Door(d.pA, d.kind, d.isDoor));
             }
 
             return doc;
@@ -196,27 +196,44 @@ namespace MidasMain.CanvasSpace
 			uDoor.Location = uDoor.pA;
 			uDoor.kind = door.kind;
 			uDoor.pB = uDoor.pA;
+			uDoor.isDoor = door.isDoor;
 			if (door.kind %2 == 0)
 				uDoor.pB = PointUtil.Plus(door.pB, new Point(0, 50));
 			else
 				uDoor.pB = PointUtil.Plus(door.pB, new Point(50, 0));
 
-			switch (door.kind)
+			if (door.isDoor)
+				switch (door.kind)
+				{
+					case 0: // right
+						uDoor.BackgroundImage = Properties.Resources.rDoor0;
+						break;
+					case 1: // up
+						uDoor.BackgroundImage = Properties.Resources.rDoor1;
+						uDoor.Location = PointUtil.Minus(uDoor.Location, new Point(0, 50));
+						break;
+					case 2: // left
+						uDoor.BackgroundImage = Properties.Resources.rDoor2;
+						uDoor.Location = PointUtil.Minus(uDoor.Location, new Point(50, 0));
+						break;
+					case 3:
+						uDoor.BackgroundImage = Properties.Resources.rDoor3;
+						break;
+				}
+			else
 			{
-				case 0: // right
-					uDoor.BackgroundImage = Properties.Resources.rDoor0;
-					break;
-				case 1: // up
-					uDoor.BackgroundImage = Properties.Resources.rDoor1;
-					uDoor.Location = PointUtil.Minus(uDoor.Location, new Point(0, 50));
-					break;
-				case 2: // left
-					uDoor.BackgroundImage = Properties.Resources.rDoor2;
-					uDoor.Location = PointUtil.Minus(uDoor.Location, new Point(50, 0));
-					break;
-				case 3:
-					uDoor.BackgroundImage = Properties.Resources.rDoor3;
-					break;
+				if (uDoor.kind % 2 == 0)
+				{
+					uDoor.BackgroundImage = Properties.Resources.rWindow1;
+					uDoor.Location = PointUtil.Minus(uDoor.Location, new Point(10, 0));
+					uDoor.Size = new Size(new Point(20, 50));
+				}
+				else
+				{
+					uDoor.BackgroundImage = Properties.Resources.rWindow0;
+					uDoor.Location = PointUtil.Minus(uDoor.Location, new Point(0, 10));
+					uDoor.Size = new Size(new Point(50, 20));
+				}
 			}
 			m_listDoor.Add(uDoor);
 			return uDoor;

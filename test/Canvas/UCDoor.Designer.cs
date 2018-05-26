@@ -37,6 +37,7 @@
 			this.BackColor = System.Drawing.Color.Transparent;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
 			this.ForeColor = System.Drawing.Color.Transparent;
+			this.Margin = new System.Windows.Forms.Padding(0);
 			this.Name = "UCDoor";
 			this.Size = new System.Drawing.Size(50, 50);
 			this.ResumeLayout(false);

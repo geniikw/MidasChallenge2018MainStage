@@ -20,7 +20,7 @@ namespace MidasMain.CanvasSpace
 			InitializeComponent();
 		}
 
-		private void makeDoor(int idx)
+		private void makeDoor(int idx, bool isDoor)
 		{
 			if (isVertical)
 				loc.X = 0;
@@ -37,6 +37,7 @@ namespace MidasMain.CanvasSpace
 			Door temp = new Door();
 			temp.pA = newLoc;
 			temp.kind = idx;
+			temp.isDoor = isDoor;
 
 			Canvas.instance.MakeDoor(temp);
 			
@@ -44,7 +45,7 @@ namespace MidasMain.CanvasSpace
 
 		private void makeDoorToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			makeDoor(3);
+			makeDoor(3, true);
 		}
 
 		private void UCWall_MouseDown(object sender, MouseEventArgs e)
@@ -57,6 +58,11 @@ namespace MidasMain.CanvasSpace
 				makeDoorRightToolStripMenuItem.Visible = true;
 				makeDoorToolStripMenuItem.Visible = false;
 				makeDoorUpToolStripMenuItem.Visible = false;
+
+				makeWindowLeftToolStripMenuItem.Visible = true;
+				makeWindowRightToolStripMenuItem.Visible = true;
+				makeWindowDownToolStripMenuItem.Visible = false;
+				makeWindowUpToolStripMenuItem.Visible = false;
 			}
 			else
 			{
@@ -64,22 +70,47 @@ namespace MidasMain.CanvasSpace
 				makeDoorUpToolStripMenuItem.Visible = true;
 				makeDoorLeftToolStripMenuItem.Visible = false;
 				makeDoorRightToolStripMenuItem.Visible = false;
+
+				makeWindowDownToolStripMenuItem.Visible = true;
+				makeWindowUpToolStripMenuItem.Visible = true;
+				makeWindowLeftToolStripMenuItem.Visible = false;
+				makeWindowRightToolStripMenuItem.Visible = false;
 			}
 		}
 
 		private void makeDoorUpToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			makeDoor(1);
+			makeDoor(1, true);
 		}
 
 		private void makeDoorLeftToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			makeDoor(2);
+			makeDoor(2, true);
 		}
 
 		private void makeDoorRightToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			makeDoor(0);
+			makeDoor(0, true);
+		}
+
+		private void makeWindowRightToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			makeDoor(0, false);
+		}
+
+		private void makeWindowLeftToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			makeDoor(2, false);
+		}
+
+		private void makeWindowUpToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			makeDoor(1, false);
+		}
+
+		private void makeWindowDownToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			makeDoor(3, false);
 		}
 	}
 }
