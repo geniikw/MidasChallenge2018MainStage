@@ -15,11 +15,15 @@ namespace MidasMain
         public List<Room> rooms;
         public List<Furniture> objects;
         public List<Line> lines;
+        public List<Door> doors;
+
+
         public Document()
         {
             rooms = new List<Room>();
             objects = new List<Furniture>();
             lines = new List<Line>();
+            doors = new List<Door>();
         }
 
         //아이디가 존재하면 return false
@@ -315,5 +319,19 @@ namespace MidasMain
 
             //return lines;
         }
+
+        /*public bool ValidateConstruction()
+        {
+            List<Line> connectedWalls = new List<Line>();
+
+            foreach(var line in lines)
+            {
+                foreach(var door in doors)
+                {
+
+                }
+            }
+        }*/
+        
     }
 }

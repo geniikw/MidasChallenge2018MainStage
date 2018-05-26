@@ -22,6 +22,12 @@ namespace MidasMain
             this.to = to;
         }
 
+        public Line()
+        {
+            pA = new Point();
+            pB = new Point();
+        }
+
         public bool IsPointAIncludedIn(Room room)
         {
             return room.Rect.Contains(pA);
