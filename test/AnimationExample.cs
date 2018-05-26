@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace MidasMain
 {
+
+
+
     class AnimationExample
     {
         public void Animation()
         {
-
+            
             //Animation ani = new Animation()
             //{
             //    DurationInFrames = Animation.FromTimeSpanToDurationInFrames(1),

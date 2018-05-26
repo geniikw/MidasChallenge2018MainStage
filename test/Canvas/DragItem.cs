@@ -34,7 +34,7 @@ namespace MidasMain.Canvas
                 .TakeUntil(OnUp)
                 .Repeat()
                 .Subscribe(p => Location = Parent.PointToClient( PointToScreen( p)));
-
+            
             OnUp.Subscribe(arg => Invalidate());
         }
         
