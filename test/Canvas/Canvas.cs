@@ -97,12 +97,13 @@ namespace MidasMain.CanvasSpace
             List<Control> delList = new List<Control>();
             foreach (Control child in Controls)
             {
-                if (child is UCRoom || child is UCObject)
+                if (child is UCRoom || child is UCObject || child is UCDoor)
                     delList.Add(child);
             }
 
             m_listObject.Clear();
             m_listRoom.Clear();
+            m_listDoor.Clear();
 
             foreach (var todel in delList)
             {
@@ -146,7 +147,7 @@ namespace MidasMain.CanvasSpace
         public Document GetCurrent()
         {
             var doc = new Document();
-            var n = 0;
+            var n = 1;
             foreach (var r in m_listRoom)
             {
                 doc.AddRoom(new Room(n++, new Rectangle(r.Location, r.Size), r.tileIdx, r.BackColor));

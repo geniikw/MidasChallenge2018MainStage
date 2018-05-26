@@ -33,7 +33,6 @@ namespace MidasMain
             InitializeComponent();
 
             CreateCloseAnimation();
-
         }
 
         private void MakeTestDataButton(object sender, EventArgs e)
@@ -70,11 +69,17 @@ namespace MidasMain
 
         private void NewButton(object sender, EventArgs e)
         {
+            GlobalEvent.OnDocumentChangeBefore?.Invoke(Canvas.instance.GetCurrent(), "LoadButton");
+
             canvas1.Clear();
+
+            GlobalEvent.OnDocumentChangeAfter?.Invoke("LoadButton");
         }
 
         private void LoadButton(object sender, EventArgs e)
         {
+            GlobalEvent.OnDocumentChangeBefore?.Invoke(Canvas.instance.GetCurrent(), "LoadButton");
+
             var dia = new OpenFileDialog();
             dia.Filter = "XMLfile|*.xml";
             dia.Title = "Load";
@@ -90,14 +95,16 @@ namespace MidasMain
                     canvas1.SetupDocument((Document)output);
                 }
             }
+
+            GlobalEvent.OnDocumentChangeAfter?.Invoke("LoadButton");
         }
 
-		private void metroButtonObject_Click(object sender, EventArgs e)
+        private void SelectRoomButton(object sender, EventArgs e)
 		{
 			makeWhat = 1;
 		}
 		
-		private void metroButtonRoom_Click(object sender, EventArgs e)
+		private void SelectObjectButton(object sender, EventArgs e)
 		{
 			makeWhat = 0;
 		}
@@ -108,12 +115,15 @@ namespace MidasMain
 
 			if (makeWhat == -1)
 				return;
-			else if (makeWhat == 0)
-				canvas1.MakeRoom(new Room(0, new Rectangle(new Point(e.X - 75, e.Y - 75), new Size(150, 150)), -1));
+
+            GlobalEvent.OnDocumentChangeBefore?.Invoke(Canvas.instance.GetCurrent(), "AddItem");
+
+            if (makeWhat == 0)
+				canvas1.MakeRoom(new Room(0, new Rectangle(new Point(e.X - 75, e.Y - 75), new Size(150, 150))));
 			else if (makeWhat == 1)
 				canvas1.MakeObject(new Furniture(new Point(e.X - 25, e.Y - 25), 50, 50, "새가구"));
-
-			makeWhat = -1;
+            GlobalEvent.OnDocumentChangeAfter?.Invoke("ADD item");
+            makeWhat = -1;
 		}
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -170,6 +180,11 @@ namespace MidasMain
         {
             GenBlock();
         }
+        public void ValidateConstruction()
+        {
+            Document a = canvas1.GetCurrent();
+            Console.WriteLine(a.ValidateConstruction());
+        }
         public void CaputreScreen()
         {
             using (Bitmap bmp = new Bitmap(this.Width, this.Height))
@@ -178,6 +193,29 @@ namespace MidasMain
                 canvas1.DrawToBitmap(bmp, rect);
                 bmp.Save(@"C:/Users/jonghun/Desktop/output.png", ImageFormat.Png); // make sure path exists!
             }
+        }
+        private void CaputreScreen(object sender, EventArgs e)
+        {
+            var dia = new SaveFileDialog();
+            dia.Filter = "PNGImage|*.png";
+            dia.Title = "Export Image";
+            dia.ShowDialog();
+            if (dia.FileName != "")
+            {
+                using (var fs = (FileStream)dia.OpenFile())
+                {
+                    using (Bitmap bmp = new Bitmap(this.Width, this.Height))
+                    {
+                        Rectangle rect = new Rectangle(canvas1.Location, canvas1.Size);
+                        canvas1.DrawToBitmap(bmp, rect);
+                        
+                        bmp.Save(fs, ImageFormat.Png); // make sure path exists!
+                    }
+
+                }
+            }
+
+           
         }
         public void ClearBlock()
         {
@@ -243,5 +281,7 @@ namespace MidasMain
             }
 
         }
+
+       
     }
 }

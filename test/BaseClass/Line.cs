@@ -54,7 +54,9 @@ namespace MidasMain
             int left = pA.X > pB.X ? pB.X : pA.X;
             int top = pA.Y > pB.Y ? pB.Y : pA.Y;
             int width = Math.Abs(pA.X - pB.X);
+            width = width == 0 ? 1 : width;
             int height = Math.Abs(pA.Y - pB.Y);
+            height = height == 0 ? 1 : height;
             return new Rectangle(left, top, width, height);
 
         }
