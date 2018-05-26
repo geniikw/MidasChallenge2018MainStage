@@ -32,11 +32,9 @@
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
-            this.metroButtonTest = new MetroFramework.Controls.MetroButton();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroButtonObject = new MetroFramework.Controls.MetroTile();
             this.metroButtonRoom = new MetroFramework.Controls.MetroTile();
-            this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
@@ -95,11 +93,9 @@
             // metroPanel1
             // 
             this.metroPanel1.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.metroPanel1.Controls.Add(this.metroButtonTest);
             this.metroPanel1.Controls.Add(this.metroButton1);
             this.metroPanel1.Controls.Add(this.metroButtonObject);
             this.metroPanel1.Controls.Add(this.metroButtonRoom);
-            this.metroPanel1.Controls.Add(this.metroTile4);
             this.metroPanel1.Controls.Add(this.metroTile3);
             this.metroPanel1.Controls.Add(this.metroTile2);
             this.metroPanel1.Controls.Add(this.metroTile1);
@@ -116,17 +112,6 @@
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
-            // 
-            // metroButtonTest
-            // 
-            this.metroButtonTest.Location = new System.Drawing.Point(43, 352);
-            this.metroButtonTest.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.metroButtonTest.Name = "metroButtonTest";
-            this.metroButtonTest.Size = new System.Drawing.Size(86, 29);
-            this.metroButtonTest.TabIndex = 8;
-            this.metroButtonTest.Text = "metroButton3";
-            this.metroButtonTest.UseSelectable = true;
-            this.metroButtonTest.Click += new System.EventHandler(this.GenerateBlock);
             // 
             // metroButton1
             // 
@@ -164,18 +149,6 @@
             this.metroButtonRoom.Text = "Room";
             this.metroButtonRoom.UseSelectable = true;
             this.metroButtonRoom.Click += new System.EventHandler(this.metroButtonRoom_Click);
-            // 
-            // metroTile4
-            // 
-            this.metroTile4.ActiveControl = null;
-            this.metroTile4.Location = new System.Drawing.Point(101, 106);
-            this.metroTile4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.metroTile4.Name = "metroTile4";
-            this.metroTile4.Size = new System.Drawing.Size(75, 76);
-            this.metroTile4.TabIndex = 5;
-            this.metroTile4.Text = "Test";
-            this.metroTile4.UseSelectable = true;
-            this.metroTile4.Click += new System.EventHandler(this.MakeTestDataButton);
             // 
             // metroTile3
             // 
@@ -216,6 +189,7 @@
             // canvas1
             // 
             this.canvas1.AutoScroll = true;
+            this.canvas1.BackColor = System.Drawing.SystemColors.Control;
             this.canvas1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.canvas1.Location = new System.Drawing.Point(0, 0);
             this.canvas1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -233,7 +207,7 @@
             this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(861, 420);
+            this.metroTabPage3.Size = new System.Drawing.Size(860, 420);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "Credit";
             this.metroTabPage3.VerticalScrollbarBarColor = true;
@@ -247,7 +221,7 @@
             this.creditPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.creditPanel1.Name = "creditPanel1";
             this.creditPanel1.Padding = new System.Windows.Forms.Padding(23, 25, 23, 25);
-            this.creditPanel1.Size = new System.Drawing.Size(861, 420);
+            this.creditPanel1.Size = new System.Drawing.Size(860, 420);
             this.creditPanel1.TabIndex = 2;
             // 
             // BaseForm
@@ -280,7 +254,6 @@
         private Creadit.CreditPanel creditPanel1;
         private CanvasSpace.Canvas canvas1;
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroTile metroTile4;
         private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile metroTile1;
@@ -288,6 +261,5 @@
 		private MetroFramework.Controls.MetroTile metroButtonRoom;
         private MetroFramework.Controls.MetroButton metroButton1;
         private MetroFramework.Controls.MetroButton metroButton2;
-		private MetroFramework.Controls.MetroButton metroButtonTest;
 	}
 }

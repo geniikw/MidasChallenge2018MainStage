@@ -33,7 +33,6 @@ namespace MidasMain
             InitializeComponent();
 
             CreateCloseAnimation();
-
         }
 
         private void MakeTestDataButton(object sender, EventArgs e)
