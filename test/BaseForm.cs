@@ -192,6 +192,8 @@ namespace MidasMain
                 Rectangle rect = new Rectangle(canvas1.Location, canvas1.Size);
                 canvas1.DrawToBitmap(bmp, rect);
                 bmp.Save(@"C:/Users/jonghun/Desktop/output.png", ImageFormat.Png); // make sure path exists!
+            }
+        }
         private void CaputreScreen(object sender, EventArgs e)
         {
             var dia = new SaveFileDialog();
