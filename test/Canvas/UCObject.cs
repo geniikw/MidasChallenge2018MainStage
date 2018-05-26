@@ -114,5 +114,19 @@ namespace MidasMain.CanvasSpace
             color = Color.Black.ToArgb();
             SetupRender();
         }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GlobalEvent.OnDocumentChangeBefore(Canvas.instance.GetCurrent(), "delete object");
+
+
+            var list = Canvas.instance.m_listObject;
+            var idx = list.IndexOf(this);
+            list.RemoveAt(idx);
+            Canvas.instance.Controls.Remove(this);
+            Dispose();
+
+            GlobalEvent.OnDocumentChangeAfter(Canvas.instance.GetCurrent(), "delete object");
+        }
     }
 }

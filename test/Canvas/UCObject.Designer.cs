@@ -37,6 +37,7 @@
             this.setTileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sofaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tolietToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.metroContextMenu1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,9 +46,10 @@
             this.metroContextMenu1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.metroContextMenu1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.setColorToolStripMenuItem,
-            this.setTileToolStripMenuItem});
+            this.setTileToolStripMenuItem,
+            this.deleteToolStripMenuItem});
             this.metroContextMenu1.Name = "metroContextMenu1";
-            this.metroContextMenu1.Size = new System.Drawing.Size(211, 80);
+            this.metroContextMenu1.Size = new System.Drawing.Size(211, 104);
             // 
             // setColorToolStripMenuItem
             // 
@@ -92,16 +94,23 @@
             // sofaToolStripMenuItem
             // 
             this.sofaToolStripMenuItem.Name = "sofaToolStripMenuItem";
-            this.sofaToolStripMenuItem.Size = new System.Drawing.Size(122, 26);
+            this.sofaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.sofaToolStripMenuItem.Text = "Sofa";
             this.sofaToolStripMenuItem.Click += new System.EventHandler(this.sofaToolStripMenuItem_Click);
             // 
             // tolietToolStripMenuItem
             // 
             this.tolietToolStripMenuItem.Name = "tolietToolStripMenuItem";
-            this.tolietToolStripMenuItem.Size = new System.Drawing.Size(122, 26);
+            this.tolietToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.tolietToolStripMenuItem.Text = "Toliet";
             this.tolietToolStripMenuItem.Click += new System.EventHandler(this.tolietToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
             // UCObject
             // 
@@ -127,5 +136,6 @@
         private System.Windows.Forms.ToolStripMenuItem setTileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sofaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tolietToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
     }
 }
