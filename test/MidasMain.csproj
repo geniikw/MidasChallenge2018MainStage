@@ -94,6 +94,9 @@
     <Compile Include="Canvas\Canvas.Designer.cs">
       <DependentUpon>Canvas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Canvas\Canvas.Render.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Canvas\UCRoom.cs">
       <SubType>UserControl</SubType>
     </Compile>
