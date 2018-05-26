@@ -46,7 +46,7 @@ namespace MidasMain.CanvasSpace
                 input.Y = 0;
 
             var maxW = BaseForm.instance.Width - 200;
-            var maxH = BaseForm.instance.Height - 200;
+            var maxH = BaseForm.instance.Height - 280;
             
             if (input.X > maxW)
                 input.X = maxW;
