@@ -184,6 +184,7 @@
             this.metroTile4.TabIndex = 5;
             this.metroTile4.Text = "Test";
             this.metroTile4.UseSelectable = true;
+            this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click);
             // 
             // BaseForm
             // 

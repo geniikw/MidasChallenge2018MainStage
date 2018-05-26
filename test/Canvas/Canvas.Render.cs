@@ -18,6 +18,7 @@ namespace MidasMain.Canvas
             {
                 var makeRoom = new UCRoom();
                 makeRoom.roomData = room;
+                makeRoom.Visible = true;
             }
         }
 

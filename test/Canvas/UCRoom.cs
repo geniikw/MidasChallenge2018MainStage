@@ -40,7 +40,7 @@ namespace MidasMain.Canvas
 		public override void PointerUp(object sender, MouseEventArgs e)
 		{
 			base.PointerUp(sender, e);
-		}
+        }
 
 		public void InitScalers()
 		{
