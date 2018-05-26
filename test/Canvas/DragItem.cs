@@ -45,13 +45,13 @@ namespace MidasMain.CanvasSpace
             if (input.Y < 0)
                 input.Y = 0;
 
-            var maxW = BaseForm.instance.Width - 200;
-            var maxH = BaseForm.instance.Height - 280;
+            //var maxW = BaseForm.instance.Width - 200;
+            //var maxH = BaseForm.instance.Height - 280;
             
-            if (input.X > maxW)
-                input.X = maxW;
-            if (input.Y > maxH)
-                input.Y = maxH;
+            //if (input.X > maxW)
+            //    input.X = maxW;
+            //if (input.Y > maxH)
+            //    input.Y = maxH;
             return input;
         }
 
