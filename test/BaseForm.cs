@@ -189,10 +189,111 @@ namespace MidasMain
         {
             using (Bitmap bmp = new Bitmap(this.Width, this.Height))
             {
+                InvertZOrderOfControls(canvas1);
                 Rectangle rect = new Rectangle(canvas1.Location, canvas1.Size);
                 canvas1.DrawToBitmap(bmp, rect);
                 bmp.Save(@"C:/Users/jonghun/Desktop/output.png", ImageFormat.Png); // make sure path exists!
+                InvertZOrderOfControls(canvas1);
             }
+        }
+        private static void InvertZOrderOfControls(Control ctrlParent)
+
+        {
+
+            if (ctrlParent.Controls.Count == 0)
+
+            {
+
+                return;
+
+            }
+
+            List<Control> childControls = new List<Control>();
+
+            List<Control> sortedChildControls = new List<Control>();
+
+            foreach (Control ctrlChild in ctrlParent.Controls)
+
+            {
+
+                childControls.Add(ctrlChild);
+
+            }
+
+            while (childControls.Count > 0)
+
+            {
+
+                Control ctrlMin = FindControlWithMinZOrder(ctrlParent, childControls);
+
+                sortedChildControls.Add(ctrlMin);
+
+                childControls.Remove(ctrlMin);
+
+            }
+
+            for (int i = 0; i < sortedChildControls.Count / 2; i++)
+
+            {
+
+                Control ctrlChild1 = sortedChildControls[i];
+
+                Control ctrlChild2 = sortedChildControls[sortedChildControls.Count - 1 - i];
+
+                int zOrder1 = ctrlParent.Controls.GetChildIndex(ctrlChild1);
+
+                int zOrder2 = ctrlParent.Controls.GetChildIndex(ctrlChild2);
+
+                ctrlParent.Controls.SetChildIndex(ctrlChild1, zOrder2);
+
+                ctrlParent.Controls.SetChildIndex(ctrlChild2, zOrder1);
+
+            }
+
+            foreach (Control ctrlChild in ctrlParent.Controls)
+
+            {
+
+                InvertZOrderOfControls(ctrlChild);
+
+            }
+
+        }
+
+
+
+
+
+        private static Control FindControlWithMinZOrder(Control ctrlParent, List<Control> children)
+
+        {
+
+            if (children.Count == 0)
+
+            {
+
+                return null;
+
+            }
+
+            Control ctrlMin = children[0];
+
+            foreach (Control ctrl in children)
+
+            {
+
+                if (ctrlParent.Controls.GetChildIndex(ctrl) < ctrlParent.Controls.GetChildIndex(ctrlMin))
+
+                {
+
+                    ctrlMin = ctrl;
+
+                }
+
+            }
+
+            return ctrlMin;
+
         }
         private void CaputreScreen(object sender, EventArgs e)
         {
