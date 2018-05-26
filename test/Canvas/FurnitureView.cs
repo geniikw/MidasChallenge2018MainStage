@@ -12,10 +12,7 @@ namespace MidasMain.Canvas
 {
     public interface IFurnitureView
     {
-        string ObjectName { get; set; }
-        Point Coordinate { get; set; }
-        int Width { get; set; }
-        int Height { get; set; }
+        Furniture Data { get; set; }
     }
 
     public partial class FurnitureView : DragItem , IFurnitureView
@@ -25,45 +22,16 @@ namespace MidasMain.Canvas
             InitializeComponent();
         }
 
-        public Point Coordinate { get
+        public Furniture Data { get
             {
-                return Location;
-            }
-            set {
-                Location = value;
-            }
-        }
-
-        public string ObjectName
-        {
-            get
-            {
-                return metroLabel1.Name;
+                return new Furniture(Location, Size.Width, Size.Height, metroLabel1.Text);
             }
             set
             {
-                metroLabel1.Name = value;
+                Location = value.coordinate;
+                Size = new Size(value.width, value.height);
+                metroLabel1.Text = value.name;
             }
         }
-
-        int IFurnitureView.Width
-        {
-            get
-            {
-                return Size.Width;
-            }
-            set
-            {
-                Size = new Size(value, Size.Height);
-
-            }
-        }
-        int IFurnitureView.Height { get {
-                return Size.Height;
-            } set {
-                Size = new Size(Size.Width, value);
-
-            }
-        } 
-    }
+    } 
 }

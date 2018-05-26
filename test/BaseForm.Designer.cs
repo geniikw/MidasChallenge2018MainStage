@@ -36,7 +36,6 @@
             this.metroLink2 = new MetroFramework.Controls.MetroLink();
             this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.furnitureView1 = new MidasMain.Canvas.FurnitureView();
-            this.dragItem4 = new MidasMain.Canvas.DragItem();
             this.dragItem3 = new MidasMain.Canvas.DragItem();
             this.dragItem2 = new MidasMain.Canvas.DragItem();
             this.dragItem1 = new MidasMain.Canvas.DragItem();
@@ -45,6 +44,7 @@
             this.creaditPanel1 = new MidasMain.Creadit.CreaditPanel();
             this.htmlToolTip1 = new MetroFramework.Drawing.Html.HtmlToolTip();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.canvas2 = new MidasMain.Canvas.Canvas();
             this.MainTab.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -68,11 +68,11 @@
             // 
             this.metroTabPage1.Controls.Add(this.metroPanel1);
             this.metroTabPage1.Controls.Add(this.furnitureView1);
-            this.metroTabPage1.Controls.Add(this.dragItem4);
             this.metroTabPage1.Controls.Add(this.dragItem3);
             this.metroTabPage1.Controls.Add(this.dragItem2);
             this.metroTabPage1.Controls.Add(this.dragItem1);
             this.metroTabPage1.Controls.Add(this.canvas1);
+            this.metroTabPage1.Controls.Add(this.canvas2);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage1.HorizontalScrollbarSize = 12;
@@ -143,17 +143,6 @@
             this.furnitureView1.Name = "furnitureView1";
             this.furnitureView1.Size = new System.Drawing.Size(51, 50);
             this.furnitureView1.TabIndex = 7;
-            // 
-            // dragItem4
-            // 
-            this.dragItem4.BackColor = System.Drawing.SystemColors.Control;
-            this.dragItem4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dragItem4.CausesValidation = false;
-            this.dragItem4.Location = new System.Drawing.Point(619, 214);
-            this.dragItem4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.dragItem4.Name = "dragItem4";
-            this.dragItem4.Size = new System.Drawing.Size(42, 47);
-            this.dragItem4.TabIndex = 6;
             // 
             // dragItem3
             // 
@@ -238,6 +227,16 @@
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
+            // canvas2
+            // 
+            this.canvas2.AutoScroll = true;
+            this.canvas2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.canvas2.Location = new System.Drawing.Point(0, 0);
+            this.canvas2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.canvas2.Name = "canvas2";
+            this.canvas2.Size = new System.Drawing.Size(860, 420);
+            this.canvas2.TabIndex = 9;
+            // 
             // BaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -266,7 +265,6 @@
         private Canvas.DragItem dragItem1;
         private Canvas.DragItem dragItem3;
         private Canvas.DragItem dragItem2;
-        private Canvas.DragItem dragItem4;
         private Canvas.FurnitureView furnitureView1;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroLink metroLink3;
@@ -274,5 +272,6 @@
         private MetroFramework.Controls.MetroLink metroLink1;
         private MetroFramework.Drawing.Html.HtmlToolTip htmlToolTip1;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private Canvas.Canvas canvas2;
     }
 }

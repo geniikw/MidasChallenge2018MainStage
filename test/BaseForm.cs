@@ -12,7 +12,7 @@ namespace MidasMain
 {
     public partial class BaseForm : MetroFramework.Forms.MetroForm
     {
-        public BaseClass.Document current; 
+        public Document current; 
         
         public BaseForm()
         {
@@ -21,7 +21,8 @@ namespace MidasMain
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-
+            current = new Document();
+            current.
         }
     }
 }
