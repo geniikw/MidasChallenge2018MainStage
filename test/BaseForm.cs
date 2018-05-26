@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -168,7 +169,15 @@ namespace MidasMain
         {
             GenBlock();
         }
-
+        public void CaputreScreen()
+        {
+            using (Bitmap bmp = new Bitmap(this.Width, this.Height))
+            {
+                Rectangle rect = new Rectangle(canvas1.Location, canvas1.Size);
+                canvas1.DrawToBitmap(bmp, rect);
+                bmp.Save(@"C:/Users/jonghun/Desktop/output.png", ImageFormat.Png); // make sure path exists!
+            }
+        }
         public void ClearBlock()
         {
             Stack<Control> toDel = new Stack<Control>();
