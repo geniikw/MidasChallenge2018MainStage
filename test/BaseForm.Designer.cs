@@ -243,12 +243,15 @@
             // 
             this.AlarmLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.AlarmLabel.AutoSize = true;
-            this.AlarmLabel.BackColor = System.Drawing.Color.DarkRed;
+            this.AlarmLabel.BackColor = System.Drawing.Color.White;
             this.AlarmLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.AlarmLabel.Location = new System.Drawing.Point(732, 370);
+            this.AlarmLabel.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.AlarmLabel.ForeColor = System.Drawing.Color.PowderBlue;
+            this.AlarmLabel.Location = new System.Drawing.Point(564, 377);
             this.AlarmLabel.Name = "AlarmLabel";
             this.AlarmLabel.Size = new System.Drawing.Size(0, 0);
             this.AlarmLabel.TabIndex = 9;
+            this.AlarmLabel.UseCustomBackColor = true;
             // 
             // BaseForm
             // 

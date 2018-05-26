@@ -390,7 +390,7 @@ namespace MidasMain
         public void Validation(Document doc, string msg)
         {
             if (doc.ValidateConstruction())
-                AlarmLabel.Text = "";
+                AlarmLabel.Text = "Validation Success";
             else
                 AlarmLabel.Text = "Validation Fail";
         }
