@@ -176,14 +176,14 @@ namespace MidasMain
 					temp.isVertical = true;
 					temp.Location = PointUtil.Plus(line.pA, new Point(-2, 2));
 					tSize.Width = 5;
-                    tSize.Height -= 2;
-                }
+                    tSize.Height -= 4;
+				}
                 else
                 {
 					temp.isVertical = false;
 					temp.Location = PointUtil.Plus(line.pA, new Point(2, -2));
 					tSize.Height = 5;
-                    tSize.Width -= 2;
+                    tSize.Width -= 4;
                 }
                 temp.Size = tSize;
                 canvas1.Controls.SetChildIndex(temp, 0);

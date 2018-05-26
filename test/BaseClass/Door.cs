@@ -11,6 +11,7 @@ namespace MidasMain
     {
         public Point pA;
         public Point pB;
+		public int idx;
 
         public enum DoorType
         {

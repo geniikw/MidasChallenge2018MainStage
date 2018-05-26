@@ -94,6 +94,12 @@
     <Compile Include="Canvas\Canvas.Designer.cs">
       <DependentUpon>Canvas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Canvas\UCDoor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Canvas\UCDoor.Designer.cs">
+      <DependentUpon>UCDoor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Canvas\UCWall.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     <EmbeddedResource Include="Canvas\Canvas.resx">
       <DependentUpon>Canvas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\UCDoor.resx">
+      <DependentUpon>UCDoor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Canvas\UCObject.resx">
       <DependentUpon>UCObject.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,7 +212,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\rDoor0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rDoor1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rDoor2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rDoor3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
