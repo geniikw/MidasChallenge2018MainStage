@@ -12,9 +12,12 @@ namespace MidasMain.Canvas
 {
 	public partial class UCObject : UCScaleAble
 	{
+		public UCRoom inRoom;
+
 		public UCObject()
 		{
 			InitializeComponent();
+			inRoom = null;
 		}
 
         public void SetupData(Furniture input)
@@ -28,7 +31,7 @@ namespace MidasMain.Canvas
 		{
 			base.PointerUp(sender, e);
 			Console.WriteLine("check object in room");
-			//Canvas.instance.CheckRoom
+			Canvas.instance.SearchRommForObject(this);
 		}
 	}
 }
