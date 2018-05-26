@@ -11,25 +11,17 @@ namespace MidasMain
     public class Document
     {
         // 룸 과 아이디
-        Dictionary<int, Room> rooms;
+        List<Room> rooms;
 
         public Document()
         {
-            rooms = new Dictionary<int, Room>();
+            rooms = new List<Room>();
         }
 
         //아이디가 존재하면 return false
-        public bool AddRoom(int id, Room room)
+        public void AddRoom(Room room)
         {
-            if(rooms.ContainsKey(id))
-            {
-                return false;
-            }
-            else
-            {
-                rooms.Add(id, room);
-                return true;
-            }
+            rooms.Add(room);
 
         }
 

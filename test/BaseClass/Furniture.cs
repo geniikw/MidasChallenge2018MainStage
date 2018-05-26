@@ -9,15 +9,21 @@ namespace MidasMain
 {
     public class Furniture
     {
-        Point coordinate;
-        float width;
-        float height;
+        public string name;
+        public Point coordinate;
+        public int width;
+        public int height;
 
-        public Furniture(Point coordinate, float width, float height)
+        public Furniture(Point coordinate, int width, int height, string name)
         {
+            this.name = name;
             this.coordinate = coordinate;
             this.width = width;
             this.height = height;
         }
     }
+
+
+
+    
 }
