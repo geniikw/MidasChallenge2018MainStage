@@ -142,8 +142,14 @@
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\Canvas.resx">
+      <DependentUpon>Canvas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Canvas\UCObject.resx">
       <DependentUpon>UCObject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Canvas\UCRoom.resx">
+      <DependentUpon>UCRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Canvas\UCScaleAble.resx">
       <DependentUpon>UCScaleAble.cs</DependentUpon>

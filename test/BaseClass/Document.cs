@@ -12,10 +12,12 @@ namespace MidasMain
     {
         // 룸 과 아이디
         public List<Room> rooms;
+        public List<Furniture> objects;
 
         public Document()
         {
             rooms = new List<Room>();
+            objects = new List<Furniture>();
         }
 
         //아이디가 존재하면 return false
@@ -23,14 +25,12 @@ namespace MidasMain
         {
             rooms.Add(room);
         }
-
-
+        
         public Room GetRoom(int id)
         {
             return rooms[id];
         }
-
-        
+                
         public List<Line> GetLinesOfRoom(Room room)
         {
             var sorted = rooms.OrderBy(r => -r.Depth);
