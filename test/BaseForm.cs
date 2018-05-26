@@ -390,9 +390,9 @@ namespace MidasMain
         public void Validation(Document doc, string msg)
         {
             if (doc.ValidateConstruction())
-                canvas1.BackColor = Color.White;
+                AlarmLabel.Text = "";
             else
-                canvas1.BackColor = Color.Red;
+                AlarmLabel.Text = "Validation Fail";
         }
 
        
