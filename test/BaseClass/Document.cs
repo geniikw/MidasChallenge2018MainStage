@@ -33,10 +33,36 @@ namespace MidasMain.BaseClass
 
         }
 
+        public void RemoveRoom(int id)
+        {
+            if (rooms.ContainsKey(id))
+            {
+                rooms.Remove(id);
+            }
+        }
+
         public Room GetRoom(int id)
         {
             return rooms[id];
         }
-        
+
+
+        public List<Line> GetLinesOfRoom(Room room)
+        {
+            var sorted = rooms.OrderBy(r => r.Value.Depth);
+
+            List<Line> lines = new List<Line>();
+
+
+
+            foreach (var rm in sorted)
+            {
+                if (rm.Value == room)
+                {
+                    continue;
+                }
+
+            }
+        }
     }
 }
