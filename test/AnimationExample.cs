@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MidasMain
 {
+
+
+
     class AnimationExample
     {
         public void Animation()
