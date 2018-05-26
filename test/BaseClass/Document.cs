@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace MidasMain.BaseClass
+namespace MidasMain
 {
     //전체를 포함하는 문서
     public class Document

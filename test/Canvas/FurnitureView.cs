@@ -12,10 +12,6 @@ namespace MidasMain.Canvas
 {
     public interface IFurnitureView
     {
-        string ObjectName { get; set; }
-        Point Coordinate { get; set; }
-        int Width { get; set; }
-        int Height { get; set; }
     }
 
     public partial class FurnitureView : DragItem , IFurnitureView
