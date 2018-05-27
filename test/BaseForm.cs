@@ -284,9 +284,8 @@ namespace MidasMain
                 }
             }
             InvertZOrderOfControls(canvas1);
-
-
         }
+
         public void ClearBlock()
         {
             Stack<Control> toDel = new Stack<Control>();
