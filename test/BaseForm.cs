@@ -273,7 +273,7 @@ namespace MidasMain
             {
                 using (var fs = (FileStream)dia.OpenFile())
                 {
-                    using (Bitmap bmp = new Bitmap(this.Width, this.Height))
+                    using (Bitmap bmp = new Bitmap(canvas1.Size.Width, canvas1.Size.Height))
                     {
                         Rectangle rect = new Rectangle(canvas1.Location, canvas1.Size);
                         canvas1.DrawToBitmap(bmp, rect);
