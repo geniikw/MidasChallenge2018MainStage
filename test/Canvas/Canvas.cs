@@ -251,8 +251,8 @@ namespace MidasMain.CanvasSpace
 		{
 			UCDoor uDoor = new UCDoor();
 
-			Parent.Controls.Add(uDoor);
-			Parent.Controls.SetChildIndex(uDoor, 0);
+			this.Controls.Add(uDoor);
+			this.Controls.SetChildIndex(uDoor, 0);
 
 			uDoor.pA = door.pA;
 			uDoor.Location = uDoor.pA;
@@ -311,10 +311,9 @@ namespace MidasMain.CanvasSpace
 				this.Controls.SetChildIndex(m_listRoom[m_listRoom.Count - i - 1], i+ m_listObject.Count);
 
             for (int i = 0; i < m_listDoor.Count; i++)
-            {
-                
-            }
-        }
+				this.Controls.SetChildIndex(m_listDoor[i], i);
+
+		}
 
 		public void AllFocusOut()
 		{
